@@ -8,15 +8,29 @@
 
 #import "AppDelegate.h"
 
+
+
 @interface AppDelegate ()
 
 @end
+
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    WRLOG_INIT  //  Initial Log Method
+        
+//    DDLogVerbose(@"Verbose");
+//    DDLogDebug(@"Debug");
+//    DDLogInfo(@"Info");
+//    DDLogWarn(@"Warn");
+//    DDLogError(@"Error");
+    
+
+    
+    
     return YES;
 }
 

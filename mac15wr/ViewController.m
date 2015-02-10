@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WRCourse.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    
+    [[WRAPIClient sharedClient] GET:@"Courses/20151/FADW" parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+        NSMutableArray *mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
+        for (NSDictionary *course_attributes in JSON) {
+            //DDLogVerbose(@"%s", [course ])
+            
+//            int courseid = (NSUInteger)[[course valueForKey:@"COURSE_ID"] integerValue];
+//
+            
+            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
+            [mutableCourses addObject:course];
+        }
+    
+        
+                //NSLog(@"hello %f",course.course_id);
+    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+       
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
