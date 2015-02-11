@@ -23,15 +23,12 @@
     self.title = (NSString*)[attributes valueForKeyPath:@"TITLE"];
     self.min_units = (double)[[attributes valueForKeyPath:@"MIN_UNITS"] doubleValue];
     self.max_units = (double)[[attributes valueForKeyPath:@"MAX_UNITS"] doubleValue];
-    
-    // Return Null, need to process
-//    self.total_max_units = ISNULLVALUE([attributes valueForKeyPath:@"TOTAL_MAX_UNITS"]);
-//    self.description = (NSString*)[attributes valueForKeyPath:@"DESCRIPTION"];
-//    self.diversity_flag = (NSString*)[attributes valueForKey:@"DIVERSITY_FLAG"];
-//    self.effective_term_code = (NSString*)[attributes valueForKey:@"EFFECTIVE_TERM_CODE"];
-//    self.section = [attributes valueForKey:@"SECTIONS"];
-    
-    
+    self.total_max_units = [[attributes valueForKeyPath:@"TOTAL_MAX_UNITS"] isKindOfClass:[NSNull class]]?0:(double)[[attributes valueForKeyPath:@"TOTAL_MAX_UNITS"] doubleValue];
+    self.desc = (NSString*)[attributes valueForKeyPath:@"DESCRIPTION"];
+    self.diversity_flag = (NSString*)[attributes valueForKey:@"DIVERSITY_FLAG"];
+    self.effective_term_code = (NSString*)[attributes valueForKey:@"EFFECTIVE_TERM_CODE"];
+    //
+    self.section = [attributes valueForKey:@"SECTIONS"];
    // self.user = [[User alloc] initWithAttributes:[attributes valueForKeyPath:@"user"]];
     
     return self;

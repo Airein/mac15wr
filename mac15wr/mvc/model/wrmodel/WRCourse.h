@@ -17,15 +17,14 @@
 @property (assign, nonatomic) double min_units;
 @property (assign, nonatomic) double max_units;
 @property (assign, nonatomic) double total_max_units;
-@property (strong, nonatomic) NSString* description;
+@property (strong, nonatomic) NSString* desc;
 @property (strong, nonatomic) NSString* diversity_flag;
 @property (strong, nonatomic) NSString* effective_term_code;
-@property (strong, nonatomic) NSString* end_term_code;
 
 @property (strong, nonatomic) NSArray* section;
 
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
-- (void) test;
+
 
 @end
