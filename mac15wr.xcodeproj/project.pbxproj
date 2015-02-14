@@ -58,6 +58,10 @@
 		1FD7CAB11A88AEB7009857F7 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD7CAA71A88AEB7009857F7 /* JSONValueTransformer.m */; };
 		1FD7CAB31A88AF05009857F7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD7CAB21A88AF05009857F7 /* SystemConfiguration.framework */; };
 		1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD7CAB61A88B357009857F7 /* WRCourse.m */; };
+		FA82E7171A8DF64200FF93CD /* WRCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */; };
+		FA82E71F1A8DF81C00FF93CD /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71C1A8DF81C00FF93CD /* MGSwipeButton.m */; };
+		FA82E7201A8DF81C00FF93CD /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71E1A8DF81C00FF93CD /* MGSwipeTableCell.m */; };
+		FA82E7301A8EDE8100FF93CD /* WRCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E72F1A8EDE8100FF93CD /* WRCourseTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +197,14 @@
 		1FD7CAB21A88AF05009857F7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1FD7CAB51A88AF6E009857F7 /* WRCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourse.h; sourceTree = "<group>"; };
 		1FD7CAB61A88B357009857F7 /* WRCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourse.m; sourceTree = "<group>"; };
+		FA82E7151A8DF64200FF93CD /* WRCourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewController.h; sourceTree = "<group>"; };
+		FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewController.m; sourceTree = "<group>"; };
+		FA82E71B1A8DF81C00FF93CD /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		FA82E71C1A8DF81C00FF93CD /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		FA82E71D1A8DF81C00FF93CD /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		FA82E71E1A8DF81C00FF93CD /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		FA82E72E1A8EDE8100FF93CD /* WRCourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewCell.h; sourceTree = "<group>"; };
+		FA82E72F1A8EDE8100FF93CD /* WRCourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +229,7 @@
 		003C34191A8729E7003097DD = {
 			isa = PBXGroup;
 			children = (
+				FA82E71A1A8DF81C00FF93CD /* MGSwipeTableCell */,
 				1FD7CAB21A88AF05009857F7 /* SystemConfiguration.framework */,
 				003C34241A8729E7003097DD /* mac15wr */,
 				003C343E1A8729E7003097DD /* mac15wrTests */,
@@ -291,6 +304,8 @@
 		1F9292A11A881DCE001B8A45 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA82E7151A8DF64200FF93CD /* WRCourseTableViewController.h */,
+				FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */,
 				1F9292B11A8827B3001B8A45 /* WRController.h */,
 			);
 			path = controller;
@@ -299,6 +314,7 @@
 		1F9292A21A881DCE001B8A45 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FA82E72D1A8EDE5A00FF93CD /* wrtable */,
 				1FD7CAB41A88AF5E009857F7 /* wrmodel */,
 				1F9292B21A8827C4001B8A45 /* WRModel.h */,
 			);
@@ -590,6 +606,27 @@
 			path = wrmodel;
 			sourceTree = "<group>";
 		};
+		FA82E71A1A8DF81C00FF93CD /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA82E71B1A8DF81C00FF93CD /* MGSwipeButton.h */,
+				FA82E71C1A8DF81C00FF93CD /* MGSwipeButton.m */,
+				FA82E71D1A8DF81C00FF93CD /* MGSwipeTableCell.h */,
+				FA82E71E1A8DF81C00FF93CD /* MGSwipeTableCell.m */,
+			);
+			name = MGSwipeTableCell;
+			path = mac15wr/vendor/MGSwipeTableCell;
+			sourceTree = "<group>";
+		};
+		FA82E72D1A8EDE5A00FF93CD /* wrtable */ = {
+			isa = PBXGroup;
+			children = (
+				FA82E72E1A8EDE8100FF93CD /* WRCourseTableViewCell.h */,
+				FA82E72F1A8EDE8100FF93CD /* WRCourseTableViewCell.m */,
+			);
+			path = wrtable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -701,6 +738,7 @@
 				1FA99DFF1A8859E900CDCA6E /* DDFileLogger.m in Sources */,
 				1F9292E81A883974001B8A45 /* UIFont+AirExtension.m in Sources */,
 				1FD7CA751A88A08C009857F7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				FA82E7201A8DF81C00FF93CD /* MGSwipeTableCell.m in Sources */,
 				1FA99E031A8859E900CDCA6E /* DDDispatchQueueLogFormatter.m in Sources */,
 				1FD7CA7B1A88A08C009857F7 /* UIWebView+AFNetworking.m in Sources */,
 				1FD7CA6D1A88A08C009857F7 /* AFHTTPSessionManager.m in Sources */,
@@ -709,6 +747,7 @@
 				1FD7CA761A88A08C009857F7 /* UIAlertView+AFNetworking.m in Sources */,
 				1FD7CA8C1A88A709009857F7 /* WRAPIClient.m in Sources */,
 				1F9292DC1A883216001B8A45 /* WRLog.m in Sources */,
+				FA82E71F1A8DF81C00FF93CD /* MGSwipeButton.m in Sources */,
 				1FD7CA6E1A88A08C009857F7 /* AFNetworkReachabilityManager.m in Sources */,
 				1FD7CA731A88A08C009857F7 /* AFURLSessionManager.m in Sources */,
 				1FA99E011A8859E900CDCA6E /* DDTTYLogger.m in Sources */,
@@ -728,9 +767,11 @@
 				1FD7CA771A88A08C009857F7 /* UIButton+AFNetworking.m in Sources */,
 				1FD7CA7A1A88A08C009857F7 /* UIRefreshControl+AFNetworking.m in Sources */,
 				1FD7CA6C1A88A08C009857F7 /* AFHTTPRequestOperationManager.m in Sources */,
+				FA82E7301A8EDE8100FF93CD /* WRCourseTableViewCell.m in Sources */,
 				1FD7CAA81A88AEB7009857F7 /* JSONModel.m in Sources */,
 				1FD7CAB11A88AEB7009857F7 /* JSONValueTransformer.m in Sources */,
 				1FD7CAAF1A88AEB7009857F7 /* JSONModel+networking.m in Sources */,
+				FA82E7171A8DF64200FF93CD /* WRCourseTableViewController.m in Sources */,
 				1FD7CA6F1A88A08C009857F7 /* AFSecurityPolicy.m in Sources */,
 				1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */,
 				1FD7CAAC1A88AEB7009857F7 /* NSArray+JSONModel.m in Sources */,
@@ -864,7 +905,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac15wr/PrefixHeader.pch;
 				INFOPLIST_FILE = mac15wr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -879,7 +920,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac15wr/PrefixHeader.pch;
 				INFOPLIST_FILE = mac15wr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

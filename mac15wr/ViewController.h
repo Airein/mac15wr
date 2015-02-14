@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WRCourse.h"
+#import "WRCourseTableViewController.h"
 
 @interface ViewController : UIViewController
 
-
+@property (nonatomic, strong)  WRCourse *course;
 @end
 
