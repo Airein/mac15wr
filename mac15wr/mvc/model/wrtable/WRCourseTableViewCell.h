@@ -15,4 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *courseCredit;
 
 
+
+
+
+
 @end

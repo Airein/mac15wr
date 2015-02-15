@@ -15,8 +15,8 @@
 @interface WRCourseTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate, UIActionSheetDelegate>
 
 @property NSMutableArray *mutableCourses;
-
-
+@property (strong,nonatomic) NSMutableArray *filteredCourseArray;
+@property IBOutlet UISearchBar *courseSearchBar;
 
 
 @end

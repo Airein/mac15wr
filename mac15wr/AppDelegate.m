@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <GooglePlus/GooglePlus.h>
+#import <GoogleOpenSource/GoogleOpenSource.h>
 
 
 @interface AppDelegate ()
@@ -17,6 +18,9 @@
 
 @implementation AppDelegate
 
+// Please use the client ID created for you by Google.
+static NSString * const kClientID =
+@"505486916113-8mdlode4utlqdoq7vr83l0ric7g5h6r9.apps.googleusercontent.com";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -28,11 +32,37 @@
 //    DDLogWarn(@"Warn");
 //    DDLogError(@"Error");
     
-
     
+    GPPSignIn *signin=[GPPSignIn sharedInstance];
+    signin.clientID=kClientID;
+    signin.scopes=@[kGTLAuthScopePlusLogin];
     
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [GPPURLHandler handleURL:url
+                  sourceApplication:sourceApplication
+                         annotation:annotation];
+}
+
+#pragma mark - GPPDeepLinkDelegate
+
+- (void)didReceiveDeepLink:(GPPDeepLink *)deepLink {
+    // An example to handle the deep link data.
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Deep-link Data"
+                          message:[deepLink deepLinkID]
+                          delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

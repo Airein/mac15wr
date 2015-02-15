@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <GoogleOpenSource/GoogleOpenSource.h>
+#import <GooglePlus/GooglePlus.h>
 
 
 @interface ViewController ()
@@ -17,13 +19,22 @@
 
 @implementation ViewController
 
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    self.naviItem.title = self.email;
+    
+    
+    
+    
     
     [[WRAPIClient sharedClient] GET:@"Courses/20151/INF" parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
-       
+        
         self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *course_attributes in JSON) {
             
@@ -32,17 +43,23 @@
         }
         
     } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-       
+        
     }];
-
+    
     
 }
+
+
+
+
+
+
 
 
 #pragma mark - pass course data between views
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ShowCourseList"]) {
+    if ([[segue identifier] isEqualToString:@"ShowCourseList"] || [[segue identifier] isEqualToString:@"submitInfo"]) {
         UINavigationController *nav = [segue destinationViewController];
         WRCourseTableViewController* userViewController = (WRCourseTableViewController *) nav.topViewController;
         userViewController.mutableCourses = self.mutableCourses;

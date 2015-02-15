@@ -19,9 +19,8 @@
 #pragma test
     for (WRCourse *course in self.mutableCourses){
         NSLog(@"%@",course.title);
-    
-        
     }
+    
         
     
     // Uncomment the following line to preserve selection between presentations.
@@ -44,8 +43,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    // Return the number of rows in the section.
+    
     return [self.mutableCourses count];
 }
 
@@ -109,5 +107,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

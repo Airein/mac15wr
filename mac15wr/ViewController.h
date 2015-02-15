@@ -13,5 +13,13 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong)  WRCourse *course;
+@property NSString *email;
+
+
+@property (weak, nonatomic) IBOutlet UINavigationItem *naviItem;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *submitBarButton;
+
 @end
 
+@class GPPSignInButton;
