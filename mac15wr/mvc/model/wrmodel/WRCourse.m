@@ -35,8 +35,5 @@
 }
 
 
-- (void) test{
-    NSLog(@"test");
-}
 
 @end

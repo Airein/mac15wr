@@ -16,4 +16,6 @@
 //#import "WRRuntime.h"
 #import "WRLog.h"
 
+#import "WRDevice.h"
+
 

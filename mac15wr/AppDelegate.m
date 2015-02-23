@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "WRFiveViewManager.h"
 
 
 @interface AppDelegate ()
@@ -20,16 +20,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UIApplication sharedApplication] setStatusBarHidden: YES];
+    
     WRLOG_INIT  //  Initial Log Method
-        
-//    DDLogVerbose(@"Verbose");
-//    DDLogDebug(@"Debug");
-//    DDLogInfo(@"Info");
-//    DDLogWarn(@"Warn");
-//    DDLogError(@"Error");
+    //    DDLogVerbose(@"Verbose");
+    //    DDLogDebug(@"Debug");
+    //    DDLogInfo(@"Info");
+    //    DDLogWarn(@"Warn");
+    //    DDLogError(@"Error");
     
-
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //UINavigationController *mainNavController = [[UINavigationController alloc] initWithRootViewController:deckController];
+    WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+    [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+    IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+    self.window.rootViewController = deckViewController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
