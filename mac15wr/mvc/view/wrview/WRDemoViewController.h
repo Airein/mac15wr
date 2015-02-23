@@ -10,4 +10,7 @@
 
 @interface WRDemoViewController : UIViewController
 
+@property (nonatomic, strong) UIViewController* checkViewDelegate;
+
+
 @end

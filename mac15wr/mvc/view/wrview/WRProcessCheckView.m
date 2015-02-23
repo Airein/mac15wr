@@ -8,7 +8,7 @@
 
 #import "WRProcessCheckView.h"
 
-#import "WRDemoViewController.h"    // Demo for developer guide
+#import "WRCheckActionViewController.h"
 
 @implementation WRProcessCheckView
 
@@ -209,12 +209,12 @@
  */
 -(void) handleCheckViewAction:(NSInteger)index{
     
-    UIViewController *actionViewController = NULL;
+    WRCheckActionViewController *actionViewController = NULL;
     
     if ([self.cvTypeString isEqualToString:@"first"]) {     // Tutorial
         switch (index) {
             case 0:{    //  Overview Tour
-                actionViewController = [[WRDemoViewController alloc] init];
+                actionViewController = [[WRCheckActionViewController alloc] init];
                 
                 break;
             } case 1:{  //  Team Member
@@ -304,21 +304,32 @@
         }
     }
     
-    //UIViewController *newController = [[UIViewController alloc] init];
     actionViewController.view.backgroundColor = [UIColor wetAsphaltColor];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:actionViewController];
-    [navController.navigationBar configureFlatNavigationBarWithColor:[UIColor midnightBlueColor]];
+    actionViewController.checkViewDelegate = self;
+//    UINavigationController *navViewController = [[UINavigationController alloc] initWithRootViewController:actionViewController];
+
+    //    [navController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(s)]];
     
-    self.klcPopupDelegate.dismissType = KLCPopupDismissTypeBounceOut;
+    self.klcPopupDelegate.dismissType = KLCPopupDismissTypeNone;
     [self.klcPopupDelegate dismiss:YES];
     
     
-    CATransition* transition = [CATransition animation];
+//    CATransition* transition = [CATransition animation];
+//    transition.duration = 0.3;
+//    transition.type = kCATransitionFade;
+//    transition.subtype = kCATransitionFromTop;
+//    [self.parentControllerDelegate.view.layer addAnimation:transition forKey:kCATransition];
+//    [self.parentControllerDelegate presentViewController:actionViewController animated:NO completion:nil];
+    
+    CATransition *transition = [CATransition animation];
     transition.duration = 0.3;
-    transition.type = kCATransitionFade;
-    transition.subtype = kCATransitionFromTop;
-    [self.parentControllerDelegate.view.layer addAnimation:transition forKey:kCATransition];
-    [self.parentControllerDelegate presentViewController:navController animated:YES completion:nil];
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromBottom;
+    [self.parentControllerDelegate.view.window.layer addAnimation:transition forKey:nil];
+    
+    [self.parentControllerDelegate presentViewController:actionViewController animated:NO completion:nil];
+    
     
 }
 

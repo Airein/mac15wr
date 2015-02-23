@@ -61,6 +61,7 @@
 		1F8A25901A99B08B00B3EACB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A258C1A99B08B00B3EACB /* Info.plist */; };
 		1F8A25911A99B08B00B3EACB /* MKRadialMenuDevMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A258D1A99B08B00B3EACB /* MKRadialMenuDevMode.gif */; };
 		1F8A25941A9ACD0E00B3EACB /* WRDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A25931A9ACD0E00B3EACB /* WRDemoViewController.m */; };
+		1F8A259D1A9AE38D00B3EACB /* WRCheckActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A259C1A9AE38D00B3EACB /* WRCheckActionViewController.m */; };
 		1F9292DC1A883216001B8A45 /* WRLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9292DB1A883216001B8A45 /* WRLog.m */; };
 		1F9292E81A883974001B8A45 /* UIFont+AirExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9292E31A883974001B8A45 /* UIFont+AirExtension.m */; };
 		1F9292E91A883974001B8A45 /* UIImage+AirExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9292E51A883974001B8A45 /* UIImage+AirExtension.m */; };
@@ -219,6 +220,8 @@
 		1F8A258D1A99B08B00B3EACB /* MKRadialMenuDevMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = MKRadialMenuDevMode.gif; sourceTree = "<group>"; };
 		1F8A25921A9ACD0E00B3EACB /* WRDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRDemoViewController.h; sourceTree = "<group>"; };
 		1F8A25931A9ACD0E00B3EACB /* WRDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDemoViewController.m; sourceTree = "<group>"; };
+		1F8A259B1A9AE38D00B3EACB /* WRCheckActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRCheckActionViewController.h; path = wrcontroller/WRCheckActionViewController.h; sourceTree = "<group>"; };
+		1F8A259C1A9AE38D00B3EACB /* WRCheckActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRCheckActionViewController.m; path = wrcontroller/WRCheckActionViewController.m; sourceTree = "<group>"; };
 		1F9292A91A881EC6001B8A45 /* WR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WR.h; sourceTree = "<group>"; };
 		1F9292AA1A881F93001B8A45 /* WRPrecompile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRPrecompile.h; sourceTree = "<group>"; };
 		1F9292AC1A88201A001B8A45 /* WRSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSystem.h; sourceTree = "<group>"; };
@@ -465,6 +468,8 @@
 		1F46A28B1A8C6ACE00DF74B7 /* wrcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				1F8A259B1A9AE38D00B3EACB /* WRCheckActionViewController.h */,
+				1F8A259C1A9AE38D00B3EACB /* WRCheckActionViewController.m */,
 			);
 			name = wrcontroller;
 			sourceTree = "<group>";
@@ -1175,6 +1180,7 @@
 				1FA99DFA1A8859E900CDCA6E /* CLIColor.m in Sources */,
 				1FA99DFE1A8859E900CDCA6E /* DDASLLogger.m in Sources */,
 				003C342B1A8729E7003097DD /* AppDelegate.m in Sources */,
+				1F8A259D1A9AE38D00B3EACB /* WRCheckActionViewController.m in Sources */,
 				1F46A2BC1A8C7BF000DF74B7 /* FUISegmentedControl.m in Sources */,
 				1F9292E91A883974001B8A45 /* UIImage+AirExtension.m in Sources */,
 				1FD7CA771A88A08C009857F7 /* UIButton+AFNetworking.m in Sources */,

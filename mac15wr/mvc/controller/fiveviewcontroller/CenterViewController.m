@@ -80,6 +80,7 @@
     [_chart setEnableInteractive:NO];
     [_chart setRadiusPrecent:0.92];
     [_chart setAlpha:0.85];
+    
     _chart.center = CGPointMake(screenWidth/2, screenHeight/2);
     self.chartValues = @[
                          @{@"name":@"first", @"value":@20, @"color":[UIColor midnightBlueColor]},
@@ -90,7 +91,7 @@
                          ];
     _chart.delegate = self;
     [_chart setChartValues:_chartValues animation:YES];
-    
+    [_chart setChartValues:_chartValues animation:YES duration:0.5f options:VBPieChartAnimationFan|VBPieChartAnimationTimingEaseInOut];
     
     
     // due button
