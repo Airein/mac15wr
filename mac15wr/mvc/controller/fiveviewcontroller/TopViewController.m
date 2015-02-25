@@ -7,7 +7,6 @@
 //
 
 #import "TopViewController.h"
-#import "WRWeekCalendarView.h"
 #import "MAWeekView.h"
 #import "MAEvent.h"
 #import "MAEventKitDataSource.h"

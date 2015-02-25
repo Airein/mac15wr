@@ -7,3 +7,4 @@
 //
 
 #import "UIColor+HexColor.h"
+#import "UIColor+WRColor.h"
