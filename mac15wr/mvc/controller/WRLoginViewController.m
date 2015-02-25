@@ -33,7 +33,7 @@ static NSString * const kClientID =
     
     
     //fetch data from usc api
-    [[WRAPIClient sharedClient] GET:@"Courses/20151/INF" parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+    [[WRAPIClient sharedClient] GET:@"Courses/20151/CSCI" parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
         
         self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *course_attributes in JSON) {

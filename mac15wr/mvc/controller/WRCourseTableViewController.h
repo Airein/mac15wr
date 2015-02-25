@@ -17,6 +17,8 @@
 @property NSMutableArray *mutableCourses;
 @property (strong,nonatomic) NSMutableArray *filteredCourseArray;
 @property IBOutlet UISearchBar *courseSearchBar;
+@property WRCourse *courseSelected;
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
 
 
 @end

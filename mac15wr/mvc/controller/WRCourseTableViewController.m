@@ -6,7 +6,10 @@
 //  Copyright (c) 2015 mac15wr. All rights reserved.
 //
 
+
 #import "WRCourseTableViewController.h"
+#import "WRCourseDetailViewController.h"
+
 
 @interface WRCourseTableViewController ()
 
@@ -108,6 +111,17 @@
 }
 */
 
+
+
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"courseDetail"]) {
+        UINavigationController *nav = [segue destinationViewController];
+        WRCourseDetailViewController* userViewController = (WRCourseDetailViewController *) nav.topViewController;
+        userViewController.courseSelected = [self.mutableCourses objectAtIndex:[[self.tableview indexPathForSelectedRow] row]];
+    }
+}
 
 
 @end
