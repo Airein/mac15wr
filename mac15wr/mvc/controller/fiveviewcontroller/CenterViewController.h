@@ -11,6 +11,7 @@
 #import "CircleProgressView.h"
 #import "OverallCircleProgressView.h"
 #import "CKRadialMenu.h"
+#import "KVNMaskedPageControl.h"
 
 
 enum {
@@ -30,5 +31,6 @@ typedef UInt32 IIViewDeckCP;
 
 @property (assign, nonatomic) IIViewDeckCP deckCP;   // deck view current position
 
+@property (strong, nonatomic) KVNMaskedPageControl *pageControl;
 
 @end

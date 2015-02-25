@@ -60,8 +60,8 @@
 		1F8A258F1A99B08B00B3EACB /* CKRadialMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A258B1A99B08B00B3EACB /* CKRadialMenu.m */; };
 		1F8A25901A99B08B00B3EACB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A258C1A99B08B00B3EACB /* Info.plist */; };
 		1F8A25911A99B08B00B3EACB /* MKRadialMenuDevMode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A258D1A99B08B00B3EACB /* MKRadialMenuDevMode.gif */; };
-		1F8A25941A9ACD0E00B3EACB /* WRDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A25931A9ACD0E00B3EACB /* WRDemoViewController.m */; };
 		1F8A259D1A9AE38D00B3EACB /* WRCheckActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A259C1A9AE38D00B3EACB /* WRCheckActionViewController.m */; };
+		1F8A25A11A9BBA9400B3EACB /* KVNMaskedPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A25A01A9BBA9400B3EACB /* KVNMaskedPageControl.m */; };
 		1F9292DC1A883216001B8A45 /* WRLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9292DB1A883216001B8A45 /* WRLog.m */; };
 		1F9292E81A883974001B8A45 /* UIFont+AirExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9292E31A883974001B8A45 /* UIFont+AirExtension.m */; };
 		1F9292E91A883974001B8A45 /* UIImage+AirExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9292E51A883974001B8A45 /* UIImage+AirExtension.m */; };
@@ -90,6 +90,16 @@
 		1FB85FAB1A931C9700119A34 /* WRProcessCheckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB85FAA1A931C9700119A34 /* WRProcessCheckView.m */; };
 		1FB85FAF1A93202E00119A34 /* WRDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB85FAE1A93202E00119A34 /* WRDevice.m */; };
 		1FB85FB31A9339AE00119A34 /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB85FB21A9339AE00119A34 /* TDBadgedCell.m */; };
+		1FC507D21A9D194300CBCA88 /* WRWeekCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC507D11A9D194300CBCA88 /* WRWeekCalendarView.m */; };
+		1FC508B71A9D717F00CBCA88 /* CalendarUIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508A41A9D717F00CBCA88 /* CalendarUIAppDelegate.m */; };
+		1FC508B81A9D717F00CBCA88 /* DayViewExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508A61A9D717F00CBCA88 /* DayViewExampleController.m */; };
+		1FC508B91A9D717F00CBCA88 /* WeekViewExampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508A81A9D717F00CBCA88 /* WeekViewExampleController.m */; };
+		1FC508BA1A9D717F00CBCA88 /* MAEventKitDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508AB1A9D717F00CBCA88 /* MAEventKitDataSource.m */; };
+		1FC508BB1A9D717F00CBCA88 /* MADayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508AE1A9D717F00CBCA88 /* MADayView.m */; };
+		1FC508BC1A9D717F00CBCA88 /* MAEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508B01A9D717F00CBCA88 /* MAEvent.m */; };
+		1FC508BD1A9D717F00CBCA88 /* MAGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508B21A9D717F00CBCA88 /* MAGridView.m */; };
+		1FC508BE1A9D717F00CBCA88 /* MAWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508B41A9D717F00CBCA88 /* MAWeekView.m */; };
+		1FC508BF1A9D717F00CBCA88 /* TapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508B61A9D717F00CBCA88 /* TapDetectingView.m */; };
 		1FD7CA6B1A88A08C009857F7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD7CA471A88A08C009857F7 /* AFHTTPRequestOperation.m */; };
 		1FD7CA6C1A88A08C009857F7 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD7CA491A88A08C009857F7 /* AFHTTPRequestOperationManager.m */; };
 		1FD7CA6D1A88A08C009857F7 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD7CA4B1A88A08C009857F7 /* AFHTTPSessionManager.m */; };
@@ -120,6 +130,9 @@
 		1FD7CAB11A88AEB7009857F7 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD7CAA71A88AEB7009857F7 /* JSONValueTransformer.m */; };
 		1FD7CAB31A88AF05009857F7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD7CAB21A88AF05009857F7 /* SystemConfiguration.framework */; };
 		1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD7CAB61A88B357009857F7 /* WRCourse.m */; };
+		1FFE59121A9C3A9400BAB220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFE59101A9C3A1800BAB220 /* Foundation.framework */; };
+		1FFE59131A9C3A9C00BAB220 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFE590E1A9C396200BAB220 /* CoreData.framework */; };
+		1FFE59581A9C595E00BAB220 /* WREvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFE59571A9C595E00BAB220 /* WREvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,10 +231,10 @@
 		1F8A258B1A99B08B00B3EACB /* CKRadialMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRadialMenu.m; sourceTree = "<group>"; };
 		1F8A258C1A99B08B00B3EACB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F8A258D1A99B08B00B3EACB /* MKRadialMenuDevMode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = MKRadialMenuDevMode.gif; sourceTree = "<group>"; };
-		1F8A25921A9ACD0E00B3EACB /* WRDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRDemoViewController.h; sourceTree = "<group>"; };
-		1F8A25931A9ACD0E00B3EACB /* WRDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDemoViewController.m; sourceTree = "<group>"; };
 		1F8A259B1A9AE38D00B3EACB /* WRCheckActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRCheckActionViewController.h; path = wrcontroller/WRCheckActionViewController.h; sourceTree = "<group>"; };
 		1F8A259C1A9AE38D00B3EACB /* WRCheckActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRCheckActionViewController.m; path = wrcontroller/WRCheckActionViewController.m; sourceTree = "<group>"; };
+		1F8A259F1A9BBA9400B3EACB /* KVNMaskedPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVNMaskedPageControl.h; sourceTree = "<group>"; };
+		1F8A25A01A9BBA9400B3EACB /* KVNMaskedPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVNMaskedPageControl.m; sourceTree = "<group>"; };
 		1F9292A91A881EC6001B8A45 /* WR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WR.h; sourceTree = "<group>"; };
 		1F9292AA1A881F93001B8A45 /* WRPrecompile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRPrecompile.h; sourceTree = "<group>"; };
 		1F9292AC1A88201A001B8A45 /* WRSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSystem.h; sourceTree = "<group>"; };
@@ -294,6 +307,26 @@
 		1FB85FAE1A93202E00119A34 /* WRDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDevice.m; sourceTree = "<group>"; };
 		1FB85FB11A9339AE00119A34 /* TDBadgedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBadgedCell.h; sourceTree = "<group>"; };
 		1FB85FB21A9339AE00119A34 /* TDBadgedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBadgedCell.m; sourceTree = "<group>"; };
+		1FC507D01A9D194300CBCA88 /* WRWeekCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRWeekCalendarView.h; sourceTree = "<group>"; };
+		1FC507D11A9D194300CBCA88 /* WRWeekCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRWeekCalendarView.m; sourceTree = "<group>"; };
+		1FC508A31A9D717F00CBCA88 /* CalendarUIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarUIAppDelegate.h; sourceTree = "<group>"; };
+		1FC508A41A9D717F00CBCA88 /* CalendarUIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarUIAppDelegate.m; sourceTree = "<group>"; };
+		1FC508A51A9D717F00CBCA88 /* DayViewExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayViewExampleController.h; sourceTree = "<group>"; };
+		1FC508A61A9D717F00CBCA88 /* DayViewExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayViewExampleController.m; sourceTree = "<group>"; };
+		1FC508A71A9D717F00CBCA88 /* WeekViewExampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekViewExampleController.h; sourceTree = "<group>"; };
+		1FC508A81A9D717F00CBCA88 /* WeekViewExampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekViewExampleController.m; sourceTree = "<group>"; };
+		1FC508AA1A9D717F00CBCA88 /* MAEventKitDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAEventKitDataSource.h; sourceTree = "<group>"; };
+		1FC508AB1A9D717F00CBCA88 /* MAEventKitDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAEventKitDataSource.m; sourceTree = "<group>"; };
+		1FC508AD1A9D717F00CBCA88 /* MADayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MADayView.h; sourceTree = "<group>"; };
+		1FC508AE1A9D717F00CBCA88 /* MADayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MADayView.m; sourceTree = "<group>"; };
+		1FC508AF1A9D717F00CBCA88 /* MAEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAEvent.h; sourceTree = "<group>"; };
+		1FC508B01A9D717F00CBCA88 /* MAEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAEvent.m; sourceTree = "<group>"; };
+		1FC508B11A9D717F00CBCA88 /* MAGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGridView.h; sourceTree = "<group>"; };
+		1FC508B21A9D717F00CBCA88 /* MAGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAGridView.m; sourceTree = "<group>"; };
+		1FC508B31A9D717F00CBCA88 /* MAWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAWeekView.h; sourceTree = "<group>"; };
+		1FC508B41A9D717F00CBCA88 /* MAWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAWeekView.m; sourceTree = "<group>"; };
+		1FC508B51A9D717F00CBCA88 /* TapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingView.h; sourceTree = "<group>"; };
+		1FC508B61A9D717F00CBCA88 /* TapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapDetectingView.m; sourceTree = "<group>"; };
 		1FD7CA461A88A08C009857F7 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		1FD7CA471A88A08C009857F7 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		1FD7CA481A88A08C009857F7 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -359,6 +392,10 @@
 		1FD7CAB21A88AF05009857F7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1FD7CAB51A88AF6E009857F7 /* WRCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourse.h; sourceTree = "<group>"; };
 		1FD7CAB61A88B357009857F7 /* WRCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourse.m; sourceTree = "<group>"; };
+		1FFE590E1A9C396200BAB220 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1FFE59101A9C3A1800BAB220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1FFE59561A9C595E00BAB220 /* WREvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WREvent.h; sourceTree = "<group>"; };
+		1FFE59571A9C595E00BAB220 /* WREvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WREvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +403,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FFE59131A9C3A9C00BAB220 /* CoreData.framework in Frameworks */,
+				1FFE59121A9C3A9400BAB220 /* Foundation.framework in Frameworks */,
 				1F46A2CD1A8C7C1B00DF74B7 /* CoreText.framework in Frameworks */,
 				1F46A2801A8C684700DF74B7 /* Accelerate.framework in Frameworks */,
 				1F46A27E1A8C683F00DF74B7 /* QuartzCore.framework in Frameworks */,
@@ -449,6 +488,8 @@
 		1F46A2751A8C657300DF74B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1FFE59101A9C3A1800BAB220 /* Foundation.framework */,
+				1FFE590E1A9C396200BAB220 /* CoreData.framework */,
 				1F46A2CC1A8C7C1B00DF74B7 /* CoreText.framework */,
 				1F46A27F1A8C684700DF74B7 /* Accelerate.framework */,
 				1F46A27D1A8C683F00DF74B7 /* QuartzCore.framework */,
@@ -580,6 +621,15 @@
 			path = CKRadialMenu;
 			sourceTree = "<group>";
 		};
+		1F8A259E1A9BBA9400B3EACB /* KVNMaskedPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A259F1A9BBA9400B3EACB /* KVNMaskedPageControl.h */,
+				1F8A25A01A9BBA9400B3EACB /* KVNMaskedPageControl.m */,
+			);
+			path = KVNMaskedPageControl;
+			sourceTree = "<group>";
+		};
 		1F9292A01A881DCE001B8A45 /* mvc */ = {
 			isa = PBXGroup;
 			children = (
@@ -604,6 +654,7 @@
 		1F9292A21A881DCE001B8A45 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				1FFE59551A9C594400BAB220 /* calendarmodel */,
 				1FD7CAB41A88AF5E009857F7 /* wrmodel */,
 				1F9292B21A8827C4001B8A45 /* WRModel.h */,
 			);
@@ -635,6 +686,8 @@
 		1F9292A51A881DCE001B8A45 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1FC508A11A9D717F00CBCA88 /* CalendarUI */,
+				1F8A259E1A9BBA9400B3EACB /* KVNMaskedPageControl */,
 				1F8A25881A99B08B00B3EACB /* CKRadialMenu */,
 				1FB85FB01A9339AE00119A34 /* TDBadgedCell */,
 				1FB85FA41A931B3100119A34 /* KLCPopup */,
@@ -816,10 +869,10 @@
 		1FB85FA81A931C5600119A34 /* wrview */ = {
 			isa = PBXGroup;
 			children = (
+				1FFE59BD1A9C603500BAB220 /* wrcalendar */,
+				1FFE59511A9C588C00BAB220 /* wrcell */,
 				1FB85FA91A931C9700119A34 /* WRProcessCheckView.h */,
 				1FB85FAA1A931C9700119A34 /* WRProcessCheckView.m */,
-				1F8A25921A9ACD0E00B3EACB /* WRDemoViewController.h */,
-				1F8A25931A9ACD0E00B3EACB /* WRDemoViewController.m */,
 			);
 			path = wrview;
 			sourceTree = "<group>";
@@ -842,6 +895,55 @@
 				1FB85FB21A9339AE00119A34 /* TDBadgedCell.m */,
 			);
 			path = TDBadgedCell;
+			sourceTree = "<group>";
+		};
+		1FC508A11A9D717F00CBCA88 /* CalendarUI */ = {
+			isa = PBXGroup;
+			children = (
+				1FC508A21A9D717F00CBCA88 /* Example */,
+				1FC508A91A9D717F00CBCA88 /* Extensions */,
+				1FC508AC1A9D717F00CBCA88 /* Views */,
+			);
+			path = CalendarUI;
+			sourceTree = "<group>";
+		};
+		1FC508A21A9D717F00CBCA88 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				1FC508A31A9D717F00CBCA88 /* CalendarUIAppDelegate.h */,
+				1FC508A41A9D717F00CBCA88 /* CalendarUIAppDelegate.m */,
+				1FC508A51A9D717F00CBCA88 /* DayViewExampleController.h */,
+				1FC508A61A9D717F00CBCA88 /* DayViewExampleController.m */,
+				1FC508A71A9D717F00CBCA88 /* WeekViewExampleController.h */,
+				1FC508A81A9D717F00CBCA88 /* WeekViewExampleController.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		1FC508A91A9D717F00CBCA88 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1FC508AA1A9D717F00CBCA88 /* MAEventKitDataSource.h */,
+				1FC508AB1A9D717F00CBCA88 /* MAEventKitDataSource.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1FC508AC1A9D717F00CBCA88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FC508AD1A9D717F00CBCA88 /* MADayView.h */,
+				1FC508AE1A9D717F00CBCA88 /* MADayView.m */,
+				1FC508AF1A9D717F00CBCA88 /* MAEvent.h */,
+				1FC508B01A9D717F00CBCA88 /* MAEvent.m */,
+				1FC508B11A9D717F00CBCA88 /* MAGridView.h */,
+				1FC508B21A9D717F00CBCA88 /* MAGridView.m */,
+				1FC508B31A9D717F00CBCA88 /* MAWeekView.h */,
+				1FC508B41A9D717F00CBCA88 /* MAWeekView.m */,
+				1FC508B51A9D717F00CBCA88 /* TapDetectingView.h */,
+				1FC508B61A9D717F00CBCA88 /* TapDetectingView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1FD7CA441A88A08C009857F7 /* AFNetworking */ = {
@@ -1007,6 +1109,31 @@
 			path = wrmodel;
 			sourceTree = "<group>";
 		};
+		1FFE59511A9C588C00BAB220 /* wrcell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = wrcell;
+			sourceTree = "<group>";
+		};
+		1FFE59551A9C594400BAB220 /* calendarmodel */ = {
+			isa = PBXGroup;
+			children = (
+				1FFE59561A9C595E00BAB220 /* WREvent.h */,
+				1FFE59571A9C595E00BAB220 /* WREvent.m */,
+			);
+			path = calendarmodel;
+			sourceTree = "<group>";
+		};
+		1FFE59BD1A9C603500BAB220 /* wrcalendar */ = {
+			isa = PBXGroup;
+			children = (
+				1FC507D01A9D194300CBCA88 /* WRWeekCalendarView.h */,
+				1FC507D11A9D194300CBCA88 /* WRWeekCalendarView.m */,
+			);
+			name = wrcalendar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1128,6 +1255,7 @@
 				1FD7CA781A88A08C009857F7 /* UIImageView+AFNetworking.m in Sources */,
 				1F5006EB1A900AA000DBCBA5 /* IIWrapController.m in Sources */,
 				1FD7CA6B1A88A08C009857F7 /* AFHTTPRequestOperation.m in Sources */,
+				1F8A25A11A9BBA9400B3EACB /* KVNMaskedPageControl.m in Sources */,
 				1F46A2B91A8C7BF000DF74B7 /* FUIButton.m in Sources */,
 				1FA99E001A8859E900CDCA6E /* DDLog.m in Sources */,
 				1F8A258F1A99B08B00B3EACB /* CKRadialMenu.m in Sources */,
@@ -1138,17 +1266,21 @@
 				1FA99DFD1A8859E900CDCA6E /* DDASLLogCapture.m in Sources */,
 				1F46A2C01A8C7BF000DF74B7 /* UIBarButtonItem+FlatUI.m in Sources */,
 				1F46A2BD1A8C7BF000DF74B7 /* FUISwitch.m in Sources */,
+				1FC508B81A9D717F00CBCA88 /* DayViewExampleController.m in Sources */,
 				1FA99DFF1A8859E900CDCA6E /* DDFileLogger.m in Sources */,
 				1FB85FA71A931B3100119A34 /* KLCPopup.m in Sources */,
 				1FB85F761A90595100119A34 /* SDiPhoneVersion.m in Sources */,
 				1F9292E81A883974001B8A45 /* UIFont+AirExtension.m in Sources */,
 				1FB85F961A9176A400119A34 /* UIView+WhenTappedBlocks.m in Sources */,
+				1FC508BA1A9D717F00CBCA88 /* MAEventKitDataSource.m in Sources */,
 				1FB85FAB1A931C9700119A34 /* WRProcessCheckView.m in Sources */,
 				1F46A2C31A8C7BF000DF74B7 /* UIImage+FlatUI.m in Sources */,
 				1FD7CA751A88A08C009857F7 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				1FC508BD1A9D717F00CBCA88 /* MAGridView.m in Sources */,
 				1FA99E031A8859E900CDCA6E /* DDDispatchQueueLogFormatter.m in Sources */,
 				1FD7CA7B1A88A08C009857F7 /* UIWebView+AFNetworking.m in Sources */,
 				1FD7CA6D1A88A08C009857F7 /* AFHTTPSessionManager.m in Sources */,
+				1FC508BB1A9D717F00CBCA88 /* MADayView.m in Sources */,
 				1FD7CA741A88A08C009857F7 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				1F46A2C41A8C7BF000DF74B7 /* UINavigationBar+FlatUI.m in Sources */,
 				1F46A2B81A8C7BF000DF74B7 /* FUIAlertView.m in Sources */,
@@ -1157,6 +1289,7 @@
 				1FB85FA01A9301F300119A34 /* VBPiePiece.m in Sources */,
 				1F46A2C51A8C7BF000DF74B7 /* UIPopoverController+FlatUI.m in Sources */,
 				1FD7CA8C1A88A709009857F7 /* WRAPIClient.m in Sources */,
+				1FC508BC1A9D717F00CBCA88 /* MAEvent.m in Sources */,
 				1F9292DC1A883216001B8A45 /* WRLog.m in Sources */,
 				1F46A2C11A8C7BF000DF74B7 /* UIColor+FlatUI.m in Sources */,
 				1FD7CA6E1A88A08C009857F7 /* AFNetworkReachabilityManager.m in Sources */,
@@ -1172,16 +1305,21 @@
 				1FD7CAB01A88AEB7009857F7 /* JSONKeyMapper.m in Sources */,
 				1F5006E91A900AA000DBCBA5 /* IISideController.m in Sources */,
 				1F46A2BB1A8C7BF000DF74B7 /* FUIPopoverBackgroundView.m in Sources */,
+				1FC508B71A9D717F00CBCA88 /* CalendarUIAppDelegate.m in Sources */,
 				1F5006FE1A900C3200DBCBA5 /* TopViewController.m in Sources */,
 				1FD7CAAD1A88AEB7009857F7 /* JSONAPI.m in Sources */,
+				1FC508BE1A9D717F00CBCA88 /* MAWeekView.m in Sources */,
+				1FFE59581A9C595E00BAB220 /* WREvent.m in Sources */,
 				1F46A2BF1A8C7BF000DF74B7 /* NSString+Icons.m in Sources */,
 				1FD7CA711A88A08C009857F7 /* AFURLRequestSerialization.m in Sources */,
 				003C342E1A8729E7003097DD /* ViewController.m in Sources */,
 				1FA99DFA1A8859E900CDCA6E /* CLIColor.m in Sources */,
+				1FC507D21A9D194300CBCA88 /* WRWeekCalendarView.m in Sources */,
 				1FA99DFE1A8859E900CDCA6E /* DDASLLogger.m in Sources */,
 				003C342B1A8729E7003097DD /* AppDelegate.m in Sources */,
 				1F8A259D1A9AE38D00B3EACB /* WRCheckActionViewController.m in Sources */,
 				1F46A2BC1A8C7BF000DF74B7 /* FUISegmentedControl.m in Sources */,
+				1FC508BF1A9D717F00CBCA88 /* TapDetectingView.m in Sources */,
 				1F9292E91A883974001B8A45 /* UIImage+AirExtension.m in Sources */,
 				1FD7CA771A88A08C009857F7 /* UIButton+AFNetworking.m in Sources */,
 				1F46A2CB1A8C7BF000DF74B7 /* UIToolbar+FlatUI.m in Sources */,
@@ -1201,11 +1339,11 @@
 				1FD7CA6F1A88A08C009857F7 /* AFSecurityPolicy.m in Sources */,
 				1FB85FA31A93110A00119A34 /* UIColor+HexColor.m in Sources */,
 				1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */,
+				1FC508B91A9D717F00CBCA88 /* WeekViewExampleController.m in Sources */,
 				1FB85F6E1A9047F000119A34 /* WRFiveViewManager.m in Sources */,
 				1FD7CAAC1A88AEB7009857F7 /* NSArray+JSONModel.m in Sources */,
 				1F5007011A900C3A00DBCBA5 /* BottomViewController.m in Sources */,
 				1F5006FB1A900C2B00DBCBA5 /* RightViewController.m in Sources */,
-				1F8A25941A9ACD0E00B3EACB /* WRDemoViewController.m in Sources */,
 				1FD7CAAB1A88AEB7009857F7 /* JSONModelError.m in Sources */,
 				003C34281A8729E7003097DD /* main.m in Sources */,
 				1F46A2C71A8C7BF000DF74B7 /* UISlider+FlatUI.m in Sources */,

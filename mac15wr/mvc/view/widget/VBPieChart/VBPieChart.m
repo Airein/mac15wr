@@ -52,12 +52,14 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
 
 @implementation VBPieChart {
     CGPoint _touchBegan;
+    BOOL isTouchMoved;
 }
 
 - (id) init {
     self = [super init];
     self.chartsData = [NSMutableArray array];
     self.strokeColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.7];
+    
     
     self.startAngle = 0;
     self.length = M_PI*2;
@@ -314,14 +316,10 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    isTouchMoved = false;
     
-    UITouch *touch = [touches anyObject];
-    //_touchBegan = [touch locationInView:self];
-    _hitLayer = (VBPiePiece*)[self layerForTouch:touch];
-    if ([_hitLayer isKindOfClass:[VBPiePiece class]]) {
-        //NSLog(@"name: %@", _hitLayer.name);
-        [_delegate handlePieTouchedEvent:_hitLayer.name];
-    }
+    
+    
 //    moveP = CGPointMake(1, 1);
 //    CGPoint p = [touch locationInView:self];
 //    if (p.y > self.center.y && p.x > self.center.x) {
@@ -339,7 +337,7 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
 
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    
+    isTouchMoved = true;
 //    UITouch *touch = [touches anyObject];
 //    CGPoint p1 = [touch previousLocationInView:self];
 //    CGPoint p2 = [touch locationInView:self];
@@ -363,8 +361,16 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
 
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-//    UITouch *touch = [touches anyObject];
+    if (!isTouchMoved) {
+        UITouch *touch = [touches anyObject];
+        //_touchBegan = [touch locationInView:self];
+        _hitLayer = (VBPiePiece*)[self layerForTouch:touch];
+        if ([_hitLayer isKindOfClass:[VBPiePiece class]]) {
+            //NSLog(@"name: %@", _hitLayer.name);
+            [_delegate handlePieTouchedEvent:_hitLayer.name];
+        }
+    }
+    //    UITouch *touch = [touches anyObject];
 //    CGPoint point = [touch locationInView:self];
 //    if (CGPointDistanceBetweenTwoPoints(point, _touchBegan) < 5) {
 //        _hitLayer = (VBPiePiece*)[self layerForTouch:touch];

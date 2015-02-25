@@ -9,6 +9,9 @@
 #import "CenterViewController.h"
 #import "VBPieChart.h"
 #import "WRProcessCheckView.h"
+#import "KVNMaskedPageControl.h"
+
+
 
 @interface CenterViewController ()
 
@@ -113,7 +116,17 @@
     self.radialView.animationDuration = 0.0;
     [self.radialView expand];
     [self.view addSubview:self.radialView];
-
+    
+    
+    // TopViewController Page Control
+    self.pageControl = [[KVNMaskedPageControl alloc] init];
+    [self.pageControl setCenter:CGPointMake(SCREEN_WIDTH/2, 30)];
+    //[self.pageControl setHidesForSinglePage:YES];
+    [self.view addSubview:self.pageControl];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "WRFiveViewController.h"
+#import "CenterViewController.h"
 
 @interface RightViewController : WRFiveViewController
+
+@property (strong, nonatomic) CenterViewController *centerViewControllerDelegate;
+
 @end

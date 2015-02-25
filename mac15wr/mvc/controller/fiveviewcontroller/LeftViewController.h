@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "WRFiveViewController.h"
+#import "CenterViewController.h"
 
 @interface LeftViewController : WRFiveViewController
 @property (strong, nonatomic) UIView *contentView;
+@property (strong, nonatomic) CenterViewController *centerViewControllerDelegate;
+
 
 -(void) presentViewContent;
 -(void) hideViewContent;

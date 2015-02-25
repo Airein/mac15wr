@@ -33,7 +33,13 @@
         self.rightViewController = [[RightViewController alloc] init];
         self.topViewController = [[TopViewController alloc] init];
         self.bottomViewController = [[BottomViewController alloc] init];
-        
+    
+    self.leftViewController.centerViewControllerDelegate = self.centerViewController;
+    self.rightViewController.centerViewControllerDelegate = self.centerViewController;
+    self.topViewController.centerViewControllerDelegate = self.centerViewController;
+    self.bottomViewController.centerViewControllerDelegate = self.centerViewController;
+
+    
         // load into array for furture use
         self.fiveVewControllers = [[NSArray alloc] initWithObjects:
                                    self.centerViewController,
@@ -48,7 +54,7 @@
     if (self.deckViewController==NULL) {
         CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
         CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
-        CGFloat ccoffset = 40.00;
+        CGFloat ccoffset = 100.00;
         
         self.deckViewController =  [[IIViewDeckController alloc]
                                     initWithCenterViewController:self.centerViewController
