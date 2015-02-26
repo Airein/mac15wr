@@ -62,8 +62,12 @@
             cRating,pRating,day,tStart,tEnd,tType];
 }
 
--(NSString*)searchCourseByCoditions:(NSString*)conditions Term:(NSString*) term Dept:(NSString*)dept{
-    NSString *getString=[[NSString alloc]initWithFormat:@"course/search/%@/%@%@",term,dept,conditions];
+-(NSString*)searchCourseByCoditions:(NSString*)conditions
+                               Term:(NSString*) term
+                               Dept:(NSString*)dept{
+    NSString *getString=[[NSString alloc]
+                         initWithFormat:@"course/search/%@/%@%@",
+                         term,dept,conditions];
     
     return getString;
 }

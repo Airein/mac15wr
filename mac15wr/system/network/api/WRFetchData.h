@@ -28,7 +28,9 @@
                                   TimeTypeAsInclude:(NSString*)tType;
 
 
--(NSString*)searchCourseByCoditions:(NSString*)conditions Term:(NSString*) term Dept:(NSString*)dept;
+-(NSString*)searchCourseByCoditions:(NSString*)conditions
+                               Term:(NSString*) term
+                               Dept:(NSString*)dept;
 
 
 @end

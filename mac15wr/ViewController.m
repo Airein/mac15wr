@@ -33,8 +33,17 @@
     
     
     WRFetchData* fetchdata=[[WRFetchData alloc] init];
-    NSString *fetchstring=[fetchdata getCourseInSpecificTerm:@"20151" andDept:@"CSCI"];
-    [[WRAPIClient sharedClient] GET:fetchstring parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+    NSString *courseString=[fetchdata
+                            searchCourseByCoditions:[fetchdata
+                                                               getCourseSerchConditonsWithCourseRating:@"3" ProfRating:@"3"
+                                                               Day:nil
+                                                               TimeStart:nil
+                                                               TimeEnd:nil
+                                                               TimeTypeAsInclude:@""]
+                                                         Term:@"20151"
+                                                         Dept:@"CSCI"];
+//    NSString *fetchstring=[fetchdata getCourseInSpecificTerm:@"20151" andDept:@"CSCI"];
+    [[WRAPIClient sharedClient] GET:courseString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
         
         self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *course_attributes in JSON) {
