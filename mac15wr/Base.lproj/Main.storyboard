@@ -456,7 +456,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="afe-7S-fTE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="afe-7S-fTE">
                                 <rect key="frame" x="0.0" y="236" width="600" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -642,7 +642,7 @@
                         <constraints>
                             <constraint firstItem="afe-7S-fTE" firstAttribute="top" secondItem="Ku9-dP-7B0" secondAttribute="bottom" constant="31" id="2MN-wK-Ixh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ku9-dP-7B0" secondAttribute="trailing" constant="70" id="4fY-5I-ag4"/>
-                            <constraint firstItem="oVw-IM-iAh" firstAttribute="top" secondItem="afe-7S-fTE" secondAttribute="bottom" constant="14" id="GNl-Gh-55Y"/>
+                            <constraint firstItem="oVw-IM-iAh" firstAttribute="top" secondItem="afe-7S-fTE" secondAttribute="bottom" constant="114" id="GNl-Gh-55Y"/>
                             <constraint firstItem="Ku9-dP-7B0" firstAttribute="leading" secondItem="9IN-G4-JHx" secondAttribute="leading" id="IvL-lD-p3u"/>
                             <constraint firstItem="afe-7S-fTE" firstAttribute="leading" secondItem="ON6-yl-2K5" secondAttribute="leading" id="gKR-mY-3Nl"/>
                             <constraint firstItem="9IN-G4-JHx" firstAttribute="leading" secondItem="ON6-yl-2K5" secondAttribute="leadingMargin" id="jqs-OA-52a"/>

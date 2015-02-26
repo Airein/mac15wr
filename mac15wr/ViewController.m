@@ -32,8 +32,9 @@
     
     
     
-    
-    [[WRAPIClient sharedClient] GET:@"course/search/20151/CSCI" parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+    WRFetchData* fetchdata=[[WRFetchData alloc] init];
+    NSString *fetchstring=[fetchdata getCourseInSpecificTerm:@"20151" andDept:@"CSCI"];
+    [[WRAPIClient sharedClient] GET:fetchstring parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
         
         self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *course_attributes in JSON) {
