@@ -51,6 +51,23 @@
     return getString;
 }
 
+-(NSString*)getCourseSerchConditonsWithCourseRating:(NSString*)cRating
+                                         ProfRating:(NSString*)pRating
+                                                Day:(NSInteger*)day
+                                          TimeStart:(NSInteger*)tStart
+                                            TimeEnd:(NSInteger*)tEnd
+                                  TimeTypeAsInclude:(NSString*)tType {
+    return [[NSString alloc]
+            initWithFormat:@"?cRating=%@&pRating=%@&day=%zn&tStart=%zn&tEnd=%zn&tType=%@",
+            cRating,pRating,day,tStart,tEnd,tType];
+}
+
+-(NSString*)searchCourseByCoditions:(NSString*)conditions Term:(NSString*) term Dept:(NSString*)dept{
+    NSString *getString=[[NSString alloc]initWithFormat:@"course/search/%@/%@%@",term,dept,conditions];
+    
+    return getString;
+}
+
 
 
 @end

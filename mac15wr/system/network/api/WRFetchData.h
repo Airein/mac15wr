@@ -20,6 +20,15 @@
 -(NSString*)getAvailabelTerm;
 -(NSString*)getAllProfessors;
 
+-(NSString*)getCourseSerchConditonsWithCourseRating:(NSString*)cRating
+                                         ProfRating:(NSString*)pRating
+                                                Day:(NSInteger*)day
+                                          TimeStart:(NSInteger*)tStart
+                                            TimeEnd:(NSInteger*)tEnd
+                                  TimeTypeAsInclude:(NSString*)tType;
+
+
+-(NSString*)searchCourseByCoditions:(NSString*)conditions Term:(NSString*) term Dept:(NSString*)dept;
 
 
 @end
