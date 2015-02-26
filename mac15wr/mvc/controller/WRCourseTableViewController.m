@@ -8,7 +8,7 @@
 
 
 #import "WRCourseTableViewController.h"
-#import "WRCourseDetailViewController.h"
+#import "WRCourseDViewController.h"
 
 
 @interface WRCourseTableViewController ()
@@ -116,9 +116,9 @@
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"courseDetail"]) {
+    if ([[segue identifier] isEqualToString:@"courseDetails"]) {
         UINavigationController *nav = [segue destinationViewController];
-        WRCourseDetailViewController* userViewController = (WRCourseDetailViewController *) nav.topViewController;
+        WRCourseDViewController* userViewController = (WRCourseDViewController *) nav.topViewController;
         userViewController.courseSelected = [self.mutableCourses objectAtIndex:[[self.tableview indexPathForSelectedRow] row]];
     }
 }

@@ -79,6 +79,7 @@
 		FA82E71F1A8DF81C00FF93CD /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71C1A8DF81C00FF93CD /* MGSwipeButton.m */; };
 		FA82E7201A8DF81C00FF93CD /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71E1A8DF81C00FF93CD /* MGSwipeTableCell.m */; };
 		FA82E7301A8EDE8100FF93CD /* WRCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E72F1A8EDE8100FF93CD /* WRCourseTableViewCell.m */; };
+		FAA7CF5A1A9EB9EF00E85952 /* WRDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA7CF591A9EB9EF00E85952 /* WRDescTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,8 +233,8 @@
 		FA63DD261A901C3300E8374C /* login_trajons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_trajons.jpg; sourceTree = "<group>"; };
 		FA7B00A71A9C75F30078CBF9 /* WRCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseDetailViewController.h; sourceTree = "<group>"; };
 		FA7B00A81A9C75F30078CBF9 /* WRCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseDetailViewController.m; sourceTree = "<group>"; };
-		FA7B00AA1A9E5A620078CBF9 /* WRCourseDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRCourseDViewController.h; path = mvc/controller/WRCourseDViewController.h; sourceTree = "<group>"; };
-		FA7B00AB1A9E5A620078CBF9 /* WRCourseDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRCourseDViewController.m; path = mvc/controller/WRCourseDViewController.m; sourceTree = "<group>"; };
+		FA7B00AA1A9E5A620078CBF9 /* WRCourseDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseDViewController.h; sourceTree = "<group>"; };
+		FA7B00AB1A9E5A620078CBF9 /* WRCourseDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseDViewController.m; sourceTree = "<group>"; };
 		FA82E7151A8DF64200FF93CD /* WRCourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewController.h; sourceTree = "<group>"; };
 		FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewController.m; sourceTree = "<group>"; };
 		FA82E71B1A8DF81C00FF93CD /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
@@ -242,6 +243,8 @@
 		FA82E71E1A8DF81C00FF93CD /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		FA82E72E1A8EDE8100FF93CD /* WRCourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewCell.h; sourceTree = "<group>"; };
 		FA82E72F1A8EDE8100FF93CD /* WRCourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewCell.m; sourceTree = "<group>"; };
+		FAA7CF581A9EB9EF00E85952 /* WRDescTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRDescTableViewCell.h; path = wrtable/WRDescTableViewCell.h; sourceTree = "<group>"; };
+		FAA7CF591A9EB9EF00E85952 /* WRDescTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRDescTableViewCell.m; path = wrtable/WRDescTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,8 +307,6 @@
 				003C342C1A8729E7003097DD /* ViewController.h */,
 				003C342D1A8729E7003097DD /* ViewController.m */,
 				003C342F1A8729E7003097DD /* Main.storyboard */,
-				FA7B00AA1A9E5A620078CBF9 /* WRCourseDViewController.h */,
-				FA7B00AB1A9E5A620078CBF9 /* WRCourseDViewController.m */,
 				003C34321A8729E7003097DD /* Images.xcassets */,
 				003C34341A8729E7003097DD /* LaunchScreen.xib */,
 				003C34251A8729E7003097DD /* Supporting Files */,
@@ -360,6 +361,8 @@
 				FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */,
 				FA7B00A71A9C75F30078CBF9 /* WRCourseDetailViewController.h */,
 				FA7B00A81A9C75F30078CBF9 /* WRCourseDetailViewController.m */,
+				FA7B00AA1A9E5A620078CBF9 /* WRCourseDViewController.h */,
+				FA7B00AB1A9E5A620078CBF9 /* WRCourseDViewController.m */,
 				1F9292B11A8827B3001B8A45 /* WRController.h */,
 			);
 			path = controller;
@@ -371,6 +374,8 @@
 				FA82E72D1A8EDE5A00FF93CD /* wrtable */,
 				1FD7CAB41A88AF5E009857F7 /* wrmodel */,
 				1F9292B21A8827C4001B8A45 /* WRModel.h */,
+				FAA7CF581A9EB9EF00E85952 /* WRDescTableViewCell.h */,
+				FAA7CF591A9EB9EF00E85952 /* WRDescTableViewCell.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -852,6 +857,7 @@
 				003C342E1A8729E7003097DD /* ViewController.m in Sources */,
 				1FA99DFA1A8859E900CDCA6E /* CLIColor.m in Sources */,
 				1FA99DFE1A8859E900CDCA6E /* DDASLLogger.m in Sources */,
+				FAA7CF5A1A9EB9EF00E85952 /* WRDescTableViewCell.m in Sources */,
 				003C342B1A8729E7003097DD /* AppDelegate.m in Sources */,
 				1F9292E91A883974001B8A45 /* UIImage+AirExtension.m in Sources */,
 				1FD7CA771A88A08C009857F7 /* UIButton+AFNetworking.m in Sources */,

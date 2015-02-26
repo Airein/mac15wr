@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WRCourse.h"
+
 
 @interface WRCourseDViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *courseTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *courseIDLabel;
+
+@property WRCourse *courseSelected;
+@property NSMutableArray *sections;
+
+
 
 @end

@@ -8,7 +8,7 @@
 
 #import "WRAPIClient.h"
 
-static NSString * const WRAPIBaseURLString = @"http://52.1.208.251:10000/";
+static NSString * const WRAPIBaseURLString = @"http://52.1.208.251/";
 
 @implementation WRAPIClient
 
