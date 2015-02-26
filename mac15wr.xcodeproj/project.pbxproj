@@ -73,8 +73,8 @@
 		FA37C6B31A8F17EA006867A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA37C6B21A8F17EA006867A3 /* UIKit.framework */; };
 		FA63DD241A90092D00E8374C /* WRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA63DD231A90092D00E8374C /* WRLoginViewController.m */; };
 		FA63DD271A901C3300E8374C /* login_trajons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA63DD261A901C3300E8374C /* login_trajons.jpg */; };
-		FA7B00A91A9C75F30078CBF9 /* WRCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00A81A9C75F30078CBF9 /* WRCourseDetailViewController.m */; };
 		FA7B00AC1A9E5A620078CBF9 /* WRCourseDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00AB1A9E5A620078CBF9 /* WRCourseDViewController.m */; };
+		FA7B00B21A9F38A00078CBF9 /* WRSectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00B11A9F38A00078CBF9 /* WRSectionTableViewCell.m */; };
 		FA82E7171A8DF64200FF93CD /* WRCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */; };
 		FA82E71F1A8DF81C00FF93CD /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71C1A8DF81C00FF93CD /* MGSwipeButton.m */; };
 		FA82E7201A8DF81C00FF93CD /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71E1A8DF81C00FF93CD /* MGSwipeTableCell.m */; };
@@ -231,10 +231,10 @@
 		FA63DD221A90092D00E8374C /* WRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRLoginViewController.h; sourceTree = "<group>"; };
 		FA63DD231A90092D00E8374C /* WRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRLoginViewController.m; sourceTree = "<group>"; };
 		FA63DD261A901C3300E8374C /* login_trajons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_trajons.jpg; sourceTree = "<group>"; };
-		FA7B00A71A9C75F30078CBF9 /* WRCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseDetailViewController.h; sourceTree = "<group>"; };
-		FA7B00A81A9C75F30078CBF9 /* WRCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseDetailViewController.m; sourceTree = "<group>"; };
 		FA7B00AA1A9E5A620078CBF9 /* WRCourseDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseDViewController.h; sourceTree = "<group>"; };
 		FA7B00AB1A9E5A620078CBF9 /* WRCourseDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseDViewController.m; sourceTree = "<group>"; };
+		FA7B00B01A9F38A00078CBF9 /* WRSectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRSectionTableViewCell.h; path = wrtable/WRSectionTableViewCell.h; sourceTree = "<group>"; };
+		FA7B00B11A9F38A00078CBF9 /* WRSectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRSectionTableViewCell.m; path = wrtable/WRSectionTableViewCell.m; sourceTree = "<group>"; };
 		FA82E7151A8DF64200FF93CD /* WRCourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewController.h; sourceTree = "<group>"; };
 		FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewController.m; sourceTree = "<group>"; };
 		FA82E71B1A8DF81C00FF93CD /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
@@ -359,8 +359,6 @@
 				FA63DD231A90092D00E8374C /* WRLoginViewController.m */,
 				FA82E7151A8DF64200FF93CD /* WRCourseTableViewController.h */,
 				FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */,
-				FA7B00A71A9C75F30078CBF9 /* WRCourseDetailViewController.h */,
-				FA7B00A81A9C75F30078CBF9 /* WRCourseDetailViewController.m */,
 				FA7B00AA1A9E5A620078CBF9 /* WRCourseDViewController.h */,
 				FA7B00AB1A9E5A620078CBF9 /* WRCourseDViewController.m */,
 				1F9292B11A8827B3001B8A45 /* WRController.h */,
@@ -376,6 +374,8 @@
 				1F9292B21A8827C4001B8A45 /* WRModel.h */,
 				FAA7CF581A9EB9EF00E85952 /* WRDescTableViewCell.h */,
 				FAA7CF591A9EB9EF00E85952 /* WRDescTableViewCell.m */,
+				FA7B00B01A9F38A00078CBF9 /* WRSectionTableViewCell.h */,
+				FA7B00B11A9F38A00078CBF9 /* WRSectionTableViewCell.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -821,7 +821,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FD7CAAE1A88AEB7009857F7 /* JSONHTTPClient.m in Sources */,
-				FA7B00A91A9C75F30078CBF9 /* WRCourseDetailViewController.m in Sources */,
 				1FD7CA791A88A08C009857F7 /* UIProgressView+AFNetworking.m in Sources */,
 				FA63DD241A90092D00E8374C /* WRLoginViewController.m in Sources */,
 				1FD7CA781A88A08C009857F7 /* UIImageView+AFNetworking.m in Sources */,
@@ -871,6 +870,7 @@
 				1FD7CA6F1A88A08C009857F7 /* AFSecurityPolicy.m in Sources */,
 				1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */,
 				1FD7CAAC1A88AEB7009857F7 /* NSArray+JSONModel.m in Sources */,
+				FA7B00B21A9F38A00078CBF9 /* WRSectionTableViewCell.m in Sources */,
 				1FD7CAAB1A88AEB7009857F7 /* JSONModelError.m in Sources */,
 				003C34281A8729E7003097DD /* main.m in Sources */,
 				1FD7CAA91A88AEB7009857F7 /* JSONModelArray.m in Sources */,

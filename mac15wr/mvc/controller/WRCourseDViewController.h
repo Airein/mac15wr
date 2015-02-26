@@ -16,6 +16,7 @@
 
 @property WRCourse *courseSelected;
 @property NSMutableArray *sections;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 
 

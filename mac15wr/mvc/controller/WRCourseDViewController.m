@@ -8,6 +8,7 @@
 
 #import "WRCourseDViewController.h"
 #import "WRDescTableViewCell.h"
+#import "WRSectionTableViewCell.h"
 
 @implementation WRCourseDViewController
 
@@ -39,8 +40,22 @@
                                  celldesc.descLabel.frame.size.width, labelSize.height);
         return celldesc;
     }else{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sections"];
-        cell.textLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"location"];
+        WRSectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sections"];
+        cell.classNumLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"uSectionID"];
+        //seat,registered,waiting
+        NSString *srw=[[NSString alloc] initWithFormat:@"S%@/R%@/W%@", [[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"seats"],[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"registered"],@"0"];
+        cell.srwLabel.text=srw;
+        cell.roomLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"location"];
+        NSString *seTime=[[NSString alloc] initWithFormat:@"%@-%@",[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"bTime"],[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"eTime"]];
+        cell.hoursLabel.text=seTime;
+        cell.instractorLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"instructor"];
+        cell.dayLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"day"];
+        
+        //classtype
+        cell.courseTypeLabel.text=@"Lec";
+        
+        
+        
         return cell;
         
     }
@@ -55,7 +70,7 @@
         return 140;
     }
     else {
-        return 52;
+        return 100;
     }
 }
 
@@ -73,6 +88,15 @@
     for (NSDictionary *dict in self.courseSelected.section) {
         [self.sections addObject:dict];
     }
+    
+    
+    UIView * separator = [[UIView alloc] initWithFrame:CGRectMake(0, 235, 600, 0.5)];
+    separator.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1];
+    [self.view addSubview:separator];
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
+    v.backgroundColor = [UIColor clearColor];
+    [self.tableview setTableFooterView:v];
     
 }
 
