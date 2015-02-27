@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 #import "WRFiveViewManager.h"
+#import "WRWelcomeViewController.h"
+#import "SRFSurfboard.h"
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<SRFSurfboardDelegate>
 
 @end
 
@@ -19,6 +21,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
     
@@ -30,12 +33,26 @@
     //    DDLogError(@"Error");
     
     
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+//    [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+//    IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+//    self.window.rootViewController = deckViewController;
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"panels" ofType:@"json"];
+    NSArray *panels = [SRFSurfboardViewController panelsFromConfigurationAtPath:path];
+    SRFSurfboardViewController *surfboard = [[SRFSurfboardViewController alloc] initWithPathToConfiguration:path];
+    [surfboard setPanels:panels];
+    surfboard.delegate = self;
+    surfboard.backgroundColor = [UIColor WR_USC_Yellow];
+
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    //UINavigationController *mainNavController = [[UINavigationController alloc] initWithRootViewController:deckController];
-    WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
-    [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
-    IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
-    self.window.rootViewController = deckViewController;
+//    WRWelcomeViewController *wrFiveViewManager = [[WRWelcomeViewController alloc] init];
+    self.window.rootViewController = surfboard;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
@@ -63,5 +80,23 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+/**
+ *  Handle SRFSurfboardView Action
+ */
+- (void)surfboard:(SRFSurfboardViewController *)surfboard didTapButtonAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+}
+
+- (void)surfboard:(SRFSurfboardViewController *)surfboard didShowPanelAtIndex:(NSInteger)index
+{
+    //    NSLog(@"Index: %i", index);
+}
+
 
 @end

@@ -22,6 +22,12 @@
 		1F3FDED51A9FD6F20080A77C /* giraffe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F3FDED31A9FD6F20080A77C /* giraffe@2x.png */; };
 		1F3FDED91A9FDC190080A77C /* viewer-course-in-usc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F3FDED81A9FDC190080A77C /* viewer-course-in-usc.txt */; };
 		1F3FDEDC1A9FE88F0080A77C /* WRReminderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FDEDB1A9FE88F0080A77C /* WRReminderView.m */; };
+		1F3FDEF71AA017EA0080A77C /* UIButton+IndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FDEE91AA017EA0080A77C /* UIButton+IndexPath.m */; };
+		1F3FDEF81AA017EB0080A77C /* SRFSurfboardPanelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FDEEC1AA017EA0080A77C /* SRFSurfboardPanelCell.m */; };
+		1F3FDEF91AA017EB0080A77C /* SRFSurfboardPanelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3FDEED1AA017EA0080A77C /* SRFSurfboardPanelCell.xib */; };
+		1F3FDEFA1AA017EB0080A77C /* SRFSurfboardPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FDEF01AA017EA0080A77C /* SRFSurfboardPanel.m */; };
+		1F3FDEFB1AA017EB0080A77C /* SRFSurfboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FDEF61AA017EA0080A77C /* SRFSurfboardViewController.m */; };
+		1F3FDF011AA01A9A0080A77C /* panels.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F3FDF001AA01A9A0080A77C /* panels.json */; };
 		1F46A2741A8ADCE300DF74B7 /* opensource.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F46A2731A8ADCE300DF74B7 /* opensource.md */; };
 		1F46A27E1A8C683F00DF74B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F46A27D1A8C683F00DF74B7 /* QuartzCore.framework */; };
 		1F46A2801A8C684700DF74B7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F46A27F1A8C684700DF74B7 /* Accelerate.framework */; };
@@ -192,6 +198,18 @@
 		1F3FDED81A9FDC190080A77C /* viewer-course-in-usc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "viewer-course-in-usc.txt"; sourceTree = "<group>"; };
 		1F3FDEDA1A9FE88F0080A77C /* WRReminderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRReminderView.h; sourceTree = "<group>"; };
 		1F3FDEDB1A9FE88F0080A77C /* WRReminderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRReminderView.m; sourceTree = "<group>"; };
+		1F3FDEE81AA017EA0080A77C /* UIButton+IndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+IndexPath.h"; sourceTree = "<group>"; };
+		1F3FDEE91AA017EA0080A77C /* UIButton+IndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+IndexPath.m"; sourceTree = "<group>"; };
+		1F3FDEEB1AA017EA0080A77C /* SRFSurfboardPanelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboardPanelCell.h; sourceTree = "<group>"; };
+		1F3FDEEC1AA017EA0080A77C /* SRFSurfboardPanelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFSurfboardPanelCell.m; sourceTree = "<group>"; };
+		1F3FDEED1AA017EA0080A77C /* SRFSurfboardPanelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRFSurfboardPanelCell.xib; sourceTree = "<group>"; };
+		1F3FDEEF1AA017EA0080A77C /* SRFSurfboardPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboardPanel.h; sourceTree = "<group>"; };
+		1F3FDEF01AA017EA0080A77C /* SRFSurfboardPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFSurfboardPanel.m; sourceTree = "<group>"; };
+		1F3FDEF11AA017EA0080A77C /* SRFSurfboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboard.h; sourceTree = "<group>"; };
+		1F3FDEF31AA017EA0080A77C /* SRFSurfboardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboardDelegate.h; sourceTree = "<group>"; };
+		1F3FDEF51AA017EA0080A77C /* SRFSurfboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRFSurfboardViewController.h; sourceTree = "<group>"; };
+		1F3FDEF61AA017EA0080A77C /* SRFSurfboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRFSurfboardViewController.m; sourceTree = "<group>"; };
+		1F3FDF001AA01A9A0080A77C /* panels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = panels.json; sourceTree = "<group>"; };
 		1F46A2731A8ADCE300DF74B7 /* opensource.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = opensource.md; sourceTree = "<group>"; };
 		1F46A27D1A8C683F00DF74B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1F46A27F1A8C684700DF74B7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -565,6 +583,7 @@
 		1F3FDECF1A9FD4850080A77C /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				1F3FDEFF1AA01A880080A77C /* json */,
 				1F3FDED61A9FDBDD0080A77C /* image */,
 				1F3FDED71A9FDBDD0080A77C /* text */,
 				1F3FDED21A9FD6F20080A77C /* giraffe.png */,
@@ -587,6 +606,87 @@
 				1F3FDED81A9FDC190080A77C /* viewer-course-in-usc.txt */,
 			);
 			path = text;
+			sourceTree = "<group>";
+		};
+		1F3FDEE11AA00FEE0080A77C /* welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = welcome;
+			sourceTree = "<group>";
+		};
+		1F3FDEE51AA017EA0080A77C /* SRFSurfboard */ = {
+			isa = PBXGroup;
+			children = (
+				1F3FDEE61AA017EA0080A77C /* Panel Cells */,
+				1F3FDEEE1AA017EA0080A77C /* Panel Data Model */,
+				1F3FDEF11AA017EA0080A77C /* SRFSurfboard.h */,
+				1F3FDEF21AA017EA0080A77C /* Surfboard Delegate Protocol */,
+				1F3FDEF41AA017EA0080A77C /* Surfboard View Controller */,
+			);
+			path = SRFSurfboard;
+			sourceTree = "<group>";
+		};
+		1F3FDEE61AA017EA0080A77C /* Panel Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1F3FDEE71AA017EA0080A77C /* Button Extension */,
+				1F3FDEEA1AA017EA0080A77C /* Default Cell */,
+			);
+			path = "Panel Cells";
+			sourceTree = "<group>";
+		};
+		1F3FDEE71AA017EA0080A77C /* Button Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1F3FDEE81AA017EA0080A77C /* UIButton+IndexPath.h */,
+				1F3FDEE91AA017EA0080A77C /* UIButton+IndexPath.m */,
+			);
+			path = "Button Extension";
+			sourceTree = "<group>";
+		};
+		1F3FDEEA1AA017EA0080A77C /* Default Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1F3FDEEB1AA017EA0080A77C /* SRFSurfboardPanelCell.h */,
+				1F3FDEEC1AA017EA0080A77C /* SRFSurfboardPanelCell.m */,
+				1F3FDEED1AA017EA0080A77C /* SRFSurfboardPanelCell.xib */,
+			);
+			path = "Default Cell";
+			sourceTree = "<group>";
+		};
+		1F3FDEEE1AA017EA0080A77C /* Panel Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F3FDEEF1AA017EA0080A77C /* SRFSurfboardPanel.h */,
+				1F3FDEF01AA017EA0080A77C /* SRFSurfboardPanel.m */,
+			);
+			path = "Panel Data Model";
+			sourceTree = "<group>";
+		};
+		1F3FDEF21AA017EA0080A77C /* Surfboard Delegate Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1F3FDEF31AA017EA0080A77C /* SRFSurfboardDelegate.h */,
+			);
+			path = "Surfboard Delegate Protocol";
+			sourceTree = "<group>";
+		};
+		1F3FDEF41AA017EA0080A77C /* Surfboard View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F3FDEF51AA017EA0080A77C /* SRFSurfboardViewController.h */,
+				1F3FDEF61AA017EA0080A77C /* SRFSurfboardViewController.m */,
+			);
+			path = "Surfboard View Controller";
+			sourceTree = "<group>";
+		};
+		1F3FDEFF1AA01A880080A77C /* json */ = {
+			isa = PBXGroup;
+			children = (
+				1F3FDF001AA01A9A0080A77C /* panels.json */,
+			);
+			path = json;
 			sourceTree = "<group>";
 		};
 		1F46A2751A8C657300DF74B7 /* Frameworks */ = {
@@ -770,6 +870,7 @@
 		1F9292A31A881DCE001B8A45 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				1F3FDEE11AA00FEE0080A77C /* welcome */,
 				1FB85FA81A931C5600119A34 /* wrview */,
 				1FB85F611A90435000119A34 /* widget */,
 				1F5007021A900EA100DBCBA5 /* fiveview */,
@@ -792,6 +893,7 @@
 		1F9292A51A881DCE001B8A45 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1F3FDEE51AA017EA0080A77C /* SRFSurfboard */,
 				1F3FDEC81A9FBDC20080A77C /* FTCoreText */,
 				1FC508DD1A9EB9FD00CBCA88 /* M13BadgeView */,
 				1FC508A11A9D717F00CBCA88 /* CalendarUI */,
@@ -1373,11 +1475,13 @@
 			files = (
 				003C34311A8729E7003097DD /* Main.storyboard in Resources */,
 				1F8A25911A99B08B00B3EACB /* MKRadialMenuDevMode.gif in Resources */,
+				1F3FDF011AA01A9A0080A77C /* panels.json in Resources */,
 				1F3FDED91A9FDC190080A77C /* viewer-course-in-usc.txt in Resources */,
 				1F50070A1A900EE000DBCBA5 /* RightViewController.xib in Resources */,
 				1F3FDED11A9FD4A00080A77C /* ftcoretext-example-text-giraffe.txt in Resources */,
 				1F3FDED41A9FD6F20080A77C /* giraffe.png in Resources */,
 				1F5007061A900EC500DBCBA5 /* LeftViewController.xib in Resources */,
+				1F3FDEF91AA017EB0080A77C /* SRFSurfboardPanelCell.xib in Resources */,
 				003C34361A8729E7003097DD /* LaunchScreen.xib in Resources */,
 				1F8A258E1A99B08B00B3EACB /* CKRadialMenu.gif in Resources */,
 				003C34331A8729E7003097DD /* Images.xcassets in Resources */,
@@ -1437,6 +1541,7 @@
 				1F3FDECE1A9FBDC20080A77C /* FTCoreTextView.m in Sources */,
 				1FB85F961A9176A400119A34 /* UIView+WhenTappedBlocks.m in Sources */,
 				1FC508C61A9DAA7400CBCA88 /* WishListCell.m in Sources */,
+				1F3FDEFA1AA017EB0080A77C /* SRFSurfboardPanel.m in Sources */,
 				1FC508BA1A9D717F00CBCA88 /* MAEventKitDataSource.m in Sources */,
 				1FB85FAB1A931C9700119A34 /* WRProcessCheckView.m in Sources */,
 				1F46A2C31A8C7BF000DF74B7 /* UIImage+FlatUI.m in Sources */,
@@ -1465,6 +1570,7 @@
 				1F9292EA1A883974001B8A45 /* UIColor+iOS7Colors.m in Sources */,
 				1FD7CAAA1A88AEB7009857F7 /* JSONModelClassProperty.m in Sources */,
 				1FD7CA701A88A08C009857F7 /* AFURLConnectionOperation.m in Sources */,
+				1F3FDEFB1AA017EB0080A77C /* SRFSurfboardViewController.m in Sources */,
 				1FD7CA721A88A08C009857F7 /* AFURLResponseSerialization.m in Sources */,
 				1FA99DFC1A8859E900CDCA6E /* DDAbstractDatabaseLogger.m in Sources */,
 				1FD7CAB01A88AEB7009857F7 /* JSONKeyMapper.m in Sources */,
@@ -1483,6 +1589,7 @@
 				1FA99DFA1A8859E900CDCA6E /* CLIColor.m in Sources */,
 				1FA99DFE1A8859E900CDCA6E /* DDASLLogger.m in Sources */,
 				003C342B1A8729E7003097DD /* AppDelegate.m in Sources */,
+				1F3FDEF81AA017EB0080A77C /* SRFSurfboardPanelCell.m in Sources */,
 				1F8A259D1A9AE38D00B3EACB /* WRCheckActionViewController.m in Sources */,
 				1F46A2BC1A8C7BF000DF74B7 /* FUISegmentedControl.m in Sources */,
 				1FC508D31A9EB28100CBCA88 /* CheckListTableView.m in Sources */,
@@ -1525,6 +1632,7 @@
 				1F46A2C21A8C7BF000DF74B7 /* UIFont+FlatUI.m in Sources */,
 				1FD7CAA91A88AEB7009857F7 /* JSONModelArray.m in Sources */,
 				1F46A2C81A8C7BF000DF74B7 /* UIStepper+FlatUI.m in Sources */,
+				1F3FDEF71AA017EA0080A77C /* UIButton+IndexPath.m in Sources */,
 				1FC508D91A9EB2BB00CBCA88 /* CheckListDetailView.m in Sources */,
 				1FB85F9F1A9301F300119A34 /* VBPieChart.m in Sources */,
 			);
