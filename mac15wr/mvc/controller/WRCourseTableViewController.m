@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 #pragma test
+    //show navi bar
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    
     for (WRCourse *course in self.mutableCourses){
         NSLog(@"%@",course.title);
     }
