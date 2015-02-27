@@ -306,7 +306,7 @@
         <!--Change-->
         <scene sceneID="Ke2-Qu-Zv8">
             <objects>
-                <tableViewController id="6nq-Yl-V36" sceneMemberID="viewController">
+                <tableViewController id="6nq-Yl-V36" customClass="WRCourseChangeConditionsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="piN-hK-NRY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -333,7 +333,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6gv-vv-yKm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ahp-co-gb5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="choosecourse" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ahp-co-gb5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehD-Ei-SMO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
