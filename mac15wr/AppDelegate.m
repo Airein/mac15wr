@@ -89,6 +89,8 @@
     //        [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
     //        IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
     //        self.window.rootViewController = deckViewController;
+    
+    
     UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
     self.window.rootViewController = myView;
