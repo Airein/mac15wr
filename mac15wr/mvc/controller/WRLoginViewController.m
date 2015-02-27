@@ -65,26 +65,11 @@ static NSString * const kClientID =
 
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
                    error: (NSError *) error {
-//    [[[GPPSignIn sharedInstance] plusService]
-//            executeQuery:[GTLQueryPlus queryForPeopleGetWithUserId:@"me"]
-//        completionHandler:^(GTLServiceTicket *ticket,
-//                            GTLPlusPerson *person,
-//                            NSError *error) {
-////            self.profileImage.image = [UIImage imageWithData:
-////                [NSData dataWithContentsOfURL:
-////                 [NSURL URLWithString:person.image.url]]];
-//            self.displayName.text = self.signIn.userEmail;
-//    
-//        }];
-//    
-//    
-//    NSLog(@"Received error %@ and auth object %@",error, auth);
-    
-    
-    
+    NSLog(@"zzz");
     if (error) {
         // Do some error handling here.
     } else {
+        NSLog(@"abc");
         [self performSegueWithIdentifier:@"login" sender:self];
 //        [self refreshInterfaceBasedOnsignIn];
     }
