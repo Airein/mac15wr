@@ -9,7 +9,16 @@
 #import <Realm/Realm.h>
 
 @interface WRRealmCourse : RLMObject
-@property NSString* abc;
+@property double course_id;
+@property NSString* sis_course_id;
+@property NSString* title;
+@property double min_units;
+@property double max_units;
+@property double total_max_units;
+@property NSString* desc;
+@property NSString* diversity_flag;
+@property NSString* effective_term_code;
+@property NSData* section;
 @end
 
 // This protocol enables typed collections. i.e.:
