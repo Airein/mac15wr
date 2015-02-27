@@ -7,13 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import "WRFiveViewManager.h"
-#import "SRFSurfboard.h"
 #import <GooglePlus/GooglePlus.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
+#import "WRFiveViewManager.h"
+#import "SRFSurfboard.h"
+#import "WRRealmUsers.h"
+
+
 
 @interface AppDelegate ()<SRFSurfboardDelegate>
-
+@property GPPSignIn *signIn;
 @end
 
 
@@ -60,6 +63,8 @@ static NSString * const kClientID =
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    
+    //google+ login
     GPPSignIn *signin=[GPPSignIn sharedInstance];
     signin.clientID=kClientID;
     signin.scopes=@[kGTLAuthScopePlusLogin];
@@ -120,15 +125,54 @@ static NSString * const kClientID =
     //        [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
     //        IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
     //        self.window.rootViewController = deckViewController;
-    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
-    self.window.rootViewController = myView;
+    
+    //google login
+    self.signIn = [GPPSignIn sharedInstance];
+    self.signIn.shouldFetchGooglePlusUser = YES;
+    self.signIn.shouldFetchGoogleUserID=YES;
+    self.signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+    
+    // You previously set kClientId in the "Initialize the Google+ client" step
+    self.signIn.clientID = kClientID;
+    
+    // Uncomment one of these two statements for the scope you chose in the previous step
+    self.signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+    //self.signIn.scopes = @[ @"profile" ];            // "profile" scope
+    
+    // Optional: declare self.signIn.actions, see "app activities"
+    self.signIn.delegate = self;
+    
+    
+    NSLog(@"%d",[[GPPSignIn sharedInstance] trySilentAuthentication]);
+    
     
 }
 
 - (void)surfboard:(SRFSurfboardViewController *)surfboard didShowPanelAtIndex:(NSInteger)index
 {
     //    NSLog(@"Index: %i", index);
+}
+
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
+                   error: (NSError *) error {
+    if (error) {
+        // Do some error handling here.
+        NSLog(@"Error");
+        [self.signIn authenticate];
+    } else {
+        NSLog(@"Successful Login");
+        //store user_info
+        WRRealmUsers* users=[[WRRealmUsers alloc] init];
+        RLMRealm *realm=[RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
+        users.email=self.signIn.userEmail;
+        [realm addObject:users];
+        [realm commitWriteTransaction];
+        
+        UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
+        self.window.rootViewController = myView;
+    }
 }
 
 

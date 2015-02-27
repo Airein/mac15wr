@@ -160,6 +160,7 @@
 		1FFE59581A9C595E00BAB220 /* WREvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFE59571A9C595E00BAB220 /* WREvent.m */; };
 		FA1FB9841AA05EF200774B7A /* WRDataFormatChange.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB9831AA05EF200774B7A /* WRDataFormatChange.m */; };
 		FA1FB98B1AA0645100774B7A /* WRRealmCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB98A1AA0645100774B7A /* WRRealmCheckList.m */; };
+		FA1FB98E1AA06D4E00774B7A /* WRRealmUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */; };
 		FA474A911AA0325800C33517 /* WRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A901AA0325800C33517 /* WRLoginViewController.m */; };
 		FA474A961AA0328000C33517 /* WRCourseDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A931AA0328000C33517 /* WRCourseDViewController.m */; };
 		FA474A971AA0328000C33517 /* WRCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A951AA0328000C33517 /* WRCourseTableViewController.m */; };
@@ -502,6 +503,8 @@
 		FA1FB9831AA05EF200774B7A /* WRDataFormatChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDataFormatChange.m; sourceTree = "<group>"; };
 		FA1FB9891AA0645100774B7A /* WRRealmCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmCheckList.h; sourceTree = "<group>"; };
 		FA1FB98A1AA0645100774B7A /* WRRealmCheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmCheckList.m; sourceTree = "<group>"; };
+		FA1FB98C1AA06D4E00774B7A /* WRRealmUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmUsers.h; sourceTree = "<group>"; };
+		FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmUsers.m; sourceTree = "<group>"; };
 		FA474A8F1AA0325800C33517 /* WRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRLoginViewController.h; sourceTree = "<group>"; };
 		FA474A901AA0325800C33517 /* WRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRLoginViewController.m; sourceTree = "<group>"; };
 		FA474A921AA0328000C33517 /* WRCourseDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseDViewController.h; sourceTree = "<group>"; };
@@ -1516,6 +1519,8 @@
 			children = (
 				FA1FB9891AA0645100774B7A /* WRRealmCheckList.h */,
 				FA1FB98A1AA0645100774B7A /* WRRealmCheckList.m */,
+				FA1FB98C1AA06D4E00774B7A /* WRRealmUsers.h */,
+				FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -1695,6 +1700,7 @@
 				1FA99DFF1A8859E900CDCA6E /* DDFileLogger.m in Sources */,
 				1FB85FA71A931B3100119A34 /* KLCPopup.m in Sources */,
 				1FB85F761A90595100119A34 /* SDiPhoneVersion.m in Sources */,
+				FA1FB98E1AA06D4E00774B7A /* WRRealmUsers.m in Sources */,
 				1F9292E81A883974001B8A45 /* UIFont+AirExtension.m in Sources */,
 				1F3FDECE1A9FBDC20080A77C /* FTCoreTextView.m in Sources */,
 				1FB85F961A9176A400119A34 /* UIView+WhenTappedBlocks.m in Sources */,
