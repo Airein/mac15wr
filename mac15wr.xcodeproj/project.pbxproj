@@ -79,6 +79,7 @@
 		FA7B00B81A9FA0C00078CBF9 /* WRDept.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00B71A9FA0C00078CBF9 /* WRDept.m */; };
 		FA7B00BB1A9FA6D40078CBF9 /* WRSchoolList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00BA1A9FA6D40078CBF9 /* WRSchoolList.m */; };
 		FA7B00C11A9FACA10078CBF9 /* WRFetchData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00C01A9FACA10078CBF9 /* WRFetchData.m */; };
+		FA7B00C71AA0021B0078CBF9 /* WRSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00C61AA0021B0078CBF9 /* WRSection.m */; };
 		FA82E7171A8DF64200FF93CD /* WRCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */; };
 		FA82E71F1A8DF81C00FF93CD /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71C1A8DF81C00FF93CD /* MGSwipeButton.m */; };
 		FA82E7201A8DF81C00FF93CD /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71E1A8DF81C00FF93CD /* MGSwipeTableCell.m */; };
@@ -247,6 +248,8 @@
 		FA7B00BA1A9FA6D40078CBF9 /* WRSchoolList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSchoolList.m; sourceTree = "<group>"; };
 		FA7B00BF1A9FACA10078CBF9 /* WRFetchData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRFetchData.h; sourceTree = "<group>"; };
 		FA7B00C01A9FACA10078CBF9 /* WRFetchData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRFetchData.m; sourceTree = "<group>"; };
+		FA7B00C51AA0021B0078CBF9 /* WRSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSection.h; sourceTree = "<group>"; };
+		FA7B00C61AA0021B0078CBF9 /* WRSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSection.m; sourceTree = "<group>"; };
 		FA82E7151A8DF64200FF93CD /* WRCourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewController.h; sourceTree = "<group>"; };
 		FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewController.m; sourceTree = "<group>"; };
 		FA82E71B1A8DF81C00FF93CD /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
@@ -683,6 +686,8 @@
 				FA7B00B71A9FA0C00078CBF9 /* WRDept.m */,
 				1FD7CAB51A88AF6E009857F7 /* WRCourse.h */,
 				1FD7CAB61A88B357009857F7 /* WRCourse.m */,
+				FA7B00C51AA0021B0078CBF9 /* WRSection.h */,
+				FA7B00C61AA0021B0078CBF9 /* WRSection.m */,
 			);
 			path = wrmodel;
 			sourceTree = "<group>";
@@ -849,6 +854,7 @@
 				1FA99E021A8859E900CDCA6E /* DDContextFilterLogFormatter.m in Sources */,
 				1FA99DFD1A8859E900CDCA6E /* DDASLLogCapture.m in Sources */,
 				1FA99DFF1A8859E900CDCA6E /* DDFileLogger.m in Sources */,
+				FA7B00C71AA0021B0078CBF9 /* WRSection.m in Sources */,
 				FA7B00B51A9F9F770078CBF9 /* WRSchool.m in Sources */,
 				1F9292E81A883974001B8A45 /* UIFont+AirExtension.m in Sources */,
 				FA7B00C11A9FACA10078CBF9 /* WRFetchData.m in Sources */,

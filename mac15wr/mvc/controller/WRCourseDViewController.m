@@ -48,11 +48,12 @@
         cell.roomLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"location"];
         NSString *seTime=[[NSString alloc] initWithFormat:@"%@-%@",[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"bTime"],[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"eTime"]];
         cell.hoursLabel.text=seTime;
+        
         cell.instractorLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"instructor"];
         cell.dayLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"day"];
         
         //classtype
-        cell.courseTypeLabel.text=@"Lec";
+        cell.courseTypeLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"type"];
         
         
         
