@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "WRFiveViewManager.h"
-#import "WRWelcomeViewController.h"
 #import "SRFSurfboard.h"
 
 
