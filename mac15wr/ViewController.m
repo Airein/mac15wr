@@ -44,10 +44,8 @@
                                                          Dept:@"CSCI"];
 //    NSString *fetchstring=[fetchdata getCourseInSpecificTerm:@"20151" andDept:@"CSCI"];
     [[WRAPIClient sharedClient] GET:courseString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
-        
         self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *course_attributes in JSON) {
-            
             WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
             [self.mutableCourses addObject:course];
         }
@@ -69,7 +67,7 @@
 #pragma mark - pass course data between views
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ShowCourseList"] || [[segue identifier] isEqualToString:@"submitInfo"]) {
+    if ([[segue identifier] isEqualToString:@"submitInfo"]) {
         UINavigationController *nav = [segue destinationViewController];
         WRCourseTableViewController* userViewController = (WRCourseTableViewController *) nav.topViewController;
         userViewController.mutableCourses = self.mutableCourses;

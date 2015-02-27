@@ -115,17 +115,23 @@
 
 - (IBAction)addToCheckList:(id)sender {
     NSInteger row=[[self.tableview indexPathForSelectedRow] row];
+    
+    //realm, data put in
     RLMRealm *defaultRealm = [RLMRealm defaultRealm];
     WRCheckList *checklist=[[WRCheckList alloc] init];
-    
-    NSDictionary *aDict = @{ @"Value1": @"sadsadasdasdsadqwwqsadasd",
-                             @"Value2": @"10",
-                             @"Value3": @"12" };
-    
-    checklist.section=[NSJSONSerialization dataWithJSONObject:aDict//[self.sections objectAtIndex:row]
+    [defaultRealm beginWriteTransaction];
+    checklist.section=[NSJSONSerialization dataWithJSONObject:[self.sections objectAtIndex:row]
                                                        options:0
                                                          error:nil];
-    NSLog(@"%@",checklist.section);
+    
+//    NSData to NSDictionary
+//    NSDictionary *jsonObject=[NSJSONSerialization
+//                              JSONObjectWithData:checklist.section
+//                              options:NSJSONReadingMutableLeaves
+//                              error:nil];
+//    NSLog(@"jsonObject is %@",jsonObject);
+
+    
     checklist.sis_course_id=self.courseSelected.sis_course_id;
     checklist.title=self.courseSelected.title;
     [defaultRealm addObject:checklist];
