@@ -115,6 +115,8 @@
 
 - (IBAction)addToCheckList:(id)sender {
     NSInteger row=[[self.tableview indexPathForSelectedRow] row];
+    
+    //realm, data put in
     RLMRealm *defaultRealm = [RLMRealm defaultRealm];
     WRCheckList *checklist=[[WRCheckList alloc] init];
     [defaultRealm beginWriteTransaction];
