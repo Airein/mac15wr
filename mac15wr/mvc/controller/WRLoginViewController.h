@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <GooglePlus/GooglePlus.h>
 #import "WRCourse.h"
+#import "AppDelegate.h"
 
 @interface WRLoginViewController : UIViewController<GPPSignInDelegate>
 
@@ -18,6 +19,7 @@
 @property (retain, nonatomic) IBOutlet GPPSignInButton *signInButton;
 @property GPPSignIn *signIn;
 
+@property (nonatomic, strong) AppDelegate *appDelegate;
 
 
 @end

@@ -12,6 +12,7 @@
 #import "WRSection.h"
 #import "WRRealmCheckList.h"
 #import "WRRealmWishList.h"
+#import "WRFiveViewManager.h"
 #import <Realm/Realm.h>
 
 @implementation WRCourseDViewController
@@ -131,6 +132,9 @@
     
     [defaultRealm commitWriteTransaction];
     
+    //return mainview
+    NSLog(@"pop");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addToWishList:(id)sender {
@@ -149,6 +153,12 @@
     [defaultRealm addObject:wishlist];
     
     [defaultRealm commitWriteTransaction];
+    
+    
+    //return mainview
+    NSLog(@"pop");
+    [self dismissViewControllerAnimated:YES completion:nil];
+
     
 }
 

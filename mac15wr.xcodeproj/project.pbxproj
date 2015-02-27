@@ -190,7 +190,8 @@
 		FA474AD91AA036C900C33517 /* WRCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AD41AA036C900C33517 /* WRCourseTableViewCell.m */; };
 		FA474ADA1AA036C900C33517 /* WRDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AD61AA036C900C33517 /* WRDescTableViewCell.m */; };
 		FA474ADB1AA036C900C33517 /* WRSectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AD81AA036C900C33517 /* WRSectionTableViewCell.m */; };
-		FA474ADC1AA03D6700C33517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA474AAC1AA033D900C33517 /* Main.storyboard */; };
+		FA51221A1AA0FC6E00E24E61 /* WRRealmSchoolList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5122191AA0FC6E00E24E61 /* WRRealmSchoolList.m */; };
+		FA51221C1AA1131C00E24E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA51221B1AA1131C00E24E61 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -530,7 +531,6 @@
 		FA474AA31AA032D800C33517 /* WRSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSection.m; sourceTree = "<group>"; };
 		FA474AA91AA0337100C33517 /* WRFetchData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRFetchData.h; sourceTree = "<group>"; };
 		FA474AAA1AA0337100C33517 /* WRFetchData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRFetchData.m; sourceTree = "<group>"; };
-		FA474AAD1AA033D900C33517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA474AAF1AA0340200C33517 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		FA474AB11AA0340800C33517 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA474AB31AA0341500C33517 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -554,6 +554,9 @@
 		FA474AD61AA036C900C33517 /* WRDescTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDescTableViewCell.m; sourceTree = "<group>"; };
 		FA474AD71AA036C900C33517 /* WRSectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSectionTableViewCell.h; sourceTree = "<group>"; };
 		FA474AD81AA036C900C33517 /* WRSectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSectionTableViewCell.m; sourceTree = "<group>"; };
+		FA5122181AA0FC6E00E24E61 /* WRRealmSchoolList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmSchoolList.h; sourceTree = "<group>"; };
+		FA5122191AA0FC6E00E24E61 /* WRRealmSchoolList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmSchoolList.m; sourceTree = "<group>"; };
+		FA51221B1AA1131C00E24E61 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -617,7 +620,7 @@
 			children = (
 				1F9292A61A881E03001B8A45 /* app */,
 				003C34321A8729E7003097DD /* Images.xcassets */,
-				FA474AAC1AA033D900C33517 /* Main.storyboard */,
+				FA51221B1AA1131C00E24E61 /* Main.storyboard */,
 				003C34341A8729E7003097DD /* LaunchScreen.xib */,
 				1F9292A01A881DCE001B8A45 /* mvc */,
 				1F3FDECF1A9FD4850080A77C /* resource */,
@@ -1536,6 +1539,8 @@
 				FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */,
 				FA1FB9951AA0F63F00774B7A /* WRRealmCalendar.h */,
 				FA1FB9961AA0F63F00774B7A /* WRRealmCalendar.m */,
+				FA5122181AA0FC6E00E24E61 /* WRRealmSchoolList.h */,
+				FA5122191AA0FC6E00E24E61 /* WRRealmSchoolList.m */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -1646,7 +1651,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA474ADC1AA03D6700C33517 /* Main.storyboard in Resources */,
+				FA51221C1AA1131C00E24E61 /* Main.storyboard in Resources */,
 				1F8A25911A99B08B00B3EACB /* MKRadialMenuDevMode.gif in Resources */,
 				1F3FDF011AA01A9A0080A77C /* panels.json in Resources */,
 				1F3FDED91A9FDC190080A77C /* viewer-course-in-usc.txt in Resources */,
@@ -1783,6 +1788,7 @@
 				1FC508D61A9EB2AB00CBCA88 /* CheckListCell.m in Sources */,
 				1FC508BF1A9D717F00CBCA88 /* TapDetectingView.m in Sources */,
 				1F9292E91A883974001B8A45 /* UIImage+AirExtension.m in Sources */,
+				FA51221A1AA0FC6E00E24E61 /* WRRealmSchoolList.m in Sources */,
 				1FD7CA771A88A08C009857F7 /* UIButton+AFNetworking.m in Sources */,
 				FA474AD91AA036C900C33517 /* WRCourseTableViewCell.m in Sources */,
 				1F46A2CB1A8C7BF000DF74B7 /* UIToolbar+FlatUI.m in Sources */,
@@ -1865,14 +1871,6 @@
 				003C34351A8729E7003097DD /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		FA474AAC1AA033D900C33517 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA474AAD1AA033D900C33517 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

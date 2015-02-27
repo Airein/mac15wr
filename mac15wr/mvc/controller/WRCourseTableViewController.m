@@ -9,10 +9,10 @@
 
 #import "WRCourseTableViewController.h"
 #import "WRCourseDViewController.h"
+#import <Realm/Realm.h>
 
 
 @interface WRCourseTableViewController ()
-
 @end
 
 @implementation WRCourseTableViewController
@@ -46,17 +46,17 @@
         
     }];
     
-//    NSString* schoollistString=[WRFetchData getSchoolList];
-//    [[WRAPIClient sharedClient] GET:schoollistString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
-//        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
-//        for (NSDictionary *course_attributes in JSON) {
-//            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
-//            [self.mutableCourses addObject:course];
-//        }
-//        
-//    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-//        
-//    }];
+    NSString* schoollistString=[WRFetchData getSchoolList];
+    [[WRAPIClient sharedClient] GET:schoollistString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
+        for (NSDictionary *course_attributes in JSON) {
+            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
+            [self.mutableCourses addObject:course];
+        }
+        
+    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+        
+    }];
     
     
     
@@ -118,6 +118,10 @@
     return cell;
 }
 
+- (IBAction)backToMainView:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

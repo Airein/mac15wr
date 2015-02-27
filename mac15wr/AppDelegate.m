@@ -12,6 +12,7 @@
 #import "WRFiveViewManager.h"
 #import "SRFSurfboard.h"
 #import "WRRealmUsers.h"
+#import "WRLoginViewController.h"
 
 
 
@@ -130,33 +131,48 @@ static NSString * const kClientID =
     //ONLY work when user already logined in
     //now disable it,and just go to the next view straightly
     //-----------------------------------------------------------------------------
-//    self.signIn = [GPPSignIn sharedInstance];
-//    self.signIn.shouldFetchGooglePlusUser = YES;
-//    self.signIn.shouldFetchGoogleUserID=YES;
-//    self.signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
-//    
-//    // You previously set kClientId in the "Initialize the Google+ client" step
-//    self.signIn.clientID = kClientID;
-//    
-//    // Uncomment one of these two statements for the scope you chose in the previous step
-//    self.signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
-//    //self.signIn.scopes = @[ @"profile" ];            // "profile" scope
-//    
-//    // Optional: declare self.signIn.actions, see "app activities"
-//    self.signIn.delegate = self;
-//    
-//    
-//    NSLog(@"%d",[[GPPSignIn sharedInstance] trySilentAuthentication]);
+    self.signIn = [GPPSignIn sharedInstance];
+    self.signIn.shouldFetchGooglePlusUser = YES;
+    self.signIn.shouldFetchGoogleUserID=YES;
+    self.signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+    
+    // You previously set kClientId in the "Initialize the Google+ client" step
+    self.signIn.clientID = kClientID;
+    
+    // Uncomment one of these two statements for the scope you chose in the previous step
+    self.signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+    //self.signIn.scopes = @[ @"profile" ];            // "profile" scope
+    
+    // Optional: declare self.signIn.actions, see "app activities"
+    self.signIn.delegate = self;
+    
+    // go to login view on "if"
+    if (![[GPPSignIn sharedInstance] trySilentAuthentication]) {
+        //the next view, go straightly
+        UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        WRLoginViewController *myView = (WRLoginViewController*)[story instantiateViewControllerWithIdentifier:@"loginStory"];
+        myView.appDelegate=self;
+        self.window.rootViewController = myView;
+        
+    }
     //------------------------------------------------------------------------------
     
-    //the next view, go straightly
-    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
-    self.window.rootViewController = myView;
+//    //the next view, go straightly
+//    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
+//    self.window.rootViewController = myView;
     
     
     
 }
+
+- (void) entermainpage{
+    WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+    [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+    IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+    self.window.rootViewController = deckViewController;
+}
+
 
 - (void)surfboard:(SRFSurfboardViewController *)surfboard didShowPanelAtIndex:(NSInteger)index
 {
@@ -179,9 +195,10 @@ static NSString * const kClientID =
         [realm addObject:users];
         [realm commitWriteTransaction];
         
-        UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
-        self.window.rootViewController = myView;
+                WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+                [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+                IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+                self.window.rootViewController = deckViewController;
     }
 }
 

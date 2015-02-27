@@ -267,7 +267,7 @@
                 NSLog(@"0");
                 UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
                 UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"chooseCourse"];
-                [self.parentControllerDelegate presentViewController:myView animated:YES completion:nil];
+                [self.parentControllerDelegate showViewController:myView sender:self.parentControllerDelegate];
                 
                 
                 break;

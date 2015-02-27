@@ -188,7 +188,6 @@
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="vE4-Yp-I6x" id="mQ5-2x-Swo"/>
-                        <segue destination="vw4-0x-4R2" kind="showDetail" identifier="login" id="RtM-kG-TVC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orV-UH-vd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -278,9 +277,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Courses" id="i8B-la-wgO">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="7Un-My-aLX">
+                            <connections>
+                                <action selector="backToMainView:" destination="3gL-ls-vER" id="932-Ms-i8M"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Change" id="S1k-Ya-hm9">
                             <connections>
-                                <segue destination="hYN-c9-dGr" kind="showDetail" id="f4m-W0-NJZ"/>
+                                <segue destination="hYN-c9-dGr" kind="show" id="f4m-W0-NJZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -333,7 +337,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6gv-vv-yKm">
             <objects>
-                <navigationController storyboardIdentifier="choosecourse" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ahp-co-gb5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="chooseCourse" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ahp-co-gb5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehD-Ei-SMO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
