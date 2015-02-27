@@ -23,9 +23,58 @@
     //show navi bar
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     
+    
+    
+    //fetch data from back-end
+    NSString *courseString=[WRFetchData
+                            searchCourseByCoditions:[WRFetchData
+                                                               stringOfCourseSerchConditonsWithCourseRating:@"3" ProfRating:@"3"
+                                                               Day:nil
+                                                               TimeStart:nil
+                                                               TimeEnd:nil
+                                                               TimeTypeAsInclude:@""]
+                                                         Term:@"20151"
+                                                         Dept:@"CSCI"];
+    [[WRAPIClient sharedClient] GET:courseString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
+        for (NSDictionary *course_attributes in JSON) {
+            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
+            [self.mutableCourses addObject:course];
+        }
+        
+    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+        
+    }];
+    
+//    NSString* schoollistString=[WRFetchData getSchoolList];
+//    [[WRAPIClient sharedClient] GET:schoollistString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+//        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
+//        for (NSDictionary *course_attributes in JSON) {
+//            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
+//            [self.mutableCourses addObject:course];
+//        }
+//        
+//    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+//        
+//    }];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     for (WRCourse *course in self.mutableCourses){
         NSLog(@"%@",course.title);
     }
+    
+    
+    
+    
+    
     
         
     
