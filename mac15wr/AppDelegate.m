@@ -127,23 +127,33 @@ static NSString * const kClientID =
     //        self.window.rootViewController = deckViewController;
     
     //google login
-    self.signIn = [GPPSignIn sharedInstance];
-    self.signIn.shouldFetchGooglePlusUser = YES;
-    self.signIn.shouldFetchGoogleUserID=YES;
-    self.signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+    //ONLY work when user already logined in
+    //now disable it,and just go to the next view straightly
+    //-----------------------------------------------------------------------------
+//    self.signIn = [GPPSignIn sharedInstance];
+//    self.signIn.shouldFetchGooglePlusUser = YES;
+//    self.signIn.shouldFetchGoogleUserID=YES;
+//    self.signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
+//    
+//    // You previously set kClientId in the "Initialize the Google+ client" step
+//    self.signIn.clientID = kClientID;
+//    
+//    // Uncomment one of these two statements for the scope you chose in the previous step
+//    self.signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+//    //self.signIn.scopes = @[ @"profile" ];            // "profile" scope
+//    
+//    // Optional: declare self.signIn.actions, see "app activities"
+//    self.signIn.delegate = self;
+//    
+//    
+//    NSLog(@"%d",[[GPPSignIn sharedInstance] trySilentAuthentication]);
+    //------------------------------------------------------------------------------
     
-    // You previously set kClientId in the "Initialize the Google+ client" step
-    self.signIn.clientID = kClientID;
+    //the next view, go straightly
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
+    self.window.rootViewController = myView;
     
-    // Uncomment one of these two statements for the scope you chose in the previous step
-    self.signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
-    //self.signIn.scopes = @[ @"profile" ];            // "profile" scope
-    
-    // Optional: declare self.signIn.actions, see "app activities"
-    self.signIn.delegate = self;
-    
-    
-    NSLog(@"%d",[[GPPSignIn sharedInstance] trySilentAuthentication]);
     
     
 }

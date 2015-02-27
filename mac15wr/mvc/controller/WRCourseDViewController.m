@@ -120,9 +120,6 @@
     RLMRealm *defaultRealm = [RLMRealm defaultRealm];
     WRRealmCheckList *checklist=[[WRRealmCheckList alloc] init];
     [defaultRealm beginWriteTransaction];
-//    checklist.section=[NSJSONSerialization dataWithJSONObject:[self.sections objectAtIndex:row]
-//                                                       options:0
-//                                                         error:nil];
     
     checklist.section=[WRDataFormatChange NSDictionary2NSData:[self.sections objectAtIndex:row]];
 
