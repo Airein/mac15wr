@@ -11,6 +11,7 @@
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import <GooglePlus/GooglePlus.h>
 #import "ViewController.h"
+#import "WRFiveViewManager.h"
 
 @implementation WRLoginViewController
 
@@ -68,18 +69,27 @@ static NSString * const kClientID =
     if (error) {
         // Do some error handling here.
     } else {
-        [self performSegueWithIdentifier:@"login" sender:self];
+//        [self performSegueWithIdentifier:@"login" sender:self];
 //        [self refreshInterfaceBasedOnsignIn];
+        
+        //go to main view
+//        WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+//        [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+//        IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+//        [self showDetailViewController:deckViewController sender:self];
+        [self.appDelegate entermainpage];
+        
+        
     }
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"login"]) {
-        UINavigationController *nav = [segue destinationViewController];
-        ViewController* userViewController = (ViewController *) nav.topViewController;
-        userViewController.email = self.signIn.userEmail;
-    }
-}
+//- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if ([[segue identifier] isEqualToString:@"login"]) {
+//        UINavigationController *nav = [segue destinationViewController];
+//        ViewController* userViewController = (ViewController *) nav.topViewController;
+//        userViewController.email = self.signIn.userEmail;
+//    }
+//}
 
 
 

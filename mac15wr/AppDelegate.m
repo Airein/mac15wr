@@ -12,6 +12,7 @@
 #import "WRFiveViewManager.h"
 #import "SRFSurfboard.h"
 #import "WRRealmUsers.h"
+#import "WRLoginViewController.h"
 
 
 
@@ -133,6 +134,14 @@ static NSString * const kClientID =
     
 }
 
+- (void) entermainpage{
+    WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+    [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+    IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+    self.window.rootViewController = deckViewController;
+}
+
+
 - (void)surfboard:(SRFSurfboardViewController *)surfboard didShowPanelAtIndex:(NSInteger)index
 {
     //    NSLog(@"Index: %i", index);
@@ -154,9 +163,10 @@ static NSString * const kClientID =
         [realm addObject:users];
         [realm commitWriteTransaction];
         
-        UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
-        self.window.rootViewController = myView;
+                WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+                [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+                IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+                self.window.rootViewController = deckViewController;
     }
 }
 
