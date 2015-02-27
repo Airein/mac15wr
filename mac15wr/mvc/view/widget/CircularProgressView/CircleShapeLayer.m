@@ -53,8 +53,8 @@
     self.progressLayer = [CAShapeLayer layer];
     self.progressLayer.path = [self drawPathWithArcCenter:-2];
     self.progressLayer.fillColor = [UIColor clearColor].CGColor;
-    self.progressLayer.strokeColor = [UIColor cloudsColor].CGColor;
-    self.progressLayer.lineWidth = 3;
+    self.progressLayer.strokeColor = [UIColor WR_USC_Yellow].CGColor;
+    self.progressLayer.lineWidth = 11;
     self.progressLayer.lineCap = kCALineCapButt;
     self.progressLayer.lineJoin = kCALineJoinRound;
     [self addSublayer:self.progressLayer];

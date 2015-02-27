@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 mac15wr. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface WishListModel : UITableView
+@interface WishListModel : NSObject
 
 //测试类
 @property(copy,nonatomic)NSString *str1;

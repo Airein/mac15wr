@@ -6,3 +6,6 @@
 //  Copyright (c) 2015 mac15wr. All rights reserved.
 //
 
+
+
+#define FIVEPAGE_TRANSITION_DURATION 0.6f

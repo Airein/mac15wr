@@ -8,3 +8,4 @@
 
 #import "UIColor+HexColor.h"
 #import "UIColor+WRColor.h"
+#import "UIView+WRView.h"

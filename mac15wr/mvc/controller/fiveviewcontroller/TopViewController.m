@@ -15,7 +15,10 @@
 #define DATE_COMPONENTS (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit)
 #define CURRENT_CALENDAR [NSCalendar currentCalendar]
 
-@interface TopViewController ()
+
+@interface TopViewController (){
+    CGPoint containerCenter;
+}
 
 @property (readonly) MAEvent *event;
 @property (readonly) MAEventKitDataSource *eventKitDataSource;
@@ -38,7 +41,8 @@
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
-
+    containerCenter = self.scrollView.center;
+    self.scrollView.center = CGPointMake(containerCenter.x, containerCenter.y - CGRectGetHeight(self.scrollView.frame));
     
     [self.view addSubview:self.scrollView];
     
@@ -153,7 +157,7 @@ static int counter = 23;
         calenderView.frame = CGRectMake(0, 0, CGRectGetWidth(self.scrollView.bounds)-40, CGRectGetHeight(self.scrollView.bounds)-40);
 
         calenderView.center = CGPointMake(CGRectGetWidth(self.scrollView.bounds)/2, CGRectGetHeight(self.scrollView.bounds)/2);
-        calenderView.backgroundColor = [UIColor alizarinColor];
+        calenderView.backgroundColor = [UIColor WR_USC_Red];
         calenderView.layer.masksToBounds = YES;
         calenderView.layer.cornerRadius = 15.0;
         calenderView.dataSource = self;
@@ -232,6 +236,31 @@ static int counter = 23;
     }
 }
 
+
+-(void) presentViewContent{
+    [UIView animateWithDuration:FIVEPAGE_TRANSITION_DURATION animations:^{
+        //[UIView setAnimationDelay:1.2];//配置动画时延
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        self.scrollView.center = containerCenter;//CGPointMake(bgCenter.x + 100, bgCenter.y);
+        [self.scrollView setAlpha:1.0];
+        
+    } completion:^(BOOL finished) {
+        //执行完后走这里的代码块
+    }];
+    
+}
+
+
+-(void) hideViewContent{
+    [UIView animateWithDuration:FIVEPAGE_TRANSITION_DURATION animations:^{
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        self.scrollView.center = CGPointMake(containerCenter.x, containerCenter.y - CGRectGetHeight(self.scrollView.frame));
+        [self.scrollView setAlpha:0.2];
+        
+    } completion:^(BOOL finished) {
+        //执行完后走这里的代码块
+    }];
+}
 
 
 /*

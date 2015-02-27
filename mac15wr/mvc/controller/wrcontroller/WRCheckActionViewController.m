@@ -13,21 +13,41 @@
 @end
 
 @implementation WRCheckActionViewController
+@synthesize headerContainer;
+@synthesize titleLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithIntegerRed:250. green:259. blue:242 alpha:1.];
+    
+    // Header Container
+    headerContainer = [[UIView alloc] init];
+    headerContainer.backgroundColor = [UIColor WR_USC_Red];
+    [self.view addSubview:headerContainer];
+    
+    
     UIImage *image = [UIImage imageNamed:@"nbi_close"];
     CGRect frame = CGRectMake(SCREEN_WIDTH-image.size.width-10, 10, image.size.width, image.size.height);
-    
-    //init a normal UIButton using that image
     UIButton* button = [[UIButton alloc] initWithFrame:frame];
     [button setBackgroundImage:image forState:UIControlStateNormal];
     [button setShowsTouchWhenHighlighted:YES];
-    
-    //set the button to handle clicks - this one calls a method called 'downloadClicked'
     [button addTarget:self action:@selector(closeButtonPressed) forControlEvents:UIControlEventTouchDown];
+    [headerContainer addSubview:button];
+    headerContainer.frame = CGRectMake(0, 0, SCREEN_WIDTH, CGRectGetHeight(button.frame) + 20);
+    button.center = CGPointMake(button.center.x, CGRectGetHeight(headerContainer.frame)/2);
     
-    [self.view addSubview:button];
+    
+    titleLabel = [[UILabel alloc] init];
+    titleLabel.frame  = CGRectMake(0, 0, SCREEN_WIDTH/2, CGRectGetHeight(headerContainer.frame));
+    titleLabel.center = CGPointMake(CGRectGetWidth(headerContainer.frame)/2, CGRectGetHeight(headerContainer.frame)/2);
+    titleLabel.text = @"Title";
+    titleLabel.textColor = [UIColor WR_USC_Yellow];
+    titleLabel.font = [UIFont boldSystemFontOfSize:28.f];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    [headerContainer addSubview:titleLabel];
+    
+    
+    
 }
 
 

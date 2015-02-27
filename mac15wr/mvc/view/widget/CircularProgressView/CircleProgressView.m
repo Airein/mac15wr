@@ -116,31 +116,33 @@
 
 - (NSAttributedString *)formatProgressStringFromTimeInterval:(NSTimeInterval)interval {
     
-    NSString *progressString = [self stringFromTimeInterval:interval shortDate:false];
+    //NSString *progressString = [self stringFromTimeInterval:interval shortDate:false];
     
     NSMutableAttributedString *attributedString;
     
     
     if (_status.length > 0) {
         
-        attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n%@", progressString, _status]];
+        attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n%@", _status, _registeredPoint]];
+        
+        
         
         [attributedString addAttributes:@{
                                         NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:40]}
-                                range:NSMakeRange(0, progressString.length)];
+                                range:NSMakeRange(0, _status.length)];
         
         [attributedString addAttributes:@{
-                                        NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-thin" size:18]}
-                                range:NSMakeRange(progressString.length+1, _status.length)];
+                                        NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-thin" size:20]}
+                                range:NSMakeRange(_status.length+1, _registeredPoint.length)];
         
     }
     else
     {
-        attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@",progressString]];
+        attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@",_status]];
         
         [attributedString addAttributes:@{
                                         NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:33]}
-                                range:NSMakeRange(0, progressString.length)];
+                                range:NSMakeRange(0, _status.length)];
     }
     
     return attributedString;

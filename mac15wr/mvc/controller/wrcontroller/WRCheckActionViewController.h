@@ -10,5 +10,7 @@
 
 @interface WRCheckActionViewController : UIViewController
 @property (nonatomic, strong) UIView* checkViewDelegate;
+@property (nonatomic, strong) UIView* headerContainer;
+@property (nonatomic, strong) UILabel* titleLabel;
 
 @end

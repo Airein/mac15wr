@@ -10,6 +10,7 @@
 #import "WRFiveViewController.h"
 #import "CenterViewController.h"
 #import "WishListTableView.h"
+#import "CheckListTableView.h"
 
 @interface RightViewController : WRFiveViewController
 
@@ -18,9 +19,13 @@
 @property (nonatomic, strong) WishListTableView *wishlistTable;
 @property (nonatomic, strong) NSMutableArray *wishlistContent;
 
-@property (nonatomic, strong) UITableView *checkoutTable;
+@property (nonatomic, strong) CheckListTableView *checkoutTable;
 @property (nonatomic, strong) NSMutableArray *checkoutContent;
 
+-(void) openWishListView;
+-(void) openCheckListView;
 
+-(void) presentViewContent;
+-(void) hideViewContent;
 
 @end

@@ -9,6 +9,9 @@
 #import "WRProcessCheckView.h"
 
 #import "WRCheckActionViewController.h"
+#import "WRViewerViewController.h"
+
+#import "RightViewController.h"
 
 @implementation WRProcessCheckView
 
@@ -17,7 +20,7 @@
     
     self = [super init];
     //self.translatesAutoresizingMaskIntoConstraints = NO;
-    self.backgroundColor = [UIColor colorWithIntegerRed:213 green:76 blue:60 alpha:0.9];
+    self.backgroundColor = [UIColor WR_USC_Red];//[UIColor colorWithIntegerRed:213 green:76 blue:60 alpha:0.9];
     self.layer.cornerRadius = 12.0;
     self.frame = CGRectMake(0, 0, SCREEN_WIDTH-55, SCREEN_WIDTH-55);
     self.cvTypeString = cvType;
@@ -26,7 +29,7 @@
     _titleLabel.backgroundColor = [UIColor clearColor];
     _titleLabel.clipsToBounds = YES;
     _titleLabel.layer.cornerRadius = 6.0;
-    _titleLabel.textColor = [UIColor whiteColor];
+    _titleLabel.textColor = [UIColor WR_USC_Yellow];
     _titleLabel.font = [UIFont boldSystemFontOfSize:24.0];
     _titleLabel.text = @"Hello";
     _titleLabel.frame = CGRectMake(0, 0, SCREEN_WIDTH-55, 50);
@@ -36,8 +39,8 @@
     
     _dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _dismissButton.contentEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20);
-    _dismissButton.backgroundColor = [UIColor pomegranateColor];
-    [_dismissButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _dismissButton.backgroundColor = [UIColor WR_USC_Red];
+    [_dismissButton setTitleColor:[UIColor WR_USC_Yellow] forState:UIControlStateNormal];
     [_dismissButton setTitleColor:[[_dismissButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
     _dismissButton.titleLabel.font = [UIFont boldSystemFontOfSize:16.0];
     [_dismissButton setTitle:@"Close" forState:UIControlStateNormal];
@@ -60,8 +63,8 @@
         _titleLabel.text = @"Viewer";
         [_checklistContent addObjectsFromArray:[[NSArray alloc] initWithObjects:
                                                 @"a) Course in USC",
-                                                @"b) Course Requirement",
-                                                @"c) Course Recommendation",
+                                                @"b) Requirement",
+                                                @"c) Recommendation",
                                                 @"d) Registration",
                                                 nil]];
     } else if ([self.cvTypeString isEqualToString:@"third"]) {
@@ -78,9 +81,9 @@
     } else if ([self.cvTypeString isEqualToString:@"fourth"]) {
         _titleLabel.text = @"Register";
         [_checklistContent addObjectsFromArray:[[NSArray alloc] initWithObjects:
-                                                @"a) Course Examination Report",
+                                                @"a) Examination Report",
                                                 @"b) DC Requester",
-                                                @"b) Checkout and Pay",
+                                                @"c) Checkout and Pay",
                                                 nil]];
     } else if ([self.cvTypeString isEqualToString:@"fifth"]) {
         _titleLabel.text = @"Planner";
@@ -97,7 +100,7 @@
     _checklistTable.frame = CGRectMake(0, 50, SCREEN_WIDTH-55, SCREEN_WIDTH-145);
     _checklistTable.separatorColor = [UIColor clearColor];
     _checklistTable.alpha = 0.9;
-    _checklistTable.backgroundColor = [UIColor alizarinColor];
+    _checklistTable.backgroundColor = [UIColor WR_USC_Yellow];
     _checklistTable.delegate = self;
     _checklistTable.dataSource = self;
     //_checklistTable.dataSource = _checklistContent;
@@ -150,12 +153,17 @@
 //
 //    }
     TDBadgedCell *cell =[[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    cell.textLabel.textColor = [UIColor cloudsColor];
+    cell.textLabel.textColor = [UIColor WR_USC_Red];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:20];
-    cell.backgroundColor = [UIColor alizarinColor];
+    cell.backgroundColor = [UIColor WR_USC_Yellow];
+    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.frame = CGRectMake(0, 0, CGRectGetWidth(cell.frame), CGRectGetHeight(cell.frame));
+    bgColorView.backgroundColor = [UIColor alizarinColor];
+    [cell setSelectedBackgroundView:bgColorView];
     cell.badgeString = @"checked";
-    cell.badgeColor = [UIColor sunflowerColor];
-    cell.badgeTextColor = [UIColor pomegranateColor];
+    cell.badgeColor = [UIColor WR_USC_Red];
+    cell.badgeTextColor = [UIColor WR_USC_Yellow];
     //cell.badge.radius = 9;
     cell.badge.fontSize = 13;
     cell.badge.boldFont = YES;
@@ -209,9 +217,9 @@
  */
 -(void) handleCheckViewAction:(NSInteger)index{
     
-    WRCheckActionViewController *actionViewController = NULL;
     
     if ([self.cvTypeString isEqualToString:@"first"]) {     // Tutorial
+        WRCheckActionViewController *actionViewController = NULL;
         switch (index) {
             case 0:{    //  Overview Tour
                 actionViewController = [[WRCheckActionViewController alloc] init];
@@ -230,37 +238,48 @@
                 break;
             }
         }
+        [self presentCheckActionViewController:actionViewController];
     } else if ([self.cvTypeString isEqualToString:@"second"]) {     //  Viewer
+        WRCheckActionViewController *actionViewController = NULL;
         switch (index) {
             case 0:{
-                NSLog(@"0");
+                actionViewController = [[WRViewerViewController alloc] initWithTextResource:@"viewer-course-in-usc"];
+
                 break;
             } case 1:{
-                NSLog(@"1");
+                actionViewController = [[WRViewerViewController alloc] initWithTextResource:@"viewer-course-in-usc"];
                 break;
             } case 2:{
-                
+                actionViewController = [[WRViewerViewController alloc] initWithTextResource:@"viewer-course-in-usc"];
                 break;
             } case 3:{
-                
+                actionViewController = [[WRViewerViewController alloc] initWithTextResource:@"viewer-course-in-usc"];
                 break;
             }  default:{
+                actionViewController = [[WRViewerViewController alloc] initWithTextResource:@"viewer-course-in-usc"];
                 break;
             }
         }
+        [self presentCheckActionViewController:actionViewController];
     } else if ([self.cvTypeString isEqualToString:@"third"]) {      //  Chooser
         switch (index) {
-            case 0:{
+            case 0:{    // Choose course
                 NSLog(@"0");
                 break;
-            } case 1:{
-                NSLog(@"1");
-                break;
-            } case 2:{
+            } case 1:{  // Check Wish List
+                RightViewController *rightViewController = (RightViewController*)self.parentControllerDelegate.viewDeckController.rightController;
+                [rightViewController openWishListView];
                 
                 break;
-            } case 3:{
+            } case 2:{  // Check Reminder
                 
+                break;
+            } case 3:{  // Check Checkout List
+                RightViewController *rightViewController = (RightViewController*)self.parentControllerDelegate.viewDeckController.rightController;
+                [rightViewController openCheckListView];
+                break;
+            } case 4:{  // View Calendar
+                [self.parentControllerDelegate.viewDeckController openTopView];
                 break;
             }  default:{
                 break;
@@ -304,34 +323,25 @@
         }
     }
     
-    actionViewController.view.backgroundColor = [UIColor wetAsphaltColor];
-    actionViewController.checkViewDelegate = self;
-//    UINavigationController *navViewController = [[UINavigationController alloc] initWithRootViewController:actionViewController];
-
-    //    [navController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(s)]];
-    
     self.klcPopupDelegate.dismissType = KLCPopupDismissTypeNone;
     [self.klcPopupDelegate dismiss:YES];
+
     
+}
+
+-(void) presentCheckActionViewController:(WRCheckActionViewController*) controller{
+    controller.checkViewDelegate = self;
     
-//    CATransition* transition = [CATransition animation];
-//    transition.duration = 0.3;
-//    transition.type = kCATransitionFade;
-//    transition.subtype = kCATransitionFromTop;
-//    [self.parentControllerDelegate.view.layer addAnimation:transition forKey:kCATransition];
-//    [self.parentControllerDelegate presentViewController:actionViewController animated:NO completion:nil];
     
     CATransition *transition = [CATransition animation];
-    transition.duration = 0.3;
+    transition.duration = 0.5;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     transition.type = kCATransitionPush;
     transition.subtype = kCATransitionFromBottom;
     [self.parentControllerDelegate.view.window.layer addAnimation:transition forKey:nil];
-    
-    [self.parentControllerDelegate presentViewController:actionViewController animated:NO completion:nil];
-    
-    
+    [self.parentControllerDelegate presentViewController:controller animated:NO completion:nil];
 }
+
 
 #pragma mark - TableView delegate
 
@@ -340,8 +350,9 @@
     
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.textLabel.highlightedTextColor = [UIColor pomegranateColor];
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    cell.textLabel.highlightedTextColor = [UIColor pomegranateColor];
+
     //cell.backgroundColor = [UIColor pomegranateColor];
 //    NSLog(@"Section:%d Row:%d selected and its data is %@",
 //          indexPath.section,indexPath.row,cell.textLabel.text);

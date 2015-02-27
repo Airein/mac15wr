@@ -12,6 +12,7 @@
 #import "OverallCircleProgressView.h"
 #import "CKRadialMenu.h"
 #import "KVNMaskedPageControl.h"
+#import "M13BadgeView.h"
 
 
 enum {
@@ -32,5 +33,17 @@ typedef UInt32 IIViewDeckCP;
 @property (assign, nonatomic) IIViewDeckCP deckCP;   // deck view current position
 
 @property (strong, nonatomic) KVNMaskedPageControl *pageControl;
+
+
+@property (nonatomic, retain) M13BadgeView *wishlistBadge;
+@property (nonatomic, retain) UIView *wishlistBox;
+
+
+@property (nonatomic, retain) M13BadgeView *checklistBadge;
+@property (nonatomic, retain) UIView *checklistBox;
+
+@property (nonatomic, retain) M13BadgeView *reminderBadge;
+@property (nonatomic, retain) UIView *reminderBox;
+
 
 @end

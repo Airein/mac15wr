@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #include "KLCPopup.h"
+#include "CenterViewController.h"
 /**
  *  Process Check
  *
@@ -46,7 +47,7 @@ UITableViewDelegate>
 @property (nonatomic, strong) UITableView *checklistTable;
 @property (nonatomic, strong) NSMutableArray *checklistContent;
 
-@property (nonatomic, strong) UIViewController *parentControllerDelegate;
+@property (nonatomic, strong) CenterViewController *parentControllerDelegate;
 @property (nonatomic, strong) KLCPopup *klcPopupDelegate;
 
 @property (nonatomic, strong) NSString *cvTypeString;

@@ -13,4 +13,7 @@
 @interface BottomViewController : WRFiveViewController
 @property (strong, nonatomic) CenterViewController *centerViewControllerDelegate;
 
+-(void) presentViewContent;
+-(void) hideViewContent;
+
 @end

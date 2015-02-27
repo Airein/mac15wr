@@ -194,9 +194,9 @@ static NSString *RIGHT_ARROW_IMAGE                            = @"ma_rightArrow.
 //	[self.hourView setNeedsDisplay];
 	
 	self.weekdayBarView.frame = CGRectMake(CGRectGetMaxX(self.hourView.bounds),
-										10,
+										5,
 										CGRectGetWidth(self.gridView.bounds),
-										sizeNecessaryBold.height
+										sizeNecessaryBold.height+5
 										   );
 //	[self.weekdayBarView setNeedsDisplay];
 
@@ -248,7 +248,7 @@ static NSString *RIGHT_ARROW_IMAGE                            = @"ma_rightArrow.
 		_weekdayBarView.sundayColor     = [UIColor colorWithRed:0.6 green:0 blue:0 alpha:1.f];
 		_weekdayBarView.todayColor      = [UIColor colorWithRed:0.1 green:0.5 blue:0.9 alpha:1.f];
 		_weekdayBarView.textFont        = self.regularFont;
-		_weekdayBarView.backgroundColor = [UIColor alizarinColor];
+		_weekdayBarView.backgroundColor = [UIColor WR_USC_Red];
 	}
 	return _weekdayBarView;
 }
@@ -443,17 +443,18 @@ static NSString const * const HOURS_24[] = {
     
         
 		NSString *displayText = [NSString stringWithFormat:@"%@", [weekdaySymbols objectAtIndex:d]];
-		
-		CGSize sizeNecessary = [displayText sizeWithFont:self.textFont];
+        UIFont *headerFont = [UIFont boldSystemFontOfSize:15];
+        
+		CGSize sizeNecessary = [displayText sizeWithFont:headerFont];
 		CGRect rect = CGRectMake(cellWidth * i + ((cellWidth - sizeNecessary.width) / 2.f),
 								 CGRectGetMinY(self.bounds),
 								 sizeNecessary.width,
 								 sizeNecessary.height);
 		
-        [[UIColor cloudsColor] set];
+        [[UIColor WR_USC_Yellow] set];
 		
 		[displayText drawInRect: rect
-					withFont:self.textFont
+					withFont:headerFont
 			   lineBreakMode:UILineBreakModeTailTruncation
 				   alignment:UITextAlignmentLeft];
 //		
@@ -539,58 +540,6 @@ static const CGFloat kCorner       = 5.0;
 	_touchStart = [[touches anyObject] locationInView:self];
 	_wasDragged = NO;
 	[super touchesBegan:touches withEvent:event];
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	[super touchesMoved:touches withEvent:event];
-	
-	if (!self.weekView.eventDraggingEnabled) {
-		return;
-	}
-	
-	/* No drag & drop for all-day events */
-	if (_event.allDay) {
-		return;
-	}
-	
-	if ([self.weekView.delegate respondsToSelector:@selector(weekView:eventDraggingEnabled:)]) {
-		BOOL eventDraggingEnabled = [self.weekView.delegate weekView:self.weekView eventDraggingEnabled:self.event];
-		if (!eventDraggingEnabled) {
-			return;
-		}
-	}
-	
-	const CGPoint point = [[touches anyObject] locationInView:self];
-	CGRect newFrame = CGRectMake(self.frame.origin.x + point.x - _touchStart.x,
-								 self.frame.origin.y + point.y - _touchStart.y,
-								 self.frame.size.width,
-								 self.frame.size.height);
-	
-	/* Do not allow dragging outside the grid */
-	const CGPoint topLeft = CGPointMake(CGRectGetMinX(newFrame), CGRectGetMinY(newFrame));
-	const CGPoint topRight = CGPointMake(CGRectGetMaxX(newFrame), CGRectGetMinY(newFrame));
-	const CGPoint bottomLeft = CGPointMake(CGRectGetMinX(newFrame), CGRectGetMaxY(newFrame));
-	const CGPoint bottomRight = CGPointMake(CGRectGetMaxX(newFrame), CGRectGetMaxY(newFrame));
-	
-	if (![self.weekView.gridView hitTest:topLeft withEvent:event]) {
-		return;
-	}
-	if (![self.weekView.gridView hitTest:topRight withEvent:event]) {
-		return;
-	}
-	if (![self.weekView.gridView hitTest:bottomLeft withEvent:event]) {
-		return;
-	}
-	if (![self.weekView.gridView hitTest:bottomRight withEvent:event]) {
-		return;
-	}
-	
-	self.frame = newFrame;
-	
-	self.weekView.swipeLeftRecognizer.enabled = NO;
-	self.weekView.swipeRightRecognizer.enabled = NO;
-	_wasDragged = YES;
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

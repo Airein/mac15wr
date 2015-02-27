@@ -8,7 +8,12 @@
 
 #import "LeftViewController.h"
 
-@interface LeftViewController ()
+
+#define BG_OFFSET SCREEN_WIDTH-80
+
+@interface LeftViewController (){
+    CGPoint contentCenter;
+}
 
 @end
 
@@ -19,19 +24,43 @@
     // Do any additional setup after loading the view.
     
     self.contentView = [[UIView alloc] init];
-    self.contentView.backgroundColor = [UIColor emerlandColor];
-    self.contentView.frame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height);
+    self.contentView.backgroundColor = [UIColor pomegranateColor];
+    self.contentView.frame = CGRectMake(0, 0, SCREEN_WIDTH - 80, SCREEN_HEIGHT-80);
+    contentCenter =  CGPointMake(0, SCREEN_HEIGHT/2);
     self.contentView.alpha = 0.3;
-    self.contentView.center = CGPointMake(-CGRectGetMidX(self.view.bounds), [[UIScreen mainScreen] bounds].size.height/2);
+    self.contentView.center = CGPointMake(contentCenter.x - BG_OFFSET, contentCenter.y);
+
 
     
-    UILabel *lbl = [[UILabel alloc] init];
-    lbl.frame = CGRectMake(self.contentView.bounds.origin.x, self.contentView.bounds.size.height/2, 300, 100);
-    lbl.text = @"Hello";
-    [self.contentView addSubview:lbl];
+    UILabel *lbl1 = [[UILabel alloc] init];
+    lbl1.frame = CGRectMake(0, 200, 300, 100);
+//    lbl1.center = CGPointMake(CGRectGetWidth(self.contentView.frame)/2, CGRectGetHeight(self.contentView.frame)/2);
+    lbl1.text = @"Student Profile";
+    lbl1.textColor = [UIColor WR_USC_Yellow];
+    lbl1.font = [UIFont boldSystemFontOfSize:24.f];
+    
+    [self.contentView addSubview:lbl1];
+    
+    UILabel *lbl2 = [[UILabel alloc] init];
+    lbl2.frame = CGRectMake(0, 240, 300, 100);
+//    lbl2.center = CGPointMake(CGRectGetWidth(self.contentView.frame)/2, CGRectGetHeight(self.contentView.frame)/2);
+    lbl2.text = @"Preferences";
+    lbl2.textColor = [UIColor WR_USC_Yellow];
+    lbl2.font = [UIFont boldSystemFontOfSize:24.f];
+    [self.contentView addSubview:lbl2];
+    
+    UILabel *lbl3 = [[UILabel alloc] init];
+    lbl3.frame = CGRectMake(0, 280, 300, 100);
+//    lbl3.center = CGPointMake(CGRectGetWidth(self.contentView.frame)/2, CGRectGetHeight(self.contentView.frame)/2);
+    lbl3.text = @"System Setting";
+    lbl3.textColor = [UIColor WR_USC_Yellow];
+    lbl3.font = [UIFont boldSystemFontOfSize:24.f];
+    [self.contentView addSubview:lbl3];
     
     [self.view addSubview:self.contentView];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -61,7 +90,7 @@
 //    //[UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
 //    [UIView commitAnimations];
     
-    [UIView animateWithDuration:1.2 animations:^{
+    [UIView animateWithDuration:FIVEPAGE_TRANSITION_DURATION animations:^{
         //[UIView setAnimationDelay:1.2];//配置动画时延
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         self.contentView.center = CGPointMake(CGRectGetMidX([[UIScreen mainScreen] bounds]), CGRectGetMidY([[UIScreen mainScreen] bounds]));
@@ -77,7 +106,7 @@
 
 
 -(void) hideViewContent{
-    [UIView animateWithDuration:1.2 animations:^{
+    [UIView animateWithDuration:FIVEPAGE_TRANSITION_DURATION animations:^{
         //[UIView setAnimationDelay:1.2];//配置动画时延
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         self.contentView.center = CGPointMake(-CGRectGetMidX([[UIScreen mainScreen] bounds]), CGRectGetMidY([[UIScreen mainScreen] bounds]));

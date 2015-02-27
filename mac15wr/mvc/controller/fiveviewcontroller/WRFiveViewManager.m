@@ -68,8 +68,8 @@
         self.deckViewController.topSize = screenHeight/2-ccoffset;
         self.deckViewController.bottomSize = screenHeight/2-ccoffset;
         self.deckViewController.shadowEnabled = false;
-        self.deckViewController.openSlideAnimationDuration = 1.2f;
-        self.deckViewController.closeSlideAnimationDuration = 1.2f;
+        self.deckViewController.openSlideAnimationDuration = FIVEPAGE_TRANSITION_DURATION;  // duration 1.2
+        self.deckViewController.closeSlideAnimationDuration = FIVEPAGE_TRANSITION_DURATION;
         self.deckViewController.delegate = self;
     }
     return self.deckViewController;
@@ -93,10 +93,12 @@
             [leftViewController presentViewContent];
             break;
         }case IIViewDeckRightSide:{
-            
+            RightViewController *rightViewController = (RightViewController*)viewDeckController.rightController;
+            [rightViewController presentViewContent];
             break;
         }case IIViewDeckTopSide:{
-            
+            TopViewController *topViewController = (TopViewController*)viewDeckController.topController;
+            [topViewController presentViewContent];
             break;
         }case IIViewDeckBottomSide:{
             
@@ -114,10 +116,13 @@
             [leftViewController hideViewContent];
             break;
         }case IIViewDeckRightSide:{
-            
+            RightViewController *rightViewController = (RightViewController*)viewDeckController.rightController;
+            [rightViewController hideViewContent];
             break;
         }case IIViewDeckTopSide:{
-            
+            TopViewController *topViewController = (TopViewController*)viewDeckController.topController;
+            [topViewController hideViewContent];
+
             break;
         }case IIViewDeckBottomSide:{
             

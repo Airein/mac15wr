@@ -25,5 +25,6 @@
 
 @property (strong, nonatomic) NSMutableArray *calendarViews;
 
-
+-(void) presentViewContent;
+-(void) hideViewContent;
 @end

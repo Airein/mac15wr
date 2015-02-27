@@ -15,6 +15,8 @@
 @property (nonatomic) NSTimeInterval timeLimit;
 
 @property (nonatomic, retain) NSString *status;
+@property (nonatomic, retain) NSString *registeredPoint;  //  registered/required
+@property (nonatomic, retain) NSString *requiredPoint;
 
 @property (assign, nonatomic, readonly) double percent;
 

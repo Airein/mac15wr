@@ -8,7 +8,13 @@
 
 #import "RightViewController.h"
 
-@interface RightViewController ()
+#define BG_OFFSET SCREEN_WIDTH-80
+
+@interface RightViewController (){
+    UIView *backgroundView;
+    CGPoint bgCenter;
+    UILabel *titleLabel;
+}
 
 @end
 
@@ -23,53 +29,73 @@
 //                                            @"class two",
 //                                            nil]];
 //
-    UIView *backgroundView = [[UIView alloc] init];
+    [self loadListView];
+    [self showCheckListView];
+    
+    [self.centerViewControllerDelegate.wishlistBox addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wishlistBoxClicked)]];
+    [self.centerViewControllerDelegate.checklistBox addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checklistBoxClicked)]];
+
+}
+
+
+
+-(void) loadListView{
+    backgroundView = [[UIView alloc] init];
     backgroundView.frame = CGRectMake(100, 20, SCREEN_WIDTH-80, SCREEN_HEIGHT-40);
+    bgCenter =  backgroundView.center;
+    backgroundView.center = CGPointMake(bgCenter.x + BG_OFFSET, bgCenter.y);
     backgroundView.backgroundColor = [UIColor WR_USC_Yellow];
-    backgroundView.layer.cornerRadius = 24.0;
-    
-    
-    
-    
+    backgroundView.layer.cornerRadius = 36.0;
+    [self.view addSubview:backgroundView];
+
     UIView *headerView = [[UIView alloc] init];
     headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH-80, 40);
     headerView.backgroundColor = [UIColor WR_USC_Red];
-//    headerView.layer.cornerRadius = 24.0;
+    //    headerView.layer.cornerRadius = 24.0;
     UIRectCorner corner = UIRectCornerTopLeft;
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:headerView.bounds byRoundingCorners:corner cornerRadii:CGSizeMake(20, 20)];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:headerView.bounds byRoundingCorners:corner cornerRadii:CGSizeMake(40, 40)];
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = headerView.bounds;
     maskLayer.path = maskPath.CGPath;
     headerView.layer.mask = maskLayer;
     [backgroundView addSubview:headerView];
     
-    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel = [[UILabel alloc] init];
     titleLabel.frame = CGRectMake(0, 0, CGRectGetWidth(headerView.bounds), CGRectGetHeight(headerView.bounds));
-    titleLabel.text = @"Check List";
+//    titleLabel.text = @"Wish List";
     titleLabel.textColor = [UIColor WR_USC_Yellow];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont boldSystemFontOfSize:35.0];
     [headerView addSubview:titleLabel];
-
-    _wishlistTable = [[WishListTableView alloc] initWithFrame:CGRectMake(10, 50, CGRectGetWidth(backgroundView.bounds)-30, CGRectGetHeight(backgroundView.bounds)-60)];
-    [_wishlistTable reloadData];
     
-//    _wishlistTable.frame = self.view.bounds;
+    
+    // wish list
+    _wishlistTable = [[WishListTableView alloc] initWithFrame:CGRectMake(10, 50, CGRectGetWidth(backgroundView.bounds)-30, CGRectGetHeight(backgroundView.bounds)-65)];
+    [_wishlistTable reloadData];
     _wishlistTable.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [backgroundView addSubview:_wishlistTable];
-//    [_wishlistTable._bigTableView ]
-//    _wishlistTable.separatorColor = [UIColor clearColor];
-//    _wishlistTable.alpha = 0.9;
-//    _wishlistTable.backgroundColor = [UIColor alizarinColor];
-//    _wishlistTable.delegate = self;
-//    _wishlistTable.dataSource = self;
-//    //_wishlistTable.dataSource = _checklistContent;
-    [self.view addSubview:backgroundView];
-    
-    
-    
-    
+    // checkout list
+    _checkoutTable = [[CheckListTableView alloc] initWithFrame:CGRectMake(10, 50, CGRectGetWidth(backgroundView.bounds)-30, CGRectGetHeight(backgroundView.bounds)-65)];
+    [_checkoutTable reloadData];
+    _checkoutTable.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    [backgroundView addSubview:_checkoutTable];
+//    _checkoutTable.alpha = 0;
 }
+
+-(void)showWishListView{
+    self.wishlistTable.alpha = 1;
+    self.checkoutTable.alpha = 0;
+    titleLabel.text = @"Wish List";
+}
+
+-(void)showCheckListView{
+    self.wishlistTable.alpha = 0;
+    self.checkoutTable.alpha = 1;
+    titleLabel.text = @"Checkout List";
+}
+
+
+
 
 //
 //#pragma mark - Table View Data source
@@ -149,5 +175,56 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void) openWishListView{
+    if ([self.viewDeckController isSideClosed:IIViewDeckRightSide]) {
+        [self.viewDeckController openRightView];
+    }
+    [self showWishListView];
+}
+-(void) openCheckListView{
+    if ([self.viewDeckController isSideClosed:IIViewDeckRightSide]) {
+        [self.viewDeckController openRightView];
+    }
+    [self showCheckListView];
+}
+
+-(void)wishlistBoxClicked{
+    [self openWishListView];
+}
+
+-(void)checklistBoxClicked{
+    [self openCheckListView];
+}
+
+
+
+-(void) presentViewContent{
+    [UIView animateWithDuration:FIVEPAGE_TRANSITION_DURATION animations:^{
+        //[UIView setAnimationDelay:1.2];//配置动画时延
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        backgroundView.center = bgCenter;//CGPointMake(bgCenter.x + 100, bgCenter.y);
+        [backgroundView setAlpha:1.0];
+       
+    } completion:^(BOOL finished) {
+        //执行完后走这里的代码块
+    }];
+    
+}
+
+
+-(void) hideViewContent{
+    [UIView animateWithDuration:FIVEPAGE_TRANSITION_DURATION animations:^{
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        backgroundView.center = CGPointMake(bgCenter.x + BG_OFFSET, bgCenter.y);
+        [backgroundView setAlpha:0.2];
+        
+    } completion:^(BOOL finished) {
+        //执行完后走这里的代码块
+    }];
+}
+
+
+
 
 @end
