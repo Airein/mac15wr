@@ -11,6 +11,8 @@
 #import "SRFSurfboardPanel.h"
 #import "UIButton+IndexPath.h"
 
+
+
 /**
  *  An identifier for surfboard cells.
  */
@@ -50,6 +52,11 @@ static NSString *kSurfboardPanelIdentifier = @"com.mosheberman.surfboard-panel";
 @end
 
 @implementation SRFSurfboardViewController
+
+
+// Please use the client ID created for you by Google.
+static NSString * const kClientID =
+@"505486916113-8mdlode4utlqdoq7vr83l0ric7g5h6r9.apps.googleusercontent.com";
 
 #pragma mark - Initializers
 
@@ -177,7 +184,19 @@ static NSString *kSurfboardPanelIdentifier = @"com.mosheberman.surfboard-panel";
     
 //        self.collectionView.layer.borderColor = [UIColor redColor].CGColor;
 //        self.collectionView.layer.borderWidth = 2.0f;
+    
+    
+    
+    
+    
+    
+    
 }
+
+
+
+
+
 
 /**
  *  Add a page control

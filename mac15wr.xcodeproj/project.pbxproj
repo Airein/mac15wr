@@ -158,10 +158,12 @@
 		1FFE59121A9C3A9400BAB220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFE59101A9C3A1800BAB220 /* Foundation.framework */; };
 		1FFE59131A9C3A9C00BAB220 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFE590E1A9C396200BAB220 /* CoreData.framework */; };
 		1FFE59581A9C595E00BAB220 /* WREvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFE59571A9C595E00BAB220 /* WREvent.m */; };
+		FA1FB9841AA05EF200774B7A /* WRDataFormatChange.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB9831AA05EF200774B7A /* WRDataFormatChange.m */; };
+		FA1FB98B1AA0645100774B7A /* WRRealmCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB98A1AA0645100774B7A /* WRRealmCheckList.m */; };
+		FA1FB98E1AA06D4E00774B7A /* WRRealmUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */; };
 		FA474A911AA0325800C33517 /* WRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A901AA0325800C33517 /* WRLoginViewController.m */; };
 		FA474A961AA0328000C33517 /* WRCourseDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A931AA0328000C33517 /* WRCourseDViewController.m */; };
 		FA474A971AA0328000C33517 /* WRCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A951AA0328000C33517 /* WRCourseTableViewController.m */; };
-		FA474AA41AA032D800C33517 /* WRCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A9B1AA032D800C33517 /* WRCheckList.m */; };
 		FA474AA51AA032D800C33517 /* WRDept.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A9D1AA032D800C33517 /* WRDept.m */; };
 		FA474AA61AA032D800C33517 /* WRSchool.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A9F1AA032D800C33517 /* WRSchool.m */; };
 		FA474AA71AA032D800C33517 /* WRSchoolList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AA11AA032D800C33517 /* WRSchoolList.m */; };
@@ -497,14 +499,18 @@
 		1FFE59101A9C3A1800BAB220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1FFE59561A9C595E00BAB220 /* WREvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WREvent.h; sourceTree = "<group>"; };
 		1FFE59571A9C595E00BAB220 /* WREvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WREvent.m; sourceTree = "<group>"; };
+		FA1FB9821AA05EF200774B7A /* WRDataFormatChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRDataFormatChange.h; sourceTree = "<group>"; };
+		FA1FB9831AA05EF200774B7A /* WRDataFormatChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDataFormatChange.m; sourceTree = "<group>"; };
+		FA1FB9891AA0645100774B7A /* WRRealmCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmCheckList.h; sourceTree = "<group>"; };
+		FA1FB98A1AA0645100774B7A /* WRRealmCheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmCheckList.m; sourceTree = "<group>"; };
+		FA1FB98C1AA06D4E00774B7A /* WRRealmUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmUsers.h; sourceTree = "<group>"; };
+		FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmUsers.m; sourceTree = "<group>"; };
 		FA474A8F1AA0325800C33517 /* WRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRLoginViewController.h; sourceTree = "<group>"; };
 		FA474A901AA0325800C33517 /* WRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRLoginViewController.m; sourceTree = "<group>"; };
 		FA474A921AA0328000C33517 /* WRCourseDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseDViewController.h; sourceTree = "<group>"; };
 		FA474A931AA0328000C33517 /* WRCourseDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseDViewController.m; sourceTree = "<group>"; };
 		FA474A941AA0328000C33517 /* WRCourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewController.h; sourceTree = "<group>"; };
 		FA474A951AA0328000C33517 /* WRCourseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewController.m; sourceTree = "<group>"; };
-		FA474A9A1AA032D800C33517 /* WRCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCheckList.h; sourceTree = "<group>"; };
-		FA474A9B1AA032D800C33517 /* WRCheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCheckList.m; sourceTree = "<group>"; };
 		FA474A9C1AA032D800C33517 /* WRDept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRDept.h; sourceTree = "<group>"; };
 		FA474A9D1AA032D800C33517 /* WRDept.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDept.m; sourceTree = "<group>"; };
 		FA474A9E1AA032D800C33517 /* WRSchool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSchool.h; sourceTree = "<group>"; };
@@ -961,6 +967,7 @@
 		1F9292A21A881DCE001B8A45 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FA1FB9851AA062E200774B7A /* database */,
 				FA474AD21AA036C900C33517 /* wrtable */,
 				1FC508C71A9DAABA00CBCA88 /* viewmodel */,
 				1FFE59551A9C594400BAB220 /* calendarmodel */,
@@ -1038,6 +1045,8 @@
 				1F9292DF1A8833C5001B8A45 /* WRFoundation.h */,
 				1FB85FAD1A93202E00119A34 /* WRDevice.h */,
 				1FB85FAE1A93202E00119A34 /* WRDevice.m */,
+				FA1FB9821AA05EF200774B7A /* WRDataFormatChange.h */,
+				FA1FB9831AA05EF200774B7A /* WRDataFormatChange.m */,
 			);
 			path = foundation;
 			sourceTree = "<group>";
@@ -1464,8 +1473,6 @@
 		1FD7CAB41A88AF5E009857F7 /* wrmodel */ = {
 			isa = PBXGroup;
 			children = (
-				FA474A9A1AA032D800C33517 /* WRCheckList.h */,
-				FA474A9B1AA032D800C33517 /* WRCheckList.m */,
 				FA474A9C1AA032D800C33517 /* WRDept.h */,
 				FA474A9D1AA032D800C33517 /* WRDept.m */,
 				FA474A9E1AA032D800C33517 /* WRSchool.h */,
@@ -1505,6 +1512,17 @@
 			children = (
 			);
 			name = wrcalendar;
+			sourceTree = "<group>";
+		};
+		FA1FB9851AA062E200774B7A /* database */ = {
+			isa = PBXGroup;
+			children = (
+				FA1FB9891AA0645100774B7A /* WRRealmCheckList.h */,
+				FA1FB98A1AA0645100774B7A /* WRRealmCheckList.m */,
+				FA1FB98C1AA06D4E00774B7A /* WRRealmUsers.h */,
+				FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */,
+			);
+			path = database;
 			sourceTree = "<group>";
 		};
 		FA474ACB1AA0366B00C33517 /* MGSwipeTableCell */ = {
@@ -1667,6 +1685,7 @@
 				1F46A2B91A8C7BF000DF74B7 /* FUIButton.m in Sources */,
 				1FA99E001A8859E900CDCA6E /* DDLog.m in Sources */,
 				1F8A258F1A99B08B00B3EACB /* CKRadialMenu.m in Sources */,
+				FA1FB98B1AA0645100774B7A /* WRRealmCheckList.m in Sources */,
 				1FC508E91A9EDAAD00CBCA88 /* WRPopupView.m in Sources */,
 				1FB85F911A916DF900119A34 /* OverallCircleProgressView.m in Sources */,
 				1FA99E021A8859E900CDCA6E /* DDContextFilterLogFormatter.m in Sources */,
@@ -1681,6 +1700,7 @@
 				1FA99DFF1A8859E900CDCA6E /* DDFileLogger.m in Sources */,
 				1FB85FA71A931B3100119A34 /* KLCPopup.m in Sources */,
 				1FB85F761A90595100119A34 /* SDiPhoneVersion.m in Sources */,
+				FA1FB98E1AA06D4E00774B7A /* WRRealmUsers.m in Sources */,
 				1F9292E81A883974001B8A45 /* UIFont+AirExtension.m in Sources */,
 				1F3FDECE1A9FBDC20080A77C /* FTCoreTextView.m in Sources */,
 				1FB85F961A9176A400119A34 /* UIView+WhenTappedBlocks.m in Sources */,
@@ -1734,6 +1754,7 @@
 				003C342E1A8729E7003097DD /* ViewController.m in Sources */,
 				1F3FDECD1A9FBDC20080A77C /* FTCoreTextStyle.m in Sources */,
 				1FA99DFA1A8859E900CDCA6E /* CLIColor.m in Sources */,
+				FA1FB9841AA05EF200774B7A /* WRDataFormatChange.m in Sources */,
 				FA474A971AA0328000C33517 /* WRCourseTableViewController.m in Sources */,
 				1FA99DFE1A8859E900CDCA6E /* DDASLLogger.m in Sources */,
 				003C342B1A8729E7003097DD /* AppDelegate.m in Sources */,
@@ -1749,7 +1770,6 @@
 				1F46A2CB1A8C7BF000DF74B7 /* UIToolbar+FlatUI.m in Sources */,
 				1F3FDEDC1A9FE88F0080A77C /* WRReminderView.m in Sources */,
 				1F3FDEC21A9FA9D10080A77C /* WRViewerViewController.m in Sources */,
-				FA474AA41AA032D800C33517 /* WRCheckList.m in Sources */,
 				1FB85FB31A9339AE00119A34 /* TDBadgedCell.m in Sources */,
 				1FC508E31A9ECE0300CBCA88 /* WRPayDueView.m in Sources */,
 				1FB85FAF1A93202E00119A34 /* WRDevice.m in Sources */,

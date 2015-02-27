@@ -10,7 +10,7 @@
 #import "WRDescTableViewCell.h"
 #import "WRSectionTableViewCell.h"
 #import "WRSection.h"
-#import "WRCheckList.h"
+#import "WRRealmCheckList.h"
 #import <Realm/Realm.h>
 
 @implementation WRCourseDViewController
@@ -118,18 +118,13 @@
     
     //realm, data put in
     RLMRealm *defaultRealm = [RLMRealm defaultRealm];
-    WRCheckList *checklist=[[WRCheckList alloc] init];
+    WRRealmCheckList *checklist=[[WRRealmCheckList alloc] init];
     [defaultRealm beginWriteTransaction];
-    checklist.section=[NSJSONSerialization dataWithJSONObject:[self.sections objectAtIndex:row]
-                                                       options:0
-                                                         error:nil];
+//    checklist.section=[NSJSONSerialization dataWithJSONObject:[self.sections objectAtIndex:row]
+//                                                       options:0
+//                                                         error:nil];
     
-//    NSData to NSDictionary
-//    NSDictionary *jsonObject=[NSJSONSerialization
-//                              JSONObjectWithData:checklist.section
-//                              options:NSJSONReadingMutableLeaves
-//                              error:nil];
-//    NSLog(@"jsonObject is %@",jsonObject);
+    checklist.section=[WRDataFormatChange NSDictionary2NSData:[self.sections objectAtIndex:row]];
 
     
     checklist.sis_course_id=self.courseSelected.sis_course_id;

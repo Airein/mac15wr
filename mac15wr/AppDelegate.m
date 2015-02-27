@@ -7,13 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import "WRFiveViewManager.h"
-#import "SRFSurfboard.h"
 #import <GooglePlus/GooglePlus.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
+#import "WRFiveViewManager.h"
+#import "SRFSurfboard.h"
+#import "WRRealmUsers.h"
+
+
 
 @interface AppDelegate ()<SRFSurfboardDelegate>
-
+@property GPPSignIn *signIn;
 @end
 
 
@@ -60,6 +63,8 @@ static NSString * const kClientID =
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    
+    //google+ login
     GPPSignIn *signin=[GPPSignIn sharedInstance];
     signin.clientID=kClientID;
     signin.scopes=@[kGTLAuthScopePlusLogin];
@@ -131,6 +136,28 @@ static NSString * const kClientID =
 - (void)surfboard:(SRFSurfboardViewController *)surfboard didShowPanelAtIndex:(NSInteger)index
 {
     //    NSLog(@"Index: %i", index);
+}
+
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
+                   error: (NSError *) error {
+    if (error) {
+        // Do some error handling here.
+        NSLog(@"Error");
+        [self.signIn authenticate];
+    } else {
+        NSLog(@"Successful Login");
+        //store user_info
+        WRRealmUsers* users=[[WRRealmUsers alloc] init];
+        RLMRealm *realm=[RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
+        users.email=self.signIn.userEmail;
+        [realm addObject:users];
+        [realm commitWriteTransaction];
+        
+        UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
+        self.window.rootViewController = myView;
+    }
 }
 
 

@@ -14,13 +14,13 @@
 @property NSDictionary* data;
 
 
--(NSString*)getCourseInSpecificTerm: (NSString*) terms andDept:(NSString*) dept;
--(NSString*)getCourseInSpecificTerm: (NSString*) terms;
--(NSString*)getSchoolList;
--(NSString*)getAvailabelTerm;
--(NSString*)getAllProfessors;
++ (NSString*)getCourseInSpecificTerm: (NSString*) terms andDept:(NSString*) dept;
++ (NSString*)getCourseInSpecificTerm: (NSString*) terms;
++ (NSString*)getSchoolList;
++ (NSString*)getAvailabelTerm;
++ (NSString*)getAllProfessors;
 
--(NSString*)getCourseSerchConditonsWithCourseRating:(NSString*)cRating
++ (NSString*)stringOfCourseSerchConditonsWithCourseRating:(NSString*)cRating
                                          ProfRating:(NSString*)pRating
                                                 Day:(NSInteger*)day
                                           TimeStart:(NSInteger*)tStart
@@ -28,7 +28,7 @@
                                   TimeTypeAsInclude:(NSString*)tType;
 
 
--(NSString*)searchCourseByCoditions:(NSString*)conditions
++ (NSString*)searchCourseByCoditions:(NSString*)conditions
                                Term:(NSString*) term
                                Dept:(NSString*)dept;
 

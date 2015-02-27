@@ -12,12 +12,12 @@
 @end
 @implementation WRFetchData
 
--(NSString*)getCourseInSpecificTerm:(NSString *)terms {
++ (NSString*)getCourseInSpecificTerm:(NSString *)terms {
     NSString *getString=[[NSString alloc]initWithFormat:@"course/search/%@",terms];
     return getString;
 }
 
--(NSString*)getCourseInSpecificTerm: (NSString*) terms andDept:(NSString*) dept {
++(NSString*)getCourseInSpecificTerm: (NSString*) terms andDept:(NSString*) dept {
     
     NSString *getString=[[NSString alloc]initWithFormat:@"course/search/%@/%@",terms,dept];
 //    [[WRAPIClient sharedClient] GET:getString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
@@ -37,21 +37,21 @@
     return getString;
 }
 
--(NSString*)getSchoolList {
++ (NSString*)getSchoolList {
     NSString *getString=@"misc/school";
     return getString;
 }
 
--(NSString*)getAvailabelTerm {
++ (NSString*)getAvailabelTerm {
     NSString *getString=@"misc/term";
     return getString;
 }
--(NSString*)getAllProfessors {
++ (NSString*)getAllProfessors {
     NSString *getString=@"misc/prof/All";
     return getString;
 }
 
--(NSString*)getCourseSerchConditonsWithCourseRating:(NSString*)cRating
++ (NSString*)stringOfCourseSerchConditonsWithCourseRating:(NSString*)cRating
                                          ProfRating:(NSString*)pRating
                                                 Day:(NSInteger*)day
                                           TimeStart:(NSInteger*)tStart
@@ -62,7 +62,7 @@
             cRating,pRating,day,tStart,tEnd,tType];
 }
 
--(NSString*)searchCourseByCoditions:(NSString*)conditions
++ (NSString*)searchCourseByCoditions:(NSString*)conditions
                                Term:(NSString*) term
                                Dept:(NSString*)dept{
     NSString *getString=[[NSString alloc]
