@@ -46,17 +46,17 @@
         
     }];
     
-    NSString* schoollistString=[WRFetchData getSchoolList];
-    [[WRAPIClient sharedClient] GET:schoollistString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
-        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
-        for (NSDictionary *course_attributes in JSON) {
-            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
-            [self.mutableCourses addObject:course];
-        }
-        
-    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-        
-    }];
+//    NSString* schoollistString=[WRFetchData getSchoolList];
+//    [[WRAPIClient sharedClient] GET:schoollistString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+//        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
+//        for (NSDictionary *course_attributes in JSON) {
+//            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
+//            [self.mutableCourses addObject:course];
+//        }
+//        
+//    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+//        
+//    }];
     
     
     

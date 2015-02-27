@@ -135,6 +135,7 @@
     //return mainview
     NSLog(@"pop");
     [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)addToWishList:(id)sender {

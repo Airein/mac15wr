@@ -192,6 +192,7 @@
 		FA474ADB1AA036C900C33517 /* WRSectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AD81AA036C900C33517 /* WRSectionTableViewCell.m */; };
 		FA51221A1AA0FC6E00E24E61 /* WRRealmSchoolList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5122191AA0FC6E00E24E61 /* WRRealmSchoolList.m */; };
 		FA51221C1AA1131C00E24E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA51221B1AA1131C00E24E61 /* Main.storyboard */; };
+		FA51221F1AA11BED00E24E61 /* WRRealmCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = FA51221E1AA11BED00E24E61 /* WRRealmCourse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -557,6 +558,8 @@
 		FA5122181AA0FC6E00E24E61 /* WRRealmSchoolList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmSchoolList.h; sourceTree = "<group>"; };
 		FA5122191AA0FC6E00E24E61 /* WRRealmSchoolList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmSchoolList.m; sourceTree = "<group>"; };
 		FA51221B1AA1131C00E24E61 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FA51221D1AA11BED00E24E61 /* WRRealmCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmCourse.h; sourceTree = "<group>"; };
+		FA51221E1AA11BED00E24E61 /* WRRealmCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmCourse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1541,6 +1544,8 @@
 				FA1FB9961AA0F63F00774B7A /* WRRealmCalendar.m */,
 				FA5122181AA0FC6E00E24E61 /* WRRealmSchoolList.h */,
 				FA5122191AA0FC6E00E24E61 /* WRRealmSchoolList.m */,
+				FA51221D1AA11BED00E24E61 /* WRRealmCourse.h */,
+				FA51221E1AA11BED00E24E61 /* WRRealmCourse.m */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -1776,6 +1781,7 @@
 				1FD7CA711A88A08C009857F7 /* AFURLRequestSerialization.m in Sources */,
 				003C342E1A8729E7003097DD /* ViewController.m in Sources */,
 				1F3FDECD1A9FBDC20080A77C /* FTCoreTextStyle.m in Sources */,
+				FA51221F1AA11BED00E24E61 /* WRRealmCourse.m in Sources */,
 				1FA99DFA1A8859E900CDCA6E /* CLIColor.m in Sources */,
 				FA1FB9841AA05EF200774B7A /* WRDataFormatChange.m in Sources */,
 				FA474A971AA0328000C33517 /* WRCourseTableViewController.m in Sources */,

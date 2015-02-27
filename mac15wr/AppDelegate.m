@@ -126,6 +126,34 @@ static NSString * const kClientID =
     //        [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
     //        IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
     //        self.window.rootViewController = deckViewController;
+//    //fetch data from back-end
+//    NSString *courseString=[WRFetchData
+//                            searchCourseByCoditions:[WRFetchData
+//                                                     stringOfCourseSerchConditonsWithCourseRating:@"3" ProfRating:@"3"
+//                                                     Day:nil
+//                                                     TimeStart:nil
+//                                                     TimeEnd:nil
+//                                                     TimeTypeAsInclude:@""]
+//                            Term:@"20151"
+//                            Dept:@"CSCI"];
+//    [[WRAPIClient sharedClient] GET:courseString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+//        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
+//        for (NSDictionary *course_attributes in JSON) {
+//            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
+//            [self.mutableCourses addObject:course];
+//        }
+//        
+//    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+//        
+//    }];
+    
+    
+    
+    
+    
+    
+    
+    
     
     //google login
     //ONLY work when user already logined in
