@@ -121,15 +121,15 @@ static NSString * const kClientID =
  */
 - (void)surfboard:(SRFSurfboardViewController *)surfboard didTapButtonAtIndexPath:(NSIndexPath *)indexPath
 {
-    //        WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
-    //        [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
-    //        IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
-    //        self.window.rootViewController = deckViewController;
+            WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+            [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+            IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+            self.window.rootViewController = deckViewController;
     
     
-    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
-    self.window.rootViewController = myView;
+//    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
+//    self.window.rootViewController = myView;
     
 }
 

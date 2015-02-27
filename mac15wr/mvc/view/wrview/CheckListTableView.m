@@ -8,6 +8,8 @@
 
 #import "CheckListTableView.h"
 #import "CheckListCell.h"
+#import <Realm/Realm.h>
+#import "WRRealmCheckList.h"
 
 @implementation CheckListTableView
 
@@ -17,6 +19,14 @@
     self = [super initWithFrame:frame style:UITableViewStyleGrouped];
     self.separatorColor = [UIColor clearColor];
     self.backgroundColor = [UIColor clearColor];
+    
+    
+    // get checklist
+    RLMResults *checklistItems = [WRRealmCheckList allObjects]; // retrieves all Dogs from the default Realm
+    for (WRRealmCheckList *item in checklistItems) {
+        NSLog(@"%@",item.sis_course_id);
+        
+    }
     
     //所有的总数据数组 数组套数组 最里面是model 下边创建的仅仅是测试数组
     _array = [[NSMutableArray alloc]initWithCapacity:0];

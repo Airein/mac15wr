@@ -265,6 +265,8 @@
         switch (index) {
             case 0:{    // Choose course
                 NSLog(@"0");
+                
+                
                 break;
             } case 1:{  // Check Wish List
                 RightViewController *rightViewController = (RightViewController*)self.parentControllerDelegate.viewDeckController.rightController;
