@@ -85,9 +85,14 @@
  */
 - (void)surfboard:(SRFSurfboardViewController *)surfboard didTapButtonAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
-//    [self dismissViewControllerAnimated:YES completion:nil];
+//        WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+//        [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+//        IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+//        self.window.rootViewController = deckViewController;
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
+    self.window.rootViewController = myView;
+
     
     
 }

@@ -10,7 +10,6 @@
 		003C34281A8729E7003097DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C34271A8729E7003097DD /* main.m */; };
 		003C342B1A8729E7003097DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C342A1A8729E7003097DD /* AppDelegate.m */; };
 		003C342E1A8729E7003097DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C342D1A8729E7003097DD /* ViewController.m */; };
-		003C34311A8729E7003097DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003C342F1A8729E7003097DD /* Main.storyboard */; };
 		003C34331A8729E7003097DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003C34321A8729E7003097DD /* Images.xcassets */; };
 		003C34361A8729E7003097DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003C34341A8729E7003097DD /* LaunchScreen.xib */; };
 		003C34421A8729E7003097DD /* mac15wrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C34411A8729E7003097DD /* mac15wrTests.m */; };
@@ -159,6 +158,34 @@
 		1FFE59121A9C3A9400BAB220 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFE59101A9C3A1800BAB220 /* Foundation.framework */; };
 		1FFE59131A9C3A9C00BAB220 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FFE590E1A9C396200BAB220 /* CoreData.framework */; };
 		1FFE59581A9C595E00BAB220 /* WREvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFE59571A9C595E00BAB220 /* WREvent.m */; };
+		FA474A911AA0325800C33517 /* WRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A901AA0325800C33517 /* WRLoginViewController.m */; };
+		FA474A961AA0328000C33517 /* WRCourseDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A931AA0328000C33517 /* WRCourseDViewController.m */; };
+		FA474A971AA0328000C33517 /* WRCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A951AA0328000C33517 /* WRCourseTableViewController.m */; };
+		FA474AA41AA032D800C33517 /* WRCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A9B1AA032D800C33517 /* WRCheckList.m */; };
+		FA474AA51AA032D800C33517 /* WRDept.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A9D1AA032D800C33517 /* WRDept.m */; };
+		FA474AA61AA032D800C33517 /* WRSchool.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A9F1AA032D800C33517 /* WRSchool.m */; };
+		FA474AA71AA032D800C33517 /* WRSchoolList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AA11AA032D800C33517 /* WRSchoolList.m */; };
+		FA474AA81AA032D800C33517 /* WRSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AA31AA032D800C33517 /* WRSection.m */; };
+		FA474AAB1AA0337100C33517 /* WRFetchData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AAA1AA0337100C33517 /* WRFetchData.m */; };
+		FA474AB01AA0340200C33517 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474AAF1AA0340200C33517 /* libc++.dylib */; };
+		FA474AB21AA0340800C33517 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474AB11AA0340800C33517 /* UIKit.framework */; };
+		FA474AB41AA0341500C33517 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474AB31AA0341500C33517 /* Security.framework */; };
+		FA474AB61AA0341B00C33517 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474AB51AA0341B00C33517 /* MediaPlayer.framework */; };
+		FA474AB81AA0342900C33517 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474AB71AA0342900C33517 /* CoreGraphics.framework */; };
+		FA474ABA1AA0343700C33517 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474AB91AA0343700C33517 /* CoreMotion.framework */; };
+		FA474ABC1AA0343C00C33517 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474ABB1AA0343C00C33517 /* CoreLocation.framework */; };
+		FA474ABE1AA0344A00C33517 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474ABD1AA0344A00C33517 /* AssetsLibrary.framework */; };
+		FA474AC01AA0345200C33517 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474ABF1AA0345200C33517 /* AddressBook.framework */; };
+		FA474AC21AA0346D00C33517 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474AC11AA0346D00C33517 /* Realm.framework */; };
+		FA474AC51AA034E300C33517 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474AC31AA034E300C33517 /* GoogleOpenSource.framework */; };
+		FA474AC61AA034E300C33517 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA474AC41AA034E300C33517 /* GooglePlus.framework */; };
+		FA474AC81AA0350100C33517 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA474AC71AA0350100C33517 /* GooglePlus.bundle */; };
+		FA474AD01AA0366B00C33517 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474ACD1AA0366B00C33517 /* MGSwipeButton.m */; };
+		FA474AD11AA0366B00C33517 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474ACF1AA0366B00C33517 /* MGSwipeTableCell.m */; };
+		FA474AD91AA036C900C33517 /* WRCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AD41AA036C900C33517 /* WRCourseTableViewCell.m */; };
+		FA474ADA1AA036C900C33517 /* WRDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AD61AA036C900C33517 /* WRDescTableViewCell.m */; };
+		FA474ADB1AA036C900C33517 /* WRSectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474AD81AA036C900C33517 /* WRSectionTableViewCell.m */; };
+		FA474ADC1AA03D6700C33517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA474AAC1AA033D900C33517 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -470,6 +497,48 @@
 		1FFE59101A9C3A1800BAB220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1FFE59561A9C595E00BAB220 /* WREvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WREvent.h; sourceTree = "<group>"; };
 		1FFE59571A9C595E00BAB220 /* WREvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WREvent.m; sourceTree = "<group>"; };
+		FA474A8F1AA0325800C33517 /* WRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRLoginViewController.h; sourceTree = "<group>"; };
+		FA474A901AA0325800C33517 /* WRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRLoginViewController.m; sourceTree = "<group>"; };
+		FA474A921AA0328000C33517 /* WRCourseDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseDViewController.h; sourceTree = "<group>"; };
+		FA474A931AA0328000C33517 /* WRCourseDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseDViewController.m; sourceTree = "<group>"; };
+		FA474A941AA0328000C33517 /* WRCourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewController.h; sourceTree = "<group>"; };
+		FA474A951AA0328000C33517 /* WRCourseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewController.m; sourceTree = "<group>"; };
+		FA474A9A1AA032D800C33517 /* WRCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCheckList.h; sourceTree = "<group>"; };
+		FA474A9B1AA032D800C33517 /* WRCheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCheckList.m; sourceTree = "<group>"; };
+		FA474A9C1AA032D800C33517 /* WRDept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRDept.h; sourceTree = "<group>"; };
+		FA474A9D1AA032D800C33517 /* WRDept.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDept.m; sourceTree = "<group>"; };
+		FA474A9E1AA032D800C33517 /* WRSchool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSchool.h; sourceTree = "<group>"; };
+		FA474A9F1AA032D800C33517 /* WRSchool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSchool.m; sourceTree = "<group>"; };
+		FA474AA01AA032D800C33517 /* WRSchoolList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSchoolList.h; sourceTree = "<group>"; };
+		FA474AA11AA032D800C33517 /* WRSchoolList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSchoolList.m; sourceTree = "<group>"; };
+		FA474AA21AA032D800C33517 /* WRSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSection.h; sourceTree = "<group>"; };
+		FA474AA31AA032D800C33517 /* WRSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSection.m; sourceTree = "<group>"; };
+		FA474AA91AA0337100C33517 /* WRFetchData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRFetchData.h; sourceTree = "<group>"; };
+		FA474AAA1AA0337100C33517 /* WRFetchData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRFetchData.m; sourceTree = "<group>"; };
+		FA474AAD1AA033D900C33517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA474AAF1AA0340200C33517 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		FA474AB11AA0340800C33517 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FA474AB31AA0341500C33517 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FA474AB51AA0341B00C33517 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		FA474AB71AA0342900C33517 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FA474AB91AA0343700C33517 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		FA474ABB1AA0343C00C33517 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FA474ABD1AA0344A00C33517 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		FA474ABF1AA0345200C33517 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		FA474AC11AA0346D00C33517 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		FA474AC31AA034E300C33517 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
+		FA474AC41AA034E300C33517 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
+		FA474AC71AA0350100C33517 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
+		FA474ACC1AA0366B00C33517 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		FA474ACD1AA0366B00C33517 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		FA474ACE1AA0366B00C33517 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		FA474ACF1AA0366B00C33517 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		FA474AD31AA036C900C33517 /* WRCourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewCell.h; sourceTree = "<group>"; };
+		FA474AD41AA036C900C33517 /* WRCourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewCell.m; sourceTree = "<group>"; };
+		FA474AD51AA036C900C33517 /* WRDescTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRDescTableViewCell.h; sourceTree = "<group>"; };
+		FA474AD61AA036C900C33517 /* WRDescTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDescTableViewCell.m; sourceTree = "<group>"; };
+		FA474AD71AA036C900C33517 /* WRSectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSectionTableViewCell.h; sourceTree = "<group>"; };
+		FA474AD81AA036C900C33517 /* WRSectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSectionTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,12 +546,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FFE59131A9C3A9C00BAB220 /* CoreData.framework in Frameworks */,
+				FA474AC01AA0345200C33517 /* AddressBook.framework in Frameworks */,
+				FA474ABE1AA0344A00C33517 /* AssetsLibrary.framework in Frameworks */,
 				1FFE59121A9C3A9400BAB220 /* Foundation.framework in Frameworks */,
+				FA474ABC1AA0343C00C33517 /* CoreLocation.framework in Frameworks */,
+				FA474ABA1AA0343700C33517 /* CoreMotion.framework in Frameworks */,
+				FA474AB81AA0342900C33517 /* CoreGraphics.framework in Frameworks */,
 				1F46A2CD1A8C7C1B00DF74B7 /* CoreText.framework in Frameworks */,
+				FA474AC61AA034E300C33517 /* GooglePlus.framework in Frameworks */,
+				FA474AB61AA0341B00C33517 /* MediaPlayer.framework in Frameworks */,
+				FA474AB41AA0341500C33517 /* Security.framework in Frameworks */,
+				1FD7CAB31A88AF05009857F7 /* SystemConfiguration.framework in Frameworks */,
+				FA474AB21AA0340800C33517 /* UIKit.framework in Frameworks */,
+				FA474AB01AA0340200C33517 /* libc++.dylib in Frameworks */,
+				FA474AC21AA0346D00C33517 /* Realm.framework in Frameworks */,
+				FA474AC51AA034E300C33517 /* GoogleOpenSource.framework in Frameworks */,
+				1FFE59131A9C3A9C00BAB220 /* CoreData.framework in Frameworks */,
 				1F46A2801A8C684700DF74B7 /* Accelerate.framework in Frameworks */,
 				1F46A27E1A8C683F00DF74B7 /* QuartzCore.framework in Frameworks */,
-				1FD7CAB31A88AF05009857F7 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +580,7 @@
 		003C34191A8729E7003097DD = {
 			isa = PBXGroup;
 			children = (
+				FA474ACB1AA0366B00C33517 /* MGSwipeTableCell */,
 				1F46A2751A8C657300DF74B7 /* Frameworks */,
 				003C34241A8729E7003097DD /* mac15wr */,
 				003C343E1A8729E7003097DD /* mac15wrTests */,
@@ -520,6 +602,7 @@
 			children = (
 				1F9292A61A881E03001B8A45 /* app */,
 				003C34321A8729E7003097DD /* Images.xcassets */,
+				FA474AAC1AA033D900C33517 /* Main.storyboard */,
 				003C34341A8729E7003097DD /* LaunchScreen.xib */,
 				1F9292A01A881DCE001B8A45 /* mvc */,
 				1F3FDECF1A9FD4850080A77C /* resource */,
@@ -583,6 +666,7 @@
 		1F3FDECF1A9FD4850080A77C /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				FA474AC71AA0350100C33517 /* GooglePlus.bundle */,
 				1F3FDEFF1AA01A880080A77C /* json */,
 				1F3FDED61A9FDBDD0080A77C /* image */,
 				1F3FDED71A9FDBDD0080A77C /* text */,
@@ -692,6 +776,18 @@
 		1F46A2751A8C657300DF74B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA474AC31AA034E300C33517 /* GoogleOpenSource.framework */,
+				FA474AC41AA034E300C33517 /* GooglePlus.framework */,
+				FA474AC11AA0346D00C33517 /* Realm.framework */,
+				FA474ABF1AA0345200C33517 /* AddressBook.framework */,
+				FA474ABD1AA0344A00C33517 /* AssetsLibrary.framework */,
+				FA474ABB1AA0343C00C33517 /* CoreLocation.framework */,
+				FA474AB91AA0343700C33517 /* CoreMotion.framework */,
+				FA474AB71AA0342900C33517 /* CoreGraphics.framework */,
+				FA474AB51AA0341B00C33517 /* MediaPlayer.framework */,
+				FA474AB31AA0341500C33517 /* Security.framework */,
+				FA474AB11AA0340800C33517 /* UIKit.framework */,
+				FA474AAF1AA0340200C33517 /* libc++.dylib */,
 				1FFE59101A9C3A1800BAB220 /* Foundation.framework */,
 				1FFE590E1A9C396200BAB220 /* CoreData.framework */,
 				1F46A2CC1A8C7C1B00DF74B7 /* CoreText.framework */,
@@ -849,6 +945,12 @@
 		1F9292A11A881DCE001B8A45 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA474A921AA0328000C33517 /* WRCourseDViewController.h */,
+				FA474A931AA0328000C33517 /* WRCourseDViewController.m */,
+				FA474A941AA0328000C33517 /* WRCourseTableViewController.h */,
+				FA474A951AA0328000C33517 /* WRCourseTableViewController.m */,
+				FA474A8F1AA0325800C33517 /* WRLoginViewController.h */,
+				FA474A901AA0325800C33517 /* WRLoginViewController.m */,
 				1F5006F21A900C0000DBCBA5 /* fiveviewcontroller */,
 				1F46A28B1A8C6ACE00DF74B7 /* wrcontroller */,
 				1F9292B11A8827B3001B8A45 /* WRController.h */,
@@ -859,6 +961,7 @@
 		1F9292A21A881DCE001B8A45 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FA474AD21AA036C900C33517 /* wrtable */,
 				1FC508C71A9DAABA00CBCA88 /* viewmodel */,
 				1FFE59551A9C594400BAB220 /* calendarmodel */,
 				1FD7CAB41A88AF5E009857F7 /* wrmodel */,
@@ -1289,6 +1392,8 @@
 		1FD7CA891A88A69A009857F7 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				FA474AA91AA0337100C33517 /* WRFetchData.h */,
+				FA474AAA1AA0337100C33517 /* WRFetchData.m */,
 				1FD7CA8A1A88A6E9009857F7 /* WRAPIClient.h */,
 				1FD7CA8B1A88A709009857F7 /* WRAPIClient.m */,
 				1FD7CA8D1A88AACE009857F7 /* WRAPI.h */,
@@ -1359,6 +1464,16 @@
 		1FD7CAB41A88AF5E009857F7 /* wrmodel */ = {
 			isa = PBXGroup;
 			children = (
+				FA474A9A1AA032D800C33517 /* WRCheckList.h */,
+				FA474A9B1AA032D800C33517 /* WRCheckList.m */,
+				FA474A9C1AA032D800C33517 /* WRDept.h */,
+				FA474A9D1AA032D800C33517 /* WRDept.m */,
+				FA474A9E1AA032D800C33517 /* WRSchool.h */,
+				FA474A9F1AA032D800C33517 /* WRSchool.m */,
+				FA474AA01AA032D800C33517 /* WRSchoolList.h */,
+				FA474AA11AA032D800C33517 /* WRSchoolList.m */,
+				FA474AA21AA032D800C33517 /* WRSection.h */,
+				FA474AA31AA032D800C33517 /* WRSection.m */,
 				1FD7CAB51A88AF6E009857F7 /* WRCourse.h */,
 				1FD7CAB61A88B357009857F7 /* WRCourse.m */,
 			);
@@ -1390,6 +1505,31 @@
 			children = (
 			);
 			name = wrcalendar;
+			sourceTree = "<group>";
+		};
+		FA474ACB1AA0366B00C33517 /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA474ACC1AA0366B00C33517 /* MGSwipeButton.h */,
+				FA474ACD1AA0366B00C33517 /* MGSwipeButton.m */,
+				FA474ACE1AA0366B00C33517 /* MGSwipeTableCell.h */,
+				FA474ACF1AA0366B00C33517 /* MGSwipeTableCell.m */,
+			);
+			name = MGSwipeTableCell;
+			path = mac15wr/mvc/view/MGSwipeTableCell;
+			sourceTree = "<group>";
+		};
+		FA474AD21AA036C900C33517 /* wrtable */ = {
+			isa = PBXGroup;
+			children = (
+				FA474AD31AA036C900C33517 /* WRCourseTableViewCell.h */,
+				FA474AD41AA036C900C33517 /* WRCourseTableViewCell.m */,
+				FA474AD51AA036C900C33517 /* WRDescTableViewCell.h */,
+				FA474AD61AA036C900C33517 /* WRDescTableViewCell.m */,
+				FA474AD71AA036C900C33517 /* WRSectionTableViewCell.h */,
+				FA474AD81AA036C900C33517 /* WRSectionTableViewCell.m */,
+			);
+			path = wrtable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1473,7 +1613,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				003C34311A8729E7003097DD /* Main.storyboard in Resources */,
+				FA474ADC1AA03D6700C33517 /* Main.storyboard in Resources */,
 				1F8A25911A99B08B00B3EACB /* MKRadialMenuDevMode.gif in Resources */,
 				1F3FDF011AA01A9A0080A77C /* panels.json in Resources */,
 				1F3FDED91A9FDC190080A77C /* viewer-course-in-usc.txt in Resources */,
@@ -1490,6 +1630,7 @@
 				1F8A25901A99B08B00B3EACB /* Info.plist in Resources */,
 				1F3FDED51A9FD6F20080A77C /* giraffe@2x.png in Resources */,
 				1F46A2741A8ADCE300DF74B7 /* opensource.md in Resources */,
+				FA474AC81AA0350100C33517 /* GooglePlus.bundle in Resources */,
 				1F5007081A900ED300DBCBA5 /* CenterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1512,8 +1653,10 @@
 				1F5007141A90109400DBCBA5 /* BottomViewController.h in Sources */,
 				1F5007121A90107700DBCBA5 /* TopViewController.h in Sources */,
 				1F5007111A90106800DBCBA5 /* RightViewController.h in Sources */,
+				FA474AD01AA0366B00C33517 /* MGSwipeButton.m in Sources */,
 				1F5007101A90106100DBCBA5 /* LeftViewController.h in Sources */,
 				1F50070F1A90105500DBCBA5 /* CenterViewController.h in Sources */,
+				FA474AA71AA032D800C33517 /* WRSchoolList.m in Sources */,
 				1FD7CAAE1A88AEB7009857F7 /* JSONHTTPClient.m in Sources */,
 				1FD7CA791A88A08C009857F7 /* UIProgressView+AFNetworking.m in Sources */,
 				1F46A2C61A8C7BF000DF74B7 /* UIProgressView+FlatUI.m in Sources */,
@@ -1527,6 +1670,7 @@
 				1FC508E91A9EDAAD00CBCA88 /* WRPopupView.m in Sources */,
 				1FB85F911A916DF900119A34 /* OverallCircleProgressView.m in Sources */,
 				1FA99E021A8859E900CDCA6E /* DDContextFilterLogFormatter.m in Sources */,
+				FA474A911AA0325800C33517 /* WRLoginViewController.m in Sources */,
 				1FC508E61A9ED68A00CBCA88 /* UIView+WRView.m in Sources */,
 				1F5006F81A900C2300DBCBA5 /* LeftViewController.m in Sources */,
 				1FB85F6B1A90460600119A34 /* WRFiveViewController.m in Sources */,
@@ -1554,6 +1698,7 @@
 				1FD7CA741A88A08C009857F7 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				1F46A2C41A8C7BF000DF74B7 /* UINavigationBar+FlatUI.m in Sources */,
 				1F46A2B81A8C7BF000DF74B7 /* FUIAlertView.m in Sources */,
+				FA474AA61AA032D800C33517 /* WRSchool.m in Sources */,
 				1FA99E041A8859E900CDCA6E /* DDMultiFormatter.m in Sources */,
 				1FD7CA761A88A08C009857F7 /* UIAlertView+AFNetworking.m in Sources */,
 				1FB85FA01A9301F300119A34 /* VBPiePiece.m in Sources */,
@@ -1572,11 +1717,13 @@
 				1FD7CA701A88A08C009857F7 /* AFURLConnectionOperation.m in Sources */,
 				1F3FDEFB1AA017EB0080A77C /* SRFSurfboardViewController.m in Sources */,
 				1FD7CA721A88A08C009857F7 /* AFURLResponseSerialization.m in Sources */,
+				FA474A961AA0328000C33517 /* WRCourseDViewController.m in Sources */,
 				1FA99DFC1A8859E900CDCA6E /* DDAbstractDatabaseLogger.m in Sources */,
 				1FD7CAB01A88AEB7009857F7 /* JSONKeyMapper.m in Sources */,
 				1F5006E91A900AA000DBCBA5 /* IISideController.m in Sources */,
 				1F46A2BB1A8C7BF000DF74B7 /* FUIPopoverBackgroundView.m in Sources */,
 				1FC508B71A9D717F00CBCA88 /* CalendarUIAppDelegate.m in Sources */,
+				FA474ADB1AA036C900C33517 /* WRSectionTableViewCell.m in Sources */,
 				1F5006FE1A900C3200DBCBA5 /* TopViewController.m in Sources */,
 				1FC508C31A9DA97D00CBCA88 /* WishListTableView.m in Sources */,
 				1FD7CAAD1A88AEB7009857F7 /* JSONAPI.m in Sources */,
@@ -1587,6 +1734,7 @@
 				003C342E1A8729E7003097DD /* ViewController.m in Sources */,
 				1F3FDECD1A9FBDC20080A77C /* FTCoreTextStyle.m in Sources */,
 				1FA99DFA1A8859E900CDCA6E /* CLIColor.m in Sources */,
+				FA474A971AA0328000C33517 /* WRCourseTableViewController.m in Sources */,
 				1FA99DFE1A8859E900CDCA6E /* DDASLLogger.m in Sources */,
 				003C342B1A8729E7003097DD /* AppDelegate.m in Sources */,
 				1F3FDEF81AA017EB0080A77C /* SRFSurfboardPanelCell.m in Sources */,
@@ -1597,12 +1745,15 @@
 				1FC508BF1A9D717F00CBCA88 /* TapDetectingView.m in Sources */,
 				1F9292E91A883974001B8A45 /* UIImage+AirExtension.m in Sources */,
 				1FD7CA771A88A08C009857F7 /* UIButton+AFNetworking.m in Sources */,
+				FA474AD91AA036C900C33517 /* WRCourseTableViewCell.m in Sources */,
 				1F46A2CB1A8C7BF000DF74B7 /* UIToolbar+FlatUI.m in Sources */,
 				1F3FDEDC1A9FE88F0080A77C /* WRReminderView.m in Sources */,
 				1F3FDEC21A9FA9D10080A77C /* WRViewerViewController.m in Sources */,
+				FA474AA41AA032D800C33517 /* WRCheckList.m in Sources */,
 				1FB85FB31A9339AE00119A34 /* TDBadgedCell.m in Sources */,
 				1FC508E31A9ECE0300CBCA88 /* WRPayDueView.m in Sources */,
 				1FB85FAF1A93202E00119A34 /* WRDevice.m in Sources */,
+				FA474AAB1AA0337100C33517 /* WRFetchData.m in Sources */,
 				1FD7CA7A1A88A08C009857F7 /* UIRefreshControl+AFNetworking.m in Sources */,
 				1FD7CA6C1A88A08C009857F7 /* AFHTTPRequestOperationManager.m in Sources */,
 				1FD7CAA81A88AEB7009857F7 /* JSONModel.m in Sources */,
@@ -1610,6 +1761,7 @@
 				1FD7CAB11A88AEB7009857F7 /* JSONValueTransformer.m in Sources */,
 				1F5006EA1A900AA000DBCBA5 /* IIViewDeckController.m in Sources */,
 				1FB85F681A90436D00119A34 /* CircleShapeLayer.m in Sources */,
+				FA474ADA1AA036C900C33517 /* WRDescTableViewCell.m in Sources */,
 				1FB85F671A90436D00119A34 /* CircleProgressView.m in Sources */,
 				1F46A2BE1A8C7BF000DF74B7 /* FUITextField.m in Sources */,
 				1FD7CAAF1A88AEB7009857F7 /* JSONModel+networking.m in Sources */,
@@ -1621,13 +1773,16 @@
 				1FC508D01A9DB6EF00CBCA88 /* UIColor+WRColor.m in Sources */,
 				1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */,
 				1FC508B91A9D717F00CBCA88 /* WeekViewExampleController.m in Sources */,
+				FA474AD11AA0366B00C33517 /* MGSwipeTableCell.m in Sources */,
 				1FB85F6E1A9047F000119A34 /* WRFiveViewManager.m in Sources */,
 				1FD7CAAC1A88AEB7009857F7 /* NSArray+JSONModel.m in Sources */,
 				1F5007011A900C3A00DBCBA5 /* BottomViewController.m in Sources */,
 				1F5006FB1A900C2B00DBCBA5 /* RightViewController.m in Sources */,
+				FA474AA51AA032D800C33517 /* WRDept.m in Sources */,
 				1FD7CAAB1A88AEB7009857F7 /* JSONModelError.m in Sources */,
 				003C34281A8729E7003097DD /* main.m in Sources */,
 				1F46A2C71A8C7BF000DF74B7 /* UISlider+FlatUI.m in Sources */,
+				FA474AA81AA032D800C33517 /* WRSection.m in Sources */,
 				1FC508CA1A9DAADD00CBCA88 /* WishListModel.m in Sources */,
 				1F46A2C21A8C7BF000DF74B7 /* UIFont+FlatUI.m in Sources */,
 				1FD7CAA91A88AEB7009857F7 /* JSONModelArray.m in Sources */,
@@ -1672,6 +1827,14 @@
 				003C34351A8729E7003097DD /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FA474AAC1AA033D900C33517 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA474AAD1AA033D900C33517 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1760,6 +1923,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac15wr/PrefixHeader.pch;
 				INFOPLIST_FILE = mac15wr/Info.plist;
@@ -1776,6 +1943,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac15wr/PrefixHeader.pch;
 				INFOPLIST_FILE = mac15wr/Info.plist;

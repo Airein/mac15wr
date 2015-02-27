@@ -7,3 +7,4 @@
 //
 
 #import "WRAPIClient.h"
+#import "WRFetchData.h"
