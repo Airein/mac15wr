@@ -29,28 +29,6 @@ static NSString * const kClientID =
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_trajons.jpg"]];
     
     
-    
-    
-    
-    //fetch data from usc api
-    [[WRAPIClient sharedClient] GET:@"Courses/20151/CSCI" parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
-        
-        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
-        for (NSDictionary *course_attributes in JSON) {
-            
-            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
-            [self.mutableCourses addObject:course];
-        }
-        
-    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-        
-    }];
-    
-    
-    
-    
-    
-    
     //google login
     self.signIn = [GPPSignIn sharedInstance];
     self.signIn.shouldFetchGooglePlusUser = YES;
@@ -87,26 +65,11 @@ static NSString * const kClientID =
 
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
                    error: (NSError *) error {
-//    [[[GPPSignIn sharedInstance] plusService]
-//            executeQuery:[GTLQueryPlus queryForPeopleGetWithUserId:@"me"]
-//        completionHandler:^(GTLServiceTicket *ticket,
-//                            GTLPlusPerson *person,
-//                            NSError *error) {
-////            self.profileImage.image = [UIImage imageWithData:
-////                [NSData dataWithContentsOfURL:
-////                 [NSURL URLWithString:person.image.url]]];
-//            self.displayName.text = self.signIn.userEmail;
-//    
-//        }];
-//    
-//    
-//    NSLog(@"Received error %@ and auth object %@",error, auth);
-    
-    
-    
+    NSLog(@"zzz");
     if (error) {
         // Do some error handling here.
     } else {
+        NSLog(@"abc");
         [self performSegueWithIdentifier:@"login" sender:self];
 //        [self refreshInterfaceBasedOnsignIn];
     }
