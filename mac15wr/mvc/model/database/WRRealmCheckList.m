@@ -1,14 +1,14 @@
 //
-//  WRCheckList.m
+//  WRRealmCheckList.m
 //  mac15wr
 //
-//  Created by Alex on 2/26/15.
+//  Created by Alex on 2/27/15.
 //  Copyright (c) 2015 mac15wr. All rights reserved.
 //
 
-#import "WRCheckList.h"
+#import "WRRealmCheckList.h"
 
-@implementation WRCheckList
+@implementation WRRealmCheckList
 
 // Specify default values for properties
 

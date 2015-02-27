@@ -13,6 +13,7 @@
 
 #import "WRFoundation.h"
 #import "WRNetwork.h"
+#import "WRDataFormatChange.h"
 
 
 
