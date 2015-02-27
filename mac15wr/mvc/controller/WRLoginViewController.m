@@ -65,11 +65,9 @@ static NSString * const kClientID =
 
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
                    error: (NSError *) error {
-    NSLog(@"zzz");
     if (error) {
         // Do some error handling here.
     } else {
-        NSLog(@"abc");
         [self performSegueWithIdentifier:@"login" sender:self];
 //        [self refreshInterfaceBasedOnsignIn];
     }

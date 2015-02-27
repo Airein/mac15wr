@@ -177,24 +177,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhS-vG-t9y">
-                                <rect key="frame" x="428" y="470" width="30" height="30"/>
-                                <state key="normal" title="Test">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vw4-0x-4R2" kind="showDetail" id="ygl-hP-cUH"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="uhS-vG-t9y" secondAttribute="trailing" constant="142" id="Nix-gK-dy3"/>
                             <constraint firstItem="dW2-pB-dHQ" firstAttribute="top" secondItem="hS3-X9-pYI" secondAttribute="bottom" constant="85" id="PIa-1x-uLl"/>
                             <constraint firstItem="dW2-pB-dHQ" firstAttribute="centerX" secondItem="vE4-Yp-I6x" secondAttribute="centerX" id="RBC-uo-m8y"/>
                             <constraint firstItem="fxE-nO-ceK" firstAttribute="top" secondItem="vE4-Yp-I6x" secondAttribute="bottom" constant="222" id="TjO-S0-HdY"/>
                             <constraint firstItem="vE4-Yp-I6x" firstAttribute="centerX" secondItem="VA4-wE-w6M" secondAttribute="centerX" id="igU-AC-glP"/>
-                            <constraint firstItem="fxE-nO-ceK" firstAttribute="top" secondItem="uhS-vG-t9y" secondAttribute="bottom" constant="100" id="uoL-T0-qjg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -612,7 +601,4 @@
             <point key="canvasLocation" x="3395" y="200"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ygl-hP-cUH"/>
-    </inferredMetricsTieBreakers>
 </document>
