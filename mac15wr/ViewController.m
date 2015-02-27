@@ -7,32 +7,77 @@
 //
 
 #import "ViewController.h"
-#import "WRCourse.h"
+#import <GoogleOpenSource/GoogleOpenSource.h>
+#import <GooglePlus/GooglePlus.h>
+
 
 @interface ViewController ()
+@property NSMutableArray *mutableCourses;
+@property (weak, nonatomic) IBOutlet UIButton *courseButton;
 
 @end
 
+
 @implementation ViewController
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    self.naviItem.title = self.email;
     
-    [[WRAPIClient sharedClient] GET:@"Courses/20151/FADW" parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
-       
-        NSMutableArray *mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
+    
+    
+    
+    WRFetchData* fetchdata=[[WRFetchData alloc] init];
+    NSString *courseString=[fetchdata
+                            searchCourseByCoditions:[fetchdata
+                                                               getCourseSerchConditonsWithCourseRating:@"3" ProfRating:@"3"
+                                                               Day:nil
+                                                               TimeStart:nil
+                                                               TimeEnd:nil
+                                                               TimeTypeAsInclude:@""]
+                                                         Term:@"20151"
+                                                         Dept:@"CSCI"];
+//    NSString *fetchstring=[fetchdata getCourseInSpecificTerm:@"20151" andDept:@"CSCI"];
+    [[WRAPIClient sharedClient] GET:courseString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+        
+        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *course_attributes in JSON) {
             
             WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
-            [mutableCourses addObject:course];
+            [self.mutableCourses addObject:course];
         }
+        
     } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-       
+        
     }];
     
+    
 }
+
+
+
+
+
+
+
+
+#pragma mark - pass course data between views
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ShowCourseList"] || [[segue identifier] isEqualToString:@"submitInfo"]) {
+        UINavigationController *nav = [segue destinationViewController];
+        WRCourseTableViewController* userViewController = (WRCourseTableViewController *) nav.topViewController;
+        userViewController.mutableCourses = self.mutableCourses;
+    }
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
