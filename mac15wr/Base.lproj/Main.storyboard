@@ -277,7 +277,13 @@
                             <outlet property="delegate" destination="3gL-ls-vER" id="cdg-Pi-e6P"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Courses" id="i8B-la-wgO"/>
+                    <navigationItem key="navigationItem" title="Courses" id="i8B-la-wgO">
+                        <barButtonItem key="rightBarButtonItem" title="Change" id="S1k-Ya-hm9">
+                            <connections>
+                                <segue destination="hYN-c9-dGr" kind="showDetail" id="f4m-W0-NJZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="courseSearchBar" destination="3ep-Xp-EzF" id="dWU-tv-31S"/>
                         <outlet property="searchDisplayController" destination="Rep-tc-AP5" id="00K-fl-WDG"/>
@@ -296,6 +302,33 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2657" y="200"/>
+        </scene>
+        <!--Change-->
+        <scene sceneID="Ke2-Qu-Zv8">
+            <objects>
+                <tableViewController id="6nq-Yl-V36" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="piN-hK-NRY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BWL-54-LMP">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BWL-54-LMP" id="7Ji-W3-17R">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6nq-Yl-V36" id="AF7-ZA-Mcy"/>
+                            <outlet property="delegate" destination="6nq-Yl-V36" id="pPh-bV-JDh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Change" id="yiE-qe-qsf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPR-ZN-a4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4214" y="943"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6gv-vv-yKm">
@@ -481,6 +514,9 @@
                                                     <state key="normal" title="Add to Wishlist">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addToWishList:" destination="wuI-VO-Wn0" eventType="touchUpInside" id="PNk-fT-gem"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCu-fE-Ccg">
                                                     <rect key="frame" x="478" y="68" width="114" height="30"/>
@@ -580,7 +616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4R0-ro-pFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4189" y="266"/>
+            <point key="canvasLocation" x="5001" y="266"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dBb-Qb-Hev">
@@ -599,6 +635,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pje-Xu-6cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3395" y="200"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hFH-5g-Hh6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hYN-c9-dGr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZxB-N5-86Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6nq-Yl-V36" kind="relationship" relationship="rootViewController" id="bGC-Cb-2c5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juK-Hm-Hdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3395" y="937"/>
         </scene>
     </scenes>
 </document>
