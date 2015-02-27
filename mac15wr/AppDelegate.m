@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "WRFiveViewManager.h"
-#import "WRWelcomeViewController.h"
 #import "SRFSurfboard.h"
 
 
@@ -86,11 +85,11 @@
  */
 - (void)surfboard:(SRFSurfboardViewController *)surfboard didTapButtonAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
+    WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+    [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+    IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+    self.window.rootViewController = deckViewController;
+//  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)surfboard:(SRFSurfboardViewController *)surfboard didShowPanelAtIndex:(NSInteger)index
