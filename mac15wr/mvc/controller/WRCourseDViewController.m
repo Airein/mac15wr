@@ -11,6 +11,7 @@
 #import "WRSectionTableViewCell.h"
 #import "WRSection.h"
 #import "WRRealmCheckList.h"
+#import "WRRealmWishList.h"
 #import <Realm/Realm.h>
 
 @implementation WRCourseDViewController
@@ -132,6 +133,24 @@
     
 }
 
+- (IBAction)addToWishList:(id)sender {
+    
+    NSInteger row=[[self.tableview indexPathForSelectedRow] row];
+    
+    RLMRealm *defaultRealm = [RLMRealm defaultRealm];
+    WRRealmWishList *wishlist=[[WRRealmWishList alloc] init];
+    [defaultRealm beginWriteTransaction];
+    
+    wishlist.section=[WRDataFormatChange NSDictionary2NSData:[self.sections objectAtIndex:row]];
+    
+    
+    wishlist.sis_course_id=self.courseSelected.sis_course_id;
+    wishlist.title=self.courseSelected.title;
+    [defaultRealm addObject:wishlist];
+    
+    [defaultRealm commitWriteTransaction];
+    
+}
 
 
 
