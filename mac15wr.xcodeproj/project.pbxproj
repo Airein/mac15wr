@@ -80,11 +80,14 @@
 		FA7B00BB1A9FA6D40078CBF9 /* WRSchoolList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00BA1A9FA6D40078CBF9 /* WRSchoolList.m */; };
 		FA7B00C11A9FACA10078CBF9 /* WRFetchData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00C01A9FACA10078CBF9 /* WRFetchData.m */; };
 		FA7B00C71AA0021B0078CBF9 /* WRSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7B00C61AA0021B0078CBF9 /* WRSection.m */; };
+		FA7B00C91AA011830078CBF9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7B00C81AA011830078CBF9 /* Realm.framework */; };
+		FA7B00CB1AA011C90078CBF9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7B00CA1AA011C90078CBF9 /* libc++.dylib */; };
 		FA82E7171A8DF64200FF93CD /* WRCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */; };
 		FA82E71F1A8DF81C00FF93CD /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71C1A8DF81C00FF93CD /* MGSwipeButton.m */; };
 		FA82E7201A8DF81C00FF93CD /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E71E1A8DF81C00FF93CD /* MGSwipeTableCell.m */; };
 		FA82E7301A8EDE8100FF93CD /* WRCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA82E72F1A8EDE8100FF93CD /* WRCourseTableViewCell.m */; };
 		FAA7CF5A1A9EB9EF00E85952 /* WRDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA7CF591A9EB9EF00E85952 /* WRDescTableViewCell.m */; };
+		FAFCFE021AA01BB700F6607D /* WRCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFCFE011AA01BB700F6607D /* WRCheckList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +253,8 @@
 		FA7B00C01A9FACA10078CBF9 /* WRFetchData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRFetchData.m; sourceTree = "<group>"; };
 		FA7B00C51AA0021B0078CBF9 /* WRSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSection.h; sourceTree = "<group>"; };
 		FA7B00C61AA0021B0078CBF9 /* WRSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSection.m; sourceTree = "<group>"; };
+		FA7B00C81AA011830078CBF9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		FA7B00CA1AA011C90078CBF9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		FA82E7151A8DF64200FF93CD /* WRCourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseTableViewController.h; sourceTree = "<group>"; };
 		FA82E7161A8DF64200FF93CD /* WRCourseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewController.m; sourceTree = "<group>"; };
 		FA82E71B1A8DF81C00FF93CD /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
@@ -260,6 +265,8 @@
 		FA82E72F1A8EDE8100FF93CD /* WRCourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseTableViewCell.m; sourceTree = "<group>"; };
 		FAA7CF581A9EB9EF00E85952 /* WRDescTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRDescTableViewCell.h; path = wrtable/WRDescTableViewCell.h; sourceTree = "<group>"; };
 		FAA7CF591A9EB9EF00E85952 /* WRDescTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRDescTableViewCell.m; path = wrtable/WRDescTableViewCell.m; sourceTree = "<group>"; };
+		FAFCFE001AA01BB700F6607D /* WRCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRCheckList.h; path = wrmodel/WRCheckList.h; sourceTree = "<group>"; };
+		FAFCFE011AA01BB700F6607D /* WRCheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRCheckList.m; path = wrmodel/WRCheckList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,10 +274,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7B00CB1AA011C90078CBF9 /* libc++.dylib in Frameworks */,
 				FA37C6B31A8F17EA006867A3 /* UIKit.framework in Frameworks */,
 				1FD7CAB31A88AF05009857F7 /* SystemConfiguration.framework in Frameworks */,
 				FA37C6B11A8F17D6006867A3 /* Security.framework in Frameworks */,
 				FA37C6AF1A8F17CD006867A3 /* MediaPlayer.framework in Frameworks */,
+				FA7B00C91AA011830078CBF9 /* Realm.framework in Frameworks */,
 				FA37C6AD1A8F17C4006867A3 /* CoreText.framework in Frameworks */,
 				FA37C6AB1A8F17BC006867A3 /* CoreGraphics.framework in Frameworks */,
 				FA37C6A91A8F17B3006867A3 /* CoreMotion.framework in Frameworks */,
@@ -296,6 +305,7 @@
 		003C34191A8729E7003097DD = {
 			isa = PBXGroup;
 			children = (
+				FA7B00CA1AA011C90078CBF9 /* libc++.dylib */,
 				FA82E71A1A8DF81C00FF93CD /* MGSwipeTableCell */,
 				003C34241A8729E7003097DD /* mac15wr */,
 				003C343E1A8729E7003097DD /* mac15wrTests */,
@@ -384,6 +394,8 @@
 		1F9292A21A881DCE001B8A45 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				FAFCFE001AA01BB700F6607D /* WRCheckList.h */,
+				FAFCFE011AA01BB700F6607D /* WRCheckList.m */,
 				FA82E72D1A8EDE5A00FF93CD /* wrtable */,
 				1FD7CAB41A88AF5E009857F7 /* wrmodel */,
 				1F9292B21A8827C4001B8A45 /* WRModel.h */,
@@ -695,6 +707,7 @@
 		FA37C6991A8F0C9A006867A3 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				FA7B00C81AA011830078CBF9 /* Realm.framework */,
 				FA37C6B21A8F17EA006867A3 /* UIKit.framework */,
 				FA37C6B01A8F17D6006867A3 /* Security.framework */,
 				FA37C6AE1A8F17CD006867A3 /* MediaPlayer.framework */,
@@ -896,6 +909,7 @@
 				1FD7CAA81A88AEB7009857F7 /* JSONModel.m in Sources */,
 				1FD7CAB11A88AEB7009857F7 /* JSONValueTransformer.m in Sources */,
 				1FD7CAAF1A88AEB7009857F7 /* JSONModel+networking.m in Sources */,
+				FAFCFE021AA01BB700F6607D /* WRCheckList.m in Sources */,
 				FA82E7171A8DF64200FF93CD /* WRCourseTableViewController.m in Sources */,
 				1FD7CA6F1A88A08C009857F7 /* AFSecurityPolicy.m in Sources */,
 				1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */,

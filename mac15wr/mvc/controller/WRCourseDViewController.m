@@ -10,6 +10,8 @@
 #import "WRDescTableViewCell.h"
 #import "WRSectionTableViewCell.h"
 #import "WRSection.h"
+#import "WRCheckList.h"
+#import <Realm/Realm.h>
 
 @implementation WRCourseDViewController
 
@@ -109,6 +111,29 @@
     [self.tableview setTableFooterView:v];
     
 }
+
+
+- (IBAction)addToCheckList:(id)sender {
+    NSInteger row=[[self.tableview indexPathForSelectedRow] row];
+    RLMRealm *defaultRealm = [RLMRealm defaultRealm];
+    WRCheckList *checklist=[[WRCheckList alloc] init];
+    
+    NSDictionary *aDict = @{ @"Value1": @"sadsadasdasdsadqwwqsadasd",
+                             @"Value2": @"10",
+                             @"Value3": @"12" };
+    
+    checklist.section=[NSJSONSerialization dataWithJSONObject:aDict//[self.sections objectAtIndex:row]
+                                                       options:0
+                                                         error:nil];
+    NSLog(@"%@",checklist.section);
+    checklist.sis_course_id=self.courseSelected.sis_course_id;
+    checklist.title=self.courseSelected.title;
+    [defaultRealm addObject:checklist];
+    
+    [defaultRealm commitWriteTransaction];
+    
+}
+
 
 
 

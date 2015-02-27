@@ -482,10 +482,13 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCu-fE-Ccg">
-                                                    <rect key="frame" x="519" y="68" width="73" height="30"/>
-                                                    <state key="normal" title="Add to Bin">
+                                                    <rect key="frame" x="478" y="68" width="114" height="30"/>
+                                                    <state key="normal" title="Add to Checklist">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addToCheckList:" destination="wuI-VO-Wn0" eventType="touchUpInside" id="r2k-rO-RWc"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-ei-fBu">
                                                     <rect key="frame" x="19" y="38" width="53" height="24"/>
