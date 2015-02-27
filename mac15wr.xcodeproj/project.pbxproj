@@ -162,6 +162,8 @@
 		FA1FB98B1AA0645100774B7A /* WRRealmCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB98A1AA0645100774B7A /* WRRealmCheckList.m */; };
 		FA1FB98E1AA06D4E00774B7A /* WRRealmUsers.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */; };
 		FA1FB9911AA0F38E00774B7A /* WRRealmWishList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB9901AA0F38E00774B7A /* WRRealmWishList.m */; };
+		FA1FB9941AA0F50A00774B7A /* WRCourseChangeConditionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB9931AA0F50A00774B7A /* WRCourseChangeConditionsTableViewController.m */; };
+		FA1FB9971AA0F63F00774B7A /* WRRealmCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1FB9961AA0F63F00774B7A /* WRRealmCalendar.m */; };
 		FA474A911AA0325800C33517 /* WRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A901AA0325800C33517 /* WRLoginViewController.m */; };
 		FA474A961AA0328000C33517 /* WRCourseDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A931AA0328000C33517 /* WRCourseDViewController.m */; };
 		FA474A971AA0328000C33517 /* WRCourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA474A951AA0328000C33517 /* WRCourseTableViewController.m */; };
@@ -508,6 +510,10 @@
 		FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmUsers.m; sourceTree = "<group>"; };
 		FA1FB98F1AA0F38E00774B7A /* WRRealmWishList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmWishList.h; sourceTree = "<group>"; };
 		FA1FB9901AA0F38E00774B7A /* WRRealmWishList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmWishList.m; sourceTree = "<group>"; };
+		FA1FB9921AA0F50A00774B7A /* WRCourseChangeConditionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseChangeConditionsTableViewController.h; sourceTree = "<group>"; };
+		FA1FB9931AA0F50A00774B7A /* WRCourseChangeConditionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCourseChangeConditionsTableViewController.m; sourceTree = "<group>"; };
+		FA1FB9951AA0F63F00774B7A /* WRRealmCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmCalendar.h; sourceTree = "<group>"; };
+		FA1FB9961AA0F63F00774B7A /* WRRealmCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmCalendar.m; sourceTree = "<group>"; };
 		FA474A8F1AA0325800C33517 /* WRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRLoginViewController.h; sourceTree = "<group>"; };
 		FA474A901AA0325800C33517 /* WRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRLoginViewController.m; sourceTree = "<group>"; };
 		FA474A921AA0328000C33517 /* WRCourseDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCourseDViewController.h; sourceTree = "<group>"; };
@@ -960,6 +966,8 @@
 				FA474A951AA0328000C33517 /* WRCourseTableViewController.m */,
 				FA474A8F1AA0325800C33517 /* WRLoginViewController.h */,
 				FA474A901AA0325800C33517 /* WRLoginViewController.m */,
+				FA1FB9921AA0F50A00774B7A /* WRCourseChangeConditionsTableViewController.h */,
+				FA1FB9931AA0F50A00774B7A /* WRCourseChangeConditionsTableViewController.m */,
 				1F5006F21A900C0000DBCBA5 /* fiveviewcontroller */,
 				1F46A28B1A8C6ACE00DF74B7 /* wrcontroller */,
 				1F9292B11A8827B3001B8A45 /* WRController.h */,
@@ -1526,6 +1534,8 @@
 				FA1FB98A1AA0645100774B7A /* WRRealmCheckList.m */,
 				FA1FB98C1AA06D4E00774B7A /* WRRealmUsers.h */,
 				FA1FB98D1AA06D4E00774B7A /* WRRealmUsers.m */,
+				FA1FB9951AA0F63F00774B7A /* WRRealmCalendar.h */,
+				FA1FB9961AA0F63F00774B7A /* WRRealmCalendar.m */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -1672,6 +1682,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1FB9971AA0F63F00774B7A /* WRRealmCalendar.m in Sources */,
 				1FC508E01A9EB9FD00CBCA88 /* M13BadgeView.m in Sources */,
 				1F5007141A90109400DBCBA5 /* BottomViewController.h in Sources */,
 				1F5007121A90107700DBCBA5 /* TopViewController.h in Sources */,
@@ -1750,6 +1761,7 @@
 				1F46A2BB1A8C7BF000DF74B7 /* FUIPopoverBackgroundView.m in Sources */,
 				1FC508B71A9D717F00CBCA88 /* CalendarUIAppDelegate.m in Sources */,
 				FA474ADB1AA036C900C33517 /* WRSectionTableViewCell.m in Sources */,
+				FA1FB9941AA0F50A00774B7A /* WRCourseChangeConditionsTableViewController.m in Sources */,
 				1F5006FE1A900C3200DBCBA5 /* TopViewController.m in Sources */,
 				1FC508C31A9DA97D00CBCA88 /* WishListTableView.m in Sources */,
 				1FD7CAAD1A88AEB7009857F7 /* JSONAPI.m in Sources */,

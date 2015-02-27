@@ -265,6 +265,11 @@
         switch (index) {
             case 0:{    // Choose course
                 NSLog(@"0");
+                UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"chooseCourse"];
+                [self.parentControllerDelegate presentViewController:myView animated:YES completion:nil];
+                
+                
                 break;
             } case 1:{  // Check Wish List
                 RightViewController *rightViewController = (RightViewController*)self.parentControllerDelegate.viewDeckController.rightController;
