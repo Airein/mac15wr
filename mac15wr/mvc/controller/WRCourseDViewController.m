@@ -9,6 +9,7 @@
 #import "WRCourseDViewController.h"
 #import "WRDescTableViewCell.h"
 #import "WRSectionTableViewCell.h"
+#import "WRSection.h"
 
 @implementation WRCourseDViewController
 
@@ -41,19 +42,27 @@
         return celldesc;
     }else{
         WRSectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sections"];
-        cell.classNumLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"uSectionID"];
+        WRSection *section=[[WRSection alloc]
+                            initWithAttributes:[self.sections
+                                                objectAtIndex:indexPath.row-1]];
+        cell.classNumLabel.text=section.uSectionID;
         //seat,registered,waiting
-        NSString *srw=[[NSString alloc] initWithFormat:@"S%@/R%@/W%@", [[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"seats"],[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"registered"],@"0"];
-        cell.srwLabel.text=srw;
-        cell.roomLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"location"];
-        NSString *seTime=[[NSString alloc] initWithFormat:@"%@-%@",[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"bTime"],[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"eTime"]];
-        cell.hoursLabel.text=seTime;
+        cell.srwLabel.text=[[NSString alloc]
+                            initWithFormat:@"S%d/R%d/W%@",
+                            (int)section.seat,
+                            (int)section.registered,
+                            @"0"];;
         
-        cell.instractorLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"instructor"];
-        cell.dayLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"day"];
+        cell.roomLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"location"];
+        cell.hoursLabel.text=[[NSString alloc]
+                              initWithFormat:@"%@-%@",
+                              section.bTime,section.eTime];
+        
+        cell.instractorLabel.text=section.instructor;
+        cell.dayLabel.text=section.day;
         
         //classtype
-        cell.courseTypeLabel.text=[[self.sections objectAtIndex:indexPath.row-1] valueForKey:@"type"];
+        cell.courseTypeLabel.text=section.type;
         
         
         
