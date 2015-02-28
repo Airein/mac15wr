@@ -35,6 +35,7 @@
     [self.centerViewControllerDelegate.wishlistBox addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wishlistBoxClicked)]];
     [self.centerViewControllerDelegate.checklistBox addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checklistBoxClicked)]];
 
+    
 }
 
 
@@ -85,12 +86,14 @@
 -(void)showWishListView{
     self.wishlistTable.alpha = 1;
     self.checkoutTable.alpha = 0;
+    
     titleLabel.text = @"Wish List";
 }
 
 -(void)showCheckListView{
     self.wishlistTable.alpha = 0;
     self.checkoutTable.alpha = 1;
+    [self.checkoutTable loadData];
     titleLabel.text = @"Checkout List";
 }
 

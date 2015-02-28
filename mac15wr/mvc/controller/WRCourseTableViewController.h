@@ -11,6 +11,7 @@
 #import "MGSwipeTableCell.h"
 #import "MGSwipeButton.h"
 #import "WRCourseTableViewCell.h"
+#import "CenterViewController.h"
 
 @interface WRCourseTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate, UIActionSheetDelegate>
 
@@ -20,6 +21,8 @@
 @property IBOutlet UISearchBar *courseSearchBar;
 @property WRRealmCourse *courseSelected;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
+
+@property (strong,nonatomic) CenterViewController *centerViewControllerDelegate;
 
 
 @end
