@@ -12,6 +12,7 @@
 #import "MGSwipeButton.h"
 #import "WRCourseTableViewCell.h"
 #import "CenterViewController.h"
+#import "WRFilterViewController.h"
 
 @interface WRCourseTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate, UIActionSheetDelegate>
 
@@ -23,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 
 @property (strong,nonatomic) CenterViewController *centerViewControllerDelegate;
+@property WRFilterViewController* filterViewControllerDelegate;
 
 
 @end

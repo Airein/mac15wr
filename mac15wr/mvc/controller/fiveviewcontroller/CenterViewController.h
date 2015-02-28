@@ -44,6 +44,6 @@ typedef UInt32 IIViewDeckCP;
 
 @property (nonatomic, retain) M13BadgeView *reminderBadge;
 @property (nonatomic, retain) UIView *reminderBox;
-
+- (void) startTuturial;
 
 @end

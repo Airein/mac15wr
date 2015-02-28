@@ -7,6 +7,7 @@
 //
 
 #import "WRFilterViewController.h"
+#import "WRCourseTableViewController.h"
 
 @interface WRFilterViewController ()
 @property NSArray *term;
@@ -110,7 +111,7 @@
 }
 
 - (IBAction)SubmitFilterConditions:(id)sender {
-  /*  RLMRealm *realm=[RLMRealm defaultRealm];
+    RLMRealm *realm=[RLMRealm defaultRealm];
     
     
     NSString *searchconditionString=[WRFetchData searchCourseByCoditions:[WRFetchData
@@ -157,9 +158,15 @@
         
     } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
         
-    }];*/
+    }];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UINavigationController *myView = [story instantiateViewControllerWithIdentifier:@"chooseCourse"];
+    
+    WRCourseTableViewController *ctController  = (WRCourseTableViewController*)[myView topViewController];
+//    ctController.filterViewControllerDelegate=self;
+    [self showViewController:ctController sender:self];
+    
     
 }
 

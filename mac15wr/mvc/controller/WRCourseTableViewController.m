@@ -21,9 +21,10 @@
     [super viewDidLoad];
 #pragma test
     //show navi bar
-    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+//    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+//    self.navigationController.navigationBar.hidden = NO;
     self.mutableCourses=[WRRealmCourse allObjects];
-    
+    [self.tableview reloadData];
     
 
         
@@ -33,6 +34,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning {

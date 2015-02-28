@@ -49,6 +49,10 @@ static NSString * const kClientID =
 //    self.window.rootViewController = deckViewController;
 //    self.window.backgroundColor = [UIColor whiteColor];
 //    [self.window makeKeyAndVisible];
+    //bool for tutorial view show
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"tutorialView"];
+    
+    
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"panels" ofType:@"json"];
     NSArray *panels = [SRFSurfboardViewController panelsFromConfigurationAtPath:path];
@@ -115,6 +119,8 @@ static NSString * const kClientID =
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"tutorialView"];
+    
 }
 
 /**

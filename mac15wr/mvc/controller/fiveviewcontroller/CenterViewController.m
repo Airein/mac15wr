@@ -31,6 +31,10 @@
 - (void)viewDidAppear: (BOOL)animated{
     
     [super viewDidAppear:animated];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialView"]) {
+        self.startTuturial;
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"tutorialView"];
+    }
     
 }
 
