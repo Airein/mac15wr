@@ -14,7 +14,10 @@
 #import "WRReminderView.h"
 
 
-@interface CenterViewController ()
+@interface CenterViewController (){
+    NSTimer *theTimer;
+    int duePasted;
+}
 
 
 @property (nonatomic, retain) VBPieChart *chart;
@@ -62,7 +65,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    duePasted = -1;
     
     
     self.deckCP = IIViewDeckCenterCP;
@@ -75,11 +78,15 @@
     self.circleProgressView = [[CircleProgressView alloc] init];
     self.circleProgressView.frame = CGRectMake(0, 0, circleRadius*2, circleRadius*2);
     self.circleProgressView.center = CGPointMake(screenWidth/2, screenHeight/2);
-    self.circleProgressView.status = @"Registing";
-    self.circleProgressView.registeredPoint = @"9 Point Registered";
+    self.circleProgressView.status = @"Not Start";
+    self.circleProgressView.registeredPoint = @"0 Point Registered";
+//    self.circleProgressView.status = @"Registing";
+//    self.circleProgressView.registeredPoint = @"9 Point Registered";
     self.circleProgressView.requiredPoint = @"8 Point Required";
     [self.circleProgressView setTimeLimit:20];
-    [self.circleProgressView setElapsedTime:17];
+    [self.circleProgressView setElapsedTime:0];
+//    [self.circleProgressView setTimeLimit:20];
+//    [self.circleProgressView setElapsedTime:17];
     [self.view addSubview:self.circleProgressView];
     
     
@@ -148,17 +155,16 @@
     self.radialView.centerView.backgroundColor = [UIColor clearColor];
     self.radialView.centerView.alpha = 0;
     self.radialView.distanceFromCenter = circleRadius+25;
-    self.radialView.startAngle = -M_PI/2;
+    self.radialView.startAngle = -M_PI;
 
-    [self.radialView addPopoutView:nil withIndentifier:@"ONE"];
-    [self.radialView addPopoutView:nil withIndentifier:@"TWO"];
-    [self.radialView addPopoutView:nil withIndentifier:@"THREE"];
-    [self.radialView addPopoutView:nil withIndentifier:@"FOUR"];
-    [self.radialView addPopoutView:nil withIndentifier:@"FIVE"];
-    self.radialView.distanceBetweenPopouts = 360/[self.radialView.popoutViews count];
+//    [self.radialView addPopoutView:nil withIndentifier:@"ONE"];
+//    [self.radialView addPopoutView:nil withIndentifier:@"TWO"];
+//    [self.radialView addPopoutView:nil withIndentifier:@"THREE"];
+//    [self.radialView addPopoutView:nil withIndentifier:@"FOUR"];
+//    [self.radialView addPopoutView:nil withIndentifier:@"FIVE"];
+    self.radialView.distanceBetweenPopouts = 360/5;//360/[self.radialView.popoutViews count];
+    self.radialView.animationDuration = 0.2;
 
-    self.radialView.animationDuration = 0.0;
-    [self.radialView expand];
     [self.view addSubview:self.radialView];
     
     
@@ -201,7 +207,7 @@
     
     // Check List Box
     _reminderBadge = [[M13BadgeView alloc] initWithFrame: CGRectMake(0, 0, 12, 20)];
-    _reminderBadge.text = @"1";
+    _reminderBadge.text = @"2";
     _reminderBadge.textColor = [UIColor nephritisColor];
     _reminderBadge.badgeBackgroundColor = [UIColor midnightBlueColor];
     _reminderBox = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2 - circleRadius-20, SCREEN_HEIGHT/2 + circleRadius+3, 32, 32)];
@@ -212,7 +218,77 @@
     [self.view addSubview:_reminderBox];
     
     
+    // Timer
+    float theInterval = 1;
+    theTimer = [NSTimer scheduledTimerWithTimeInterval:theInterval target:self selector:@selector(circleDueSample) userInfo:nil repeats:YES];
+    
+    
+    
+    
 }
+
+
+- (void) circleDueSample{
+    duePasted = duePasted + 1;
+
+    [self.circleProgressView setElapsedTime:duePasted];
+    
+    switch (duePasted) {
+        case 1:{
+            [self.radialView addPopoutView:nil withIndentifier:@"ONE"];
+            UIView *first = [self.radialView getPopoutViewWithIndentifier:@"ONE"];
+            [first setHidden: YES];
+            
+            [self.radialView addPopoutView:nil withIndentifier:@"TWO"];
+            [self.radialView expand];
+            
+            self.circleProgressView.status = @"Registing";
+            self.circleProgressView.registeredPoint = @"2 Point Registered";
+            
+            break;
+        } case 4:{
+            [self.radialView addPopoutView:nil withIndentifier:@"THREE"];
+            [self.radialView expand];
+            break;
+        }case 8:{
+            [self.radialView addPopoutView:nil withIndentifier:@"FOUR"];
+            [self.radialView expand];
+            break;
+        }case 12:{
+            [self.radialView addPopoutView:nil withIndentifier:@"FIVE"];
+            [self.radialView expand];
+
+            break;
+        }case 16:{
+            [self.radialView.popoutViews[0] setHidden: NO];
+            [self.radialView expand];
+            break;
+        }case 19:{
+            
+            self.circleProgressView.status = @"Complete";
+            self.circleProgressView.registeredPoint = @"9 Point Registered";
+            break;
+        }case 20:{
+            
+            
+            
+            break;
+        }default:{
+            break;
+        }
+    }
+    
+    
+
+    
+    if (duePasted > 20) {
+        
+        [theTimer invalidate];
+        theTimer = nil;
+
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

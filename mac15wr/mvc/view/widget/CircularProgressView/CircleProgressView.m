@@ -128,7 +128,7 @@
         
         
         [attributedString addAttributes:@{
-                                        NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:40]}
+                                        NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold" size:28]}
                                 range:NSMakeRange(0, _status.length)];
         
         [attributedString addAttributes:@{
