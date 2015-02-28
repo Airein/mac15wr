@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *courseTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *courseIDLabel;
 
-@property WRCourse *courseSelected;
+@property WRRealmCourse *courseSelected;
 @property NSMutableArray *sections;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 

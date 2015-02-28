@@ -9,10 +9,10 @@
 
 #import "WRCourseTableViewController.h"
 #import "WRCourseDViewController.h"
-#import <Realm/Realm.h>
 
 
 @interface WRCourseTableViewController ()
+
 @end
 
 @implementation WRCourseTableViewController
@@ -22,60 +22,10 @@
 #pragma test
     //show navi bar
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    self.mutableCourses=[WRRealmCourse allObjects];
     
     
-    
-    //fetch data from back-end
-    NSString *courseString=[WRFetchData
-                            searchCourseByCoditions:[WRFetchData
-                                                               stringOfCourseSerchConditonsWithCourseRating:@"3" ProfRating:@"3"
-                                                               Day:nil
-                                                               TimeStart:nil
-                                                               TimeEnd:nil
-                                                               TimeTypeAsInclude:@""]
-                                                         Term:@"20151"
-                                                         Dept:@"CSCI"];
-    [[WRAPIClient sharedClient] GET:courseString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
-        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
-        for (NSDictionary *course_attributes in JSON) {
-            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
-            [self.mutableCourses addObject:course];
-        }
-        
-    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-        
-    }];
-    
-//    NSString* schoollistString=[WRFetchData getSchoolList];
-//    [[WRAPIClient sharedClient] GET:schoollistString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
-//        self.mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
-//        for (NSDictionary *course_attributes in JSON) {
-//            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
-//            [self.mutableCourses addObject:course];
-//        }
-//        
-//    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-//        
-//    }];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    for (WRCourse *course in self.mutableCourses){
-        NSLog(@"%@",course.title);
-    }
-    
-    
-    
-    
-    
-    
+
         
     
     // Uncomment the following line to preserve selection between presentations.
@@ -107,11 +57,11 @@
     
     WRCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"courselistcell" forIndexPath:indexPath];
     // Configure the cell...
-    WRCourse *course= [self.mutableCourses objectAtIndex:indexPath.row];
+    WRRealmCourse *course= [self.mutableCourses objectAtIndex:indexPath.row];
     cell.courseTileLabel.text=course.title;
     cell.courseSysNumLabel.text=course.sis_course_id;
     cell.courseDesLabel.text=course.desc;
-    cell.courseCredit.text=[NSString stringWithFormat:@"%.0f", course.min_units];
+    cell.courseCredit.text=[NSString stringWithFormat:@"%ld", (long)course.min_units];
 //    cell.textLabel.text=@"aa";
     
     

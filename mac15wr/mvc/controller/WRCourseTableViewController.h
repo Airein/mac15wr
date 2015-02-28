@@ -14,10 +14,11 @@
 
 @interface WRCourseTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate, UIActionSheetDelegate>
 
-@property NSMutableArray *mutableCourses;
+//@property NSMutableArray *mutableCourses;
+@property RLMResults *mutableCourses;
 @property (strong,nonatomic) NSMutableArray *filteredCourseArray;
 @property IBOutlet UISearchBar *courseSearchBar;
-@property WRCourse *courseSelected;
+@property WRRealmCourse *courseSelected;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 
 

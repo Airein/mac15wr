@@ -560,6 +560,7 @@
 		FA51221B1AA1131C00E24E61 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA51221D1AA11BED00E24E61 /* WRRealmCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmCourse.h; sourceTree = "<group>"; };
 		FA51221E1AA11BED00E24E61 /* WRRealmCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmCourse.m; sourceTree = "<group>"; };
+		FA947AA51AA132C00037967B /* WRRealmTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRRealmTables.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1546,6 +1547,7 @@
 				FA5122191AA0FC6E00E24E61 /* WRRealmSchoolList.m */,
 				FA51221D1AA11BED00E24E61 /* WRRealmCourse.h */,
 				FA51221E1AA11BED00E24E61 /* WRRealmCourse.m */,
+				FA947AA51AA132C00037967B /* WRRealmTables.h */,
 			);
 			path = database;
 			sourceTree = "<group>";

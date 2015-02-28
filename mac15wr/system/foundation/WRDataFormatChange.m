@@ -31,4 +31,29 @@
 
 }
 
+
++ (NSMutableArray *)NSData2NSMutableArray:(NSData*)data {
+    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
+
++ (NSArray *)NSData2NSArray:(NSData*)data {
+    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
+
+
+
+
++ (NSData*)NSArray2NSData:(NSArray*)array {
+    return [NSKeyedArchiver archivedDataWithRootObject:array];
+}
+
++ (NSData*)NSMutableArray2NSData:(NSMutableArray*)array {
+    return [NSKeyedArchiver archivedDataWithRootObject:array];
+}
+
+
+
+
+
+
 @end
