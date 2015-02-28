@@ -125,6 +125,7 @@
     if ([[segue identifier] isEqualToString:@"courseDetails"]) {
         UINavigationController *nav = [segue destinationViewController];
         WRCourseDViewController* userViewController = (WRCourseDViewController *) nav.topViewController;
+        userViewController.courseTableViewDelegate = self;
         userViewController.courseSelected = [self.mutableCourses objectAtIndex:[[self.tableview indexPathForSelectedRow] row]];
     }
 }

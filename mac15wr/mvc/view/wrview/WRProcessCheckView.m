@@ -268,7 +268,10 @@
             case 0:{    // Choose course
                 NSLog(@"0");
                 UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-                WRCourseTableViewController *myView = [story instantiateViewControllerWithIdentifier:@"chooseCourse"];
+                UINavigationController *myView = [story instantiateViewControllerWithIdentifier:@"chooseCourse"];
+                
+                WRCourseTableViewController *ctController  = (WRCourseTableViewController*)[myView topViewController];
+                ctController.centerViewControllerDelegate = self.parentControllerDelegate;
                 [self.parentControllerDelegate showViewController:myView sender:self.parentControllerDelegate];
                 
                 break;

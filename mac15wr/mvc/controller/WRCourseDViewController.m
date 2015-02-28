@@ -14,6 +14,7 @@
 #import "WRRealmWishList.h"
 #import "WRFiveViewManager.h"
 #import <Realm/Realm.h>
+#import "RightViewController.h"
 
 @implementation WRCourseDViewController
 
@@ -129,6 +130,11 @@
     [defaultRealm addObject:checklist];
     
     [defaultRealm commitWriteTransaction];
+    
+    RightViewController *rightViewController = (RightViewController*)self.courseTableViewDelegate.centerViewControllerDelegate.viewDeckController.rightController;
+    
+    [rightViewController.checkoutTable loadData];
+    [rightViewController.checkoutTable reloadData];
     
     //return mainview
     NSLog(@"pop");

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WRCourse.h"
+#import "WRCourseTableViewController.h"
 
 
 @interface WRCourseDViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
@@ -18,6 +19,7 @@
 @property NSMutableArray *sections;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
+@property (strong, nonatomic) WRCourseTableViewController *courseTableViewDelegate;
 
 
 @end

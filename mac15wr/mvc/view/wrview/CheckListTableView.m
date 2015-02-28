@@ -13,12 +13,7 @@
 
 @implementation CheckListTableView
 
-
--(instancetype)initWithFrame:(CGRect)frame{
-    //    self =[super initWithFrame:CGRectMake(10, 30, 300, 500) style:UITableViewStyleGrouped];
-    self = [super initWithFrame:frame style:UITableViewStyleGrouped];
-    self.separatorColor = [UIColor clearColor];
-    self.backgroundColor = [UIColor clearColor];
+- (void) loadData{
     
     //所有的总数据数组 数组套数组 最里面是model 下边创建的仅仅是测试数组
     _array = [[NSMutableArray alloc]initWithCapacity:0];
@@ -27,13 +22,13 @@
     RLMResults *checklistItems = [WRRealmCheckList allObjects]; // retrieves all Dogs from the default Realm
     
     
-  
+    
     
     NSMutableDictionary *checklistDictionary =
-        [[NSMutableDictionary alloc] initWithCapacity:0];
+    [[NSMutableDictionary alloc] initWithCapacity:0];
     for (WRRealmCheckList *checkListItem in checklistItems) {
         NSString *idString = checkListItem.sis_course_id;
-//        NSLog(@"%@",idString);
+        //        NSLog(@"%@",idString);
         if ([[checklistDictionary allKeys] containsObject:idString]) {  // has this key
             
             NSMutableDictionary *courseDict = [checklistDictionary valueForKey:idString];
@@ -47,17 +42,17 @@
         } else {  // add this key and object(array for many sections)
             NSMutableArray *list = [[NSMutableArray alloc] initWithCapacity:0];
             NSMutableDictionary *sectionDict = [[NSMutableDictionary alloc] initWithCapacity:0];
-             [sectionDict setValue:@"no" forKeyPath:@"isExpand"];
-             [sectionDict setValue:checkListItem forKeyPath:@"section"];
-             [list addObject:sectionDict];
+            [sectionDict setValue:@"no" forKeyPath:@"isExpand"];
+            [sectionDict setValue:checkListItem forKeyPath:@"section"];
+            [list addObject:sectionDict];
             
             NSMutableDictionary * courseDict =
-                [[NSMutableDictionary alloc] initWithCapacity:0];
+            [[NSMutableDictionary alloc] initWithCapacity:0];
             [courseDict setValue:idString forKeyPath:@"course_id"];
             [courseDict setValue:checkListItem.title forKeyPath:@"course_title"];
             [courseDict setValue:list forKeyPath:@"course_sections"];
             [courseDict setValue:@[] forKeyPath:@"isExpand"];
-
+            
             [checklistDictionary setObject:courseDict forKey:idString];
         }
     }
@@ -67,20 +62,20 @@
     }
     
     
-//    for (int i = 0; i < 3; i++) {
-//        NSMutableArray *section=[[NSMutableArray alloc]initWithCapacity:0];
-//        
-//        for (int j = 0; j < 3; j++)
-//        {
-//            CheckListModel *model=[[CheckListModel alloc]init];
-//            model.str1 =[NSString stringWithFormat:@"张三%d",i];
-//            model.str2 = [NSString stringWithFormat:@"aaaa%d",j];
-//            model.isExpand = NO;
-//            [section addObject:model];
-//        }
-//        
-//        [_array addObject:section];
-//    }
+    //    for (int i = 0; i < 3; i++) {
+    //        NSMutableArray *section=[[NSMutableArray alloc]initWithCapacity:0];
+    //
+    //        for (int j = 0; j < 3; j++)
+    //        {
+    //            CheckListModel *model=[[CheckListModel alloc]init];
+    //            model.str1 =[NSString stringWithFormat:@"张三%d",i];
+    //            model.str2 = [NSString stringWithFormat:@"aaaa%d",j];
+    //            model.isExpand = NO;
+    //            [section addObject:model];
+    //        }
+    //
+    //        [_array addObject:section];
+    //    }
     
     //表数据源数组
     _CurrentArray = [[NSMutableArray alloc]initWithCapacity:0];
@@ -89,9 +84,19 @@
         [_CurrentArray addObject:@[]];
     }
     
-    //创建表
+
+}
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    //    self =[super initWithFrame:CGRectMake(10, 30, 300, 500) style:UITableViewStyleGrouped];
+    self = [super initWithFrame:frame style:UITableViewStyleGrouped];
+    self.separatorColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor clearColor];
+        //创建表
     self.delegate = self;
     self.dataSource = self;
+    [self loadData];
+    
     return self;
 }
 
