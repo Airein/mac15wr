@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CheckListModel.h"
+
+
 @interface CheckListDetailView : UIView
 {
-    //根据model需求 创建所需控件
-    UILabel*_label1;
-    UILabel*_label2;
+    
     
 }
 
@@ -20,6 +19,17 @@
 
 //+(CGFloat)getHeightByModel:(Model*)model;
 
-@property(nonatomic,strong)CheckListModel *model;
+//@property(nonatomic,strong)CheckListModel *model;
+
+@property(nonatomic,strong) UILabel *sectionIdLabel;
+@property(nonatomic,strong) UILabel *sectionSeatsLabel;
+@property(nonatomic,strong) UILabel *sectionProfessorLabel;
+
+
+@property(nonatomic,strong) UIButton *deleteBtn;
+@property(nonatomic,strong) UIButton *addToWLBtn;
+@property(assign,nonatomic) BOOL isExpand;
+
+//@property(nonatomic,assign) CheckListCell *cellDelegate;
 
 @end

@@ -59,7 +59,6 @@ static NSString * const kClientID =
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    WRWelcomeViewController *wrFiveViewManager = [[WRWelcomeViewController alloc] init];
     self.window.rootViewController = surfboard;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

@@ -333,8 +333,6 @@
 
 -(void) presentCheckActionViewController:(WRCheckActionViewController*) controller{
     controller.checkViewDelegate = self;
-    
-    
     CATransition *transition = [CATransition animation];
     transition.duration = 0.5;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];

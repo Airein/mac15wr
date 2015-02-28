@@ -70,16 +70,19 @@
     }
     else
     {
+        NSMutableDictionary *courseDict = [_CurrentArray objectAtIndex:indexPath.section];
+        NSMutableArray *sections = [courseDict valueForKey:@"course_sections"];
+        
         if (cell.model) {
-            if (cell.model != [[_CurrentArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]) {
-                cell.model = [[_CurrentArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+            if (cell.model != [[sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]) {
+                cell.model = [[sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
                 if (cell.model.isExpand==NO) {
                     cell.model=nil;
                 }
             }
         }else
         {
-            cell.model = [[_CurrentArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+            cell.model = [[sections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
             if (cell.model.isExpand==NO) {
                 cell.model=nil;
             }
@@ -103,15 +106,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WishListCell *cell=(WishListCell*)[tableView cellForRowAtIndexPath:indexPath];
-    WishListModel *model=[[_array objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
-    model.isExpand = !model.isExpand;
-    
-    if (cell.model) {
-        cell.model=nil;
-    }else
-    {
-        cell.model=model;
-    }
+//    WishListModel *model=[[_array objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
+//    model.isExpand = !model.isExpand;
+//    
+//    if (cell.model) {
+//        cell.model=nil;
+//    }else
+//    {
+//        cell.model=model;
+//    }
     [cell layoutSubviews];
     [tableView reloadData];
 }
@@ -125,15 +128,15 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    WishListModel *model=[[_array objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
-    if (!model.isExpand)
-    {
-        return   44;
-    }else
-    {
-        return  124;
-    }
-    
+//    WishListModel *model=[[_array objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
+//    if (!model.isExpand)
+//    {
+//        return   44;
+//    }else
+//    {
+//        return  124;
+//    }
+    return 44;
     
 }
 //自定义区头 把区头model 创建的view写这里

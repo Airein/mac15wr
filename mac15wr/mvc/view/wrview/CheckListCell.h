@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CheckListModel.h"
 #import "CheckListDetailView.h"
 
 @interface CheckListCell : UITableViewCell
@@ -20,7 +19,10 @@
 @property(nonatomic,strong) UILabel *courseDateLabel;
 @property(nonatomic,strong) UIButton *addToCalendarBtn;
 
-@property(nonatomic,strong) CheckListModel *model;
-@property(nonatomic,strong)CheckListDetailView *detialView;
+//@property(nonatomic,strong) CheckListModel *model;
+@property(nonatomic,strong) CheckListDetailView *detialView;
+
+@property(assign,nonatomic) BOOL isExpand;
+
 
 @end

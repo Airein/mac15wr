@@ -120,7 +120,6 @@
 		1FC508D31A9EB28100CBCA88 /* CheckListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508D21A9EB28100CBCA88 /* CheckListTableView.m */; };
 		1FC508D61A9EB2AB00CBCA88 /* CheckListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508D51A9EB2AB00CBCA88 /* CheckListCell.m */; };
 		1FC508D91A9EB2BB00CBCA88 /* CheckListDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508D81A9EB2BB00CBCA88 /* CheckListDetailView.m */; };
-		1FC508DC1A9EB2DC00CBCA88 /* CheckListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508DB1A9EB2DC00CBCA88 /* CheckListModel.m */; };
 		1FC508E01A9EB9FD00CBCA88 /* M13BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508DF1A9EB9FD00CBCA88 /* M13BadgeView.m */; };
 		1FC508E31A9ECE0300CBCA88 /* WRPayDueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508E21A9ECE0300CBCA88 /* WRPayDueView.m */; };
 		1FC508E61A9ED68A00CBCA88 /* UIView+WRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC508E51A9ED68A00CBCA88 /* UIView+WRView.m */; };
@@ -424,8 +423,6 @@
 		1FC508D51A9EB2AB00CBCA88 /* CheckListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckListCell.m; sourceTree = "<group>"; };
 		1FC508D71A9EB2BB00CBCA88 /* CheckListDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckListDetailView.h; sourceTree = "<group>"; };
 		1FC508D81A9EB2BB00CBCA88 /* CheckListDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckListDetailView.m; sourceTree = "<group>"; };
-		1FC508DA1A9EB2DC00CBCA88 /* CheckListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckListModel.h; sourceTree = "<group>"; };
-		1FC508DB1A9EB2DC00CBCA88 /* CheckListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckListModel.m; sourceTree = "<group>"; };
 		1FC508DE1A9EB9FD00CBCA88 /* M13BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13BadgeView.h; sourceTree = "<group>"; };
 		1FC508DF1A9EB9FD00CBCA88 /* M13BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13BadgeView.m; sourceTree = "<group>"; };
 		1FC508E11A9ECE0300CBCA88 /* WRPayDueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRPayDueView.h; sourceTree = "<group>"; };
@@ -1210,7 +1207,6 @@
 			isa = PBXGroup;
 			children = (
 				1FC508C01A9DA95300CBCA88 /* wrrightview */,
-				1FFE59BD1A9C603500BAB220 /* wrcalendar */,
 				1FFE59511A9C588C00BAB220 /* wrcell */,
 				1FB85FA91A931C9700119A34 /* WRProcessCheckView.h */,
 				1FB85FAA1A931C9700119A34 /* WRProcessCheckView.m */,
@@ -1313,8 +1309,6 @@
 			children = (
 				1FC508C81A9DAADD00CBCA88 /* WishListModel.h */,
 				1FC508C91A9DAADD00CBCA88 /* WishListModel.m */,
-				1FC508DA1A9EB2DC00CBCA88 /* CheckListModel.h */,
-				1FC508DB1A9EB2DC00CBCA88 /* CheckListModel.m */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -1519,13 +1513,6 @@
 				1FFE59571A9C595E00BAB220 /* WREvent.m */,
 			);
 			path = calendarmodel;
-			sourceTree = "<group>";
-		};
-		1FFE59BD1A9C603500BAB220 /* wrcalendar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = wrcalendar;
 			sourceTree = "<group>";
 		};
 		FA1FB9851AA062E200774B7A /* database */ = {
@@ -1813,7 +1800,6 @@
 				1F46A2C91A8C7BF000DF74B7 /* UITabBar+FlatUI.m in Sources */,
 				1FD7CA6F1A88A08C009857F7 /* AFSecurityPolicy.m in Sources */,
 				1FB85FA31A93110A00119A34 /* UIColor+HexColor.m in Sources */,
-				1FC508DC1A9EB2DC00CBCA88 /* CheckListModel.m in Sources */,
 				1FC508D01A9DB6EF00CBCA88 /* UIColor+WRColor.m in Sources */,
 				1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */,
 				1FC508B91A9D717F00CBCA88 /* WeekViewExampleController.m in Sources */,
