@@ -13,5 +13,5 @@
 @property NSArray* schoolList;
 @property NSArray* deptsInSchool;
 @property WRSchool* school;
-
+- (instancetype)initWithAttributes:(NSDictionary *)attributes;
 @end

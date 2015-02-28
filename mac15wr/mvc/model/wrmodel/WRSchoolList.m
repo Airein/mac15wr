@@ -16,6 +16,9 @@
     if (!self) {
         return nil;
     }
+//    for (NSDictionary* school in attributes) {
+//        [school allKeys]
+//    }
     self.schoolList = [attributes allKeys];
     return self;
 }
