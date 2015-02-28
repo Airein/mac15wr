@@ -282,9 +282,9 @@
                                 <action selector="backToMainView:" destination="3gL-ls-vER" id="932-Ms-i8M"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Change" id="S1k-Ya-hm9">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="S1k-Ya-hm9">
                             <connections>
-                                <segue destination="hYN-c9-dGr" kind="show" id="f4m-W0-NJZ"/>
+                                <segue destination="aPR-ry-hUG" kind="show" id="6JC-d1-ifs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -307,32 +307,43 @@
             </objects>
             <point key="canvasLocation" x="2657" y="200"/>
         </scene>
-        <!--Change-->
-        <scene sceneID="Ke2-Qu-Zv8">
+        <!--Filter-->
+        <scene sceneID="8bl-XD-fKk">
             <objects>
-                <tableViewController id="6nq-Yl-V36" customClass="WRCourseChangeConditionsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="piN-hK-NRY">
+                <viewController id="JnU-CM-VLE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0IH-5F-Nsi"/>
+                        <viewControllerLayoutGuide type="bottom" id="BEF-LB-JPY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Ga-BM-7DA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Professor Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYw-r7-SLs">
+                                <rect key="frame" x="16" y="95" width="137" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xct-fz-RGu">
+                                <rect key="frame" x="21" y="279" width="147" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Lf-3Y-9JE">
+                                <rect key="frame" x="161" y="95" width="299" height="162"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BWL-54-LMP">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BWL-54-LMP" id="7Ji-W3-17R">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="6nq-Yl-V36" id="AF7-ZA-Mcy"/>
-                            <outlet property="delegate" destination="6nq-Yl-V36" id="pPh-bV-JDh"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Change" id="yiE-qe-qsf"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MPR-ZN-a4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filter" id="CkM-qR-ZvM">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="XBR-aR-fiX"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNp-CL-0SV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4214" y="943"/>
+            <point key="canvasLocation" x="4040" y="1001"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6gv-vv-yKm">
@@ -620,7 +631,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4R0-ro-pFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4178" y="200"/>
+            <point key="canvasLocation" x="4990" y="200"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dBb-Qb-Hev">
@@ -641,22 +652,22 @@
             <point key="canvasLocation" x="3395" y="200"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="hFH-5g-Hh6">
+        <scene sceneID="R8e-Tq-nak">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hYN-c9-dGr" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aPR-ry-hUG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZxB-N5-86Q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tbk-jv-6bB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6nq-Yl-V36" kind="relationship" relationship="rootViewController" id="bGC-Cb-2c5"/>
+                        <segue destination="JnU-CM-VLE" kind="relationship" relationship="rootViewController" id="njJ-5J-0bH"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="juK-Hm-Hdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hj3-TR-Nrw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3395" y="937"/>
+            <point key="canvasLocation" x="3254" y="949"/>
         </scene>
     </scenes>
 </document>
