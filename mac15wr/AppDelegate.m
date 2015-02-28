@@ -122,11 +122,75 @@ static NSString * const kClientID =
  */
 - (void)surfboard:(SRFSurfboardViewController *)surfboard didTapButtonAtIndexPath:(NSIndexPath *)indexPath
 {
-            WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
-            [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
-            IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
-            self.window.rootViewController = deckViewController;
+    //        WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+    //        [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+    //        IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+    //        self.window.rootViewController = deckViewController;
+//    //fetch data from back-end
     
+    RLMRealm *realm=[RLMRealm defaultRealm];
+    NSString *courseString=[WRFetchData
+                            searchCourseByCoditions:[WRFetchData
+                                                     stringOfCourseSerchConditonsWithCourseRating:@"3" ProfRating:@"3"
+                                                     Day:nil
+                                                     TimeStart:nil
+                                                     TimeEnd:nil
+                                                     TimeTypeAsInclude:@""]
+                            Term:@"20151"
+                            Dept:@"CSCI"];
+    [[WRAPIClient sharedClient] GET:courseString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+        NSMutableArray* mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
+        [realm beginWriteTransaction];
+        
+        
+        for (NSDictionary *course_attributes in JSON) {
+            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
+            
+            if ([WRRealmCourse objectsWhere:@"sis_course_id=%@",course.sis_course_id].count) {
+                continue;
+            }
+            
+            
+            WRRealmCourse *newcourse=[[WRRealmCourse alloc] init];
+            
+            
+            newcourse.course_id=course.course_id;
+            newcourse.sis_course_id=course.sis_course_id;
+            newcourse.title=course.title;
+            newcourse.min_units=course.min_units;
+            newcourse.max_units=course.max_units;
+            newcourse.total_max_units=course.total_max_units;
+            newcourse.desc=course.desc;
+            newcourse.diversity_flag=course.diversity_flag;
+            newcourse.effective_term_code=course.effective_term_code;
+            newcourse.section=[NSKeyedArchiver archivedDataWithRootObject:course.section];
+            [realm addObject:newcourse];
+            [mutableCourses addObject:course];
+        }
+        
+        
+        [realm commitWriteTransaction];
+        
+    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+        
+    }];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //google login
+    //ONLY work when user already logined in
+    //now disable it,and just go to the next view straightly
+    //-----------------------------------------------------------------------------
+    self.signIn = [GPPSignIn sharedInstance];
+    self.signIn.shouldFetchGooglePlusUser = YES;
+    self.signIn.shouldFetchGoogleUserID=YES;
+    self.signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
     
 //    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
 //    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
