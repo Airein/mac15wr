@@ -1,0 +1,27 @@
+//
+//  WRRealmDeptList.m
+//  mac15wr
+//
+//  Created by Alex on 2/28/15.
+//  Copyright (c) 2015 mac15wr. All rights reserved.
+//
+
+#import "WRRealmDeptList.h"
+
+@implementation WRRealmDeptList
+
+// Specify default values for properties
+
+//+ (NSDictionary *)defaultPropertyValues
+//{
+//    return @{};
+//}
+
+// Specify properties to ignore (Realm won't persist these)
+
+//+ (NSArray *)ignoredProperties
+//{
+//    return @[];
+//}
+
+@end

@@ -13,6 +13,7 @@
 #import "WRRealmCalendar.h"
 #import "WRRealmCourse.h"
 #import "WRRealmSchoolList.h"
+#import "WRRealmDeptList.h"
 
 
 #ifndef mac15wr_WRRealmTables_h

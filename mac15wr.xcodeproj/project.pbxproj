@@ -194,6 +194,9 @@
 		FA51221A1AA0FC6E00E24E61 /* WRRealmSchoolList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5122191AA0FC6E00E24E61 /* WRRealmSchoolList.m */; };
 		FA51221C1AA1131C00E24E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA51221B1AA1131C00E24E61 /* Main.storyboard */; };
 		FA51221F1AA11BED00E24E61 /* WRRealmCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = FA51221E1AA11BED00E24E61 /* WRRealmCourse.m */; };
+		FAF038EB1AA1CCE500FB42EF /* WRRealmDeptList.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF038EA1AA1CCE500FB42EF /* WRRealmDeptList.m */; };
+		FAF038EE1AA1D56000FB42EF /* WRSchoolListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF038ED1AA1D56000FB42EF /* WRSchoolListTableViewController.m */; };
+		FAF038F11AA1D59900FB42EF /* WRDeptListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF038F01AA1D59900FB42EF /* WRDeptListTableViewController.m */; };
 		FAFB16841AA17E6900DC857B /* WRFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFB16831AA17E6900DC857B /* WRFilterViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -564,6 +567,12 @@
 		FA51221D1AA11BED00E24E61 /* WRRealmCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmCourse.h; sourceTree = "<group>"; };
 		FA51221E1AA11BED00E24E61 /* WRRealmCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmCourse.m; sourceTree = "<group>"; };
 		FA947AA51AA132C00037967B /* WRRealmTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRRealmTables.h; sourceTree = "<group>"; };
+		FAF038E91AA1CCE500FB42EF /* WRRealmDeptList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmDeptList.h; sourceTree = "<group>"; };
+		FAF038EA1AA1CCE500FB42EF /* WRRealmDeptList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmDeptList.m; sourceTree = "<group>"; };
+		FAF038EC1AA1D56000FB42EF /* WRSchoolListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRSchoolListTableViewController.h; sourceTree = "<group>"; };
+		FAF038ED1AA1D56000FB42EF /* WRSchoolListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRSchoolListTableViewController.m; sourceTree = "<group>"; };
+		FAF038EF1AA1D59900FB42EF /* WRDeptListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRDeptListTableViewController.h; sourceTree = "<group>"; };
+		FAF038F01AA1D59900FB42EF /* WRDeptListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRDeptListTableViewController.m; sourceTree = "<group>"; };
 		FAFB16821AA17E6900DC857B /* WRFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRFilterViewController.h; sourceTree = "<group>"; };
 		FAFB16831AA17E6900DC857B /* WRFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRFilterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -975,6 +984,10 @@
 		1F9292A11A881DCE001B8A45 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FAF038EF1AA1D59900FB42EF /* WRDeptListTableViewController.h */,
+				FAF038F01AA1D59900FB42EF /* WRDeptListTableViewController.m */,
+				FAF038EC1AA1D56000FB42EF /* WRSchoolListTableViewController.h */,
+				FAF038ED1AA1D56000FB42EF /* WRSchoolListTableViewController.m */,
 				FAFB16821AA17E6900DC857B /* WRFilterViewController.h */,
 				FAFB16831AA17E6900DC857B /* WRFilterViewController.m */,
 				FA474A921AA0328000C33517 /* WRCourseDViewController.h */,
@@ -1535,6 +1548,8 @@
 		FA1FB9851AA062E200774B7A /* database */ = {
 			isa = PBXGroup;
 			children = (
+				FAF038E91AA1CCE500FB42EF /* WRRealmDeptList.h */,
+				FAF038EA1AA1CCE500FB42EF /* WRRealmDeptList.m */,
 				FA1FB98F1AA0F38E00774B7A /* WRRealmWishList.h */,
 				FA1FB9901AA0F38E00774B7A /* WRRealmWishList.m */,
 				FA1FB9891AA0645100774B7A /* WRRealmCheckList.h */,
@@ -1729,6 +1744,7 @@
 				1FB85FA71A931B3100119A34 /* KLCPopup.m in Sources */,
 				1FB85F761A90595100119A34 /* SDiPhoneVersion.m in Sources */,
 				FA1FB98E1AA06D4E00774B7A /* WRRealmUsers.m in Sources */,
+				FAF038EB1AA1CCE500FB42EF /* WRRealmDeptList.m in Sources */,
 				1F9292E81A883974001B8A45 /* UIFont+AirExtension.m in Sources */,
 				1F3FDECE1A9FBDC20080A77C /* FTCoreTextView.m in Sources */,
 				1FB85F961A9176A400119A34 /* UIView+WhenTappedBlocks.m in Sources */,
@@ -1814,6 +1830,7 @@
 				1F5006EA1A900AA000DBCBA5 /* IIViewDeckController.m in Sources */,
 				1FB85F681A90436D00119A34 /* CircleShapeLayer.m in Sources */,
 				FA474ADA1AA036C900C33517 /* WRDescTableViewCell.m in Sources */,
+				FAF038F11AA1D59900FB42EF /* WRDeptListTableViewController.m in Sources */,
 				1FB85F671A90436D00119A34 /* CircleProgressView.m in Sources */,
 				1F46A2BE1A8C7BF000DF74B7 /* FUITextField.m in Sources */,
 				1FD7CAAF1A88AEB7009857F7 /* JSONModel+networking.m in Sources */,
@@ -1837,6 +1854,7 @@
 				1F0B1EF71AA1AD3C000115F4 /* DKCircleImageView.m in Sources */,
 				1F46A2C71A8C7BF000DF74B7 /* UISlider+FlatUI.m in Sources */,
 				FA474AA81AA032D800C33517 /* WRSection.m in Sources */,
+				FAF038EE1AA1D56000FB42EF /* WRSchoolListTableViewController.m in Sources */,
 				1FC508CA1A9DAADD00CBCA88 /* WishListModel.m in Sources */,
 				1F46A2C21A8C7BF000DF74B7 /* UIFont+FlatUI.m in Sources */,
 				1FD7CAA91A88AEB7009857F7 /* JSONModelArray.m in Sources */,

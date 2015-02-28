@@ -135,65 +135,46 @@ static NSString * const kClientID =
 //    //fetch data from back-end
     
     RLMRealm *realm=[RLMRealm defaultRealm];
-    NSString *courseString=[WRFetchData
-                            searchCourseByCoditions:[WRFetchData
-                                                     stringOfCourseSerchConditonsWithCourseRating:@"3" ProfRating:@"3"
-                                                     Day:nil
-                                                     TimeStart:nil
-                                                     TimeEnd:nil
-                                                     TimeTypeAsInclude:@""]
-                            Term:@"20151"
-                            Dept:@"CSCI"];
-    [[WRAPIClient sharedClient] GET:courseString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
-        NSMutableArray* mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
-        [realm beginWriteTransaction];
-        
-        
-        for (NSDictionary *course_attributes in JSON) {
-            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
-            
-            if ([WRRealmCourse objectsWhere:@"sis_course_id=%@",course.sis_course_id].count) {
-                continue;
-            }
-            
-            
-            WRRealmCourse *newcourse=[[WRRealmCourse alloc] init];
-            newcourse.course_id=course.course_id;
-            newcourse.sis_course_id=course.sis_course_id;
-            newcourse.title=course.title;
-            newcourse.min_units=course.min_units;
-            newcourse.max_units=course.max_units;
-            newcourse.total_max_units=course.total_max_units;
-            newcourse.desc=course.desc;
-            newcourse.diversity_flag=course.diversity_flag;
-            newcourse.effective_term_code=course.effective_term_code;
-            newcourse.section=[NSKeyedArchiver archivedDataWithRootObject:course.section];
-            [realm addObject:newcourse];
-            [mutableCourses addObject:course];
-        }
-        
-        
-        [realm commitWriteTransaction];
-        
-    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-        
-    }];
     
-//    NSString* schoolliststring=[WRFetchData getSchoolList];
-//    [[WRAPIClient sharedClient] GET:schoolliststring parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+    
+    
+    
+//    Course data pre-load
+//    NSString *courseString=[WRFetchData
+//                            searchCourseByCoditions:[WRFetchData
+//                                                     stringOfCourseSerchConditonsWithCourseRating:@"3" ProfRating:@"3"
+//                                                     Day:nil
+//                                                     TimeStart:nil
+//                                                     TimeEnd:nil
+//                                                     TimeTypeAsInclude:@""]
+//                            Term:@"20151"
+//                            Dept:@"CSCI"];
+//    [[WRAPIClient sharedClient] GET:courseString parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+//        NSMutableArray* mutableCourses = [NSMutableArray arrayWithCapacity:[JSON count]];
 //        [realm beginWriteTransaction];
 //        
 //        
 //        for (NSDictionary *course_attributes in JSON) {
-//            WRSchoolList *schoollist = [[WRSchoolList alloc] initWithAttributes:course_attributes];
+//            WRCourse *course = [[WRCourse alloc] initWithAttributes:course_attributes];
 //            
-//            for (NSString* schoolname in schoollist.schoolList) {
-//                WRRealmSchoolList* sch=[[WRRealmSchoolList alloc] init];
-//                sch.schoolAbb=schoolname;
-//                [realm addObject:sch];
+//            if ([WRRealmCourse objectsWhere:@"sis_course_id=%@",course.sis_course_id].count) {
+//                continue;
 //            }
 //            
 //            
+//            WRRealmCourse *newcourse=[[WRRealmCourse alloc] init];
+//            newcourse.course_id=course.course_id;
+//            newcourse.sis_course_id=course.sis_course_id;
+//            newcourse.title=course.title;
+//            newcourse.min_units=course.min_units;
+//            newcourse.max_units=course.max_units;
+//            newcourse.total_max_units=course.total_max_units;
+//            newcourse.desc=course.desc;
+//            newcourse.diversity_flag=course.diversity_flag;
+//            newcourse.effective_term_code=course.effective_term_code;
+//            newcourse.section=[NSKeyedArchiver archivedDataWithRootObject:course.section];
+//            [realm addObject:newcourse];
+//            [mutableCourses addObject:course];
 //        }
 //        
 //        
@@ -202,6 +183,48 @@ static NSString * const kClientID =
 //    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
 //        
 //    }];
+    
+    NSString* schoolliststring=[WRFetchData getSchoolList];
+    [[WRAPIClient sharedClient] GET:schoolliststring parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+        [realm beginWriteTransaction];
+        
+        
+        
+//        WRSchoolList *schoollist = [[WRSchoolList alloc] init];
+        for (NSString *attributes in JSON) {
+            NSDictionary* schname = [JSON objectForKey:attributes];
+            NSDictionary* dept=[schname objectForKey:@"departments"];
+            
+            
+            if ([WRRealmSchoolList objectsWhere:@"schoolAbb=%@",attributes].count==0) {
+                WRRealmSchoolList* schlist=[[WRRealmSchoolList alloc] init];
+                schlist.schoolAbb=attributes;
+                schlist.schoolName=[schname objectForKey:@"name"];
+                [realm addObject:schlist];
+            }
+            
+            
+            
+            for (NSString* depta in dept) {
+                if ([WRRealmDeptList objectsWhere:@"DeptApp=%@",depta].count==0) {
+                    WRRealmDeptList* deptlist=[[WRRealmDeptList alloc] init];
+                    deptlist.SchoolAbb=attributes;
+                    deptlist.DeptAbb=depta;
+                    deptlist.DeptName=[dept objectForKey:depta];
+                    [realm addObject:deptlist];
+                }
+            }
+            
+            
+            
+        }
+        
+        
+        [realm commitWriteTransaction];
+        
+    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+        
+    }];
     
     
     
