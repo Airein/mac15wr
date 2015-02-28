@@ -192,6 +192,20 @@ static NSString * const kClientID =
     self.signIn.shouldFetchGoogleUserID=YES;
     self.signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
     
+    
+    // You previously set kClientId in the "Initialize the Google+ client" step
+    self.signIn.clientID = kClientID;
+    
+    // Uncomment one of these two statements for the scope you chose in the previous step
+    self.signIn.scopes = @[ kGTLAuthScopePlusLogin ];  // "https://www.googleapis.com/auth/plus.login" scope
+    //self.signIn.scopes = @[ @"profile" ];            // "profile" scope
+    
+    // Optional: declare self.signIn.actions, see "app activities"
+    self.signIn.delegate = self;
+    
+    
+    [self.signIn trySilentAuthentication];
+    
 //    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
 //    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
 //    self.window.rootViewController = myView;
