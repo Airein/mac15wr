@@ -83,6 +83,20 @@
     _checkoutTable.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [rbgView addSubview:_checkoutTable];
 //    _checkoutTable.alpha = 0;
+    
+    
+//    self.checkoutButton = [[UIButton alloc] init];
+//    self.checkoutButton.frame = CGRectMake(0, 0, 200, 50);
+//    self.checkoutButton.center = CGPointMake(CGRectGetWidth(rbgView.frame)/2, CGRectGetMaxY(rbgView.frame)-54);
+//    [self.checkoutButton setBackgroundColor:[UIColor WR_USC_Red]];
+//    self.checkoutButton.titleLabel.text = @"Check Out";
+//    self.checkoutButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+//    self.checkoutButton.titleLabel.font = [UIFont boldSystemFontOfSize:36.f];
+//    self.checkoutButton.titleLabel.textColor = [UIColor WR_USC_Yellow];
+////    [self.checkoutButton setTitleColor:[UIColor WR_USC_Yellow] forState:UIControlStateNormal];
+//    [self.rbgView addSubview:self.checkoutButton];
+//    
+    
 }
 
 -(void)showWishListView{

@@ -101,7 +101,10 @@
             [topViewController presentViewContent];
             break;
         }case IIViewDeckBottomSide:{
-            
+            BottomViewController *bottomViewController = (BottomViewController*)viewDeckController.bottomController;
+            [bottomViewController presentViewContent];
+            break;
+
             break;
         }default:{
             break;
@@ -125,7 +128,8 @@
 
             break;
         }case IIViewDeckBottomSide:{
-            
+            BottomViewController *bottomViewController = (BottomViewController*)viewDeckController.bottomController;
+            [bottomViewController hideViewContent];
             break;
         }default:{
             break;
