@@ -13,6 +13,7 @@
 #import "SRFSurfboard.h"
 #import "WRRealmUsers.h"
 #import "WRLoginViewController.h"
+#import "WRCourse.h"
 
 
 
@@ -137,6 +138,23 @@ static NSString * const kClientID =
     WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
     [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
     IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+    
+    
+    if (self.signIn.userEmail) {
+        if ([WRRealmUsers objectsWhere:@"email=%@",self.signIn.userEmail]) {
+            self.window.rootViewController = deckViewController;
+        }
+        WRRealmUsers* users=[[WRRealmUsers alloc] init];
+        RLMRealm *realm=[RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
+        users.email=self.signIn.userEmail;
+        users.idToken=self.signIn.idToken;
+        [realm addObject:users];
+        [realm commitWriteTransaction];
+    }
+    
+    
+    
     self.window.rootViewController = deckViewController;
 }
 
@@ -154,18 +172,30 @@ static NSString * const kClientID =
         [self.signIn authenticate];
     } else {
         NSLog(@"Successful Login");
-        //store user_info
-        WRRealmUsers* users=[[WRRealmUsers alloc] init];
-        RLMRealm *realm=[RLMRealm defaultRealm];
-        [realm beginWriteTransaction];
-        users.email=self.signIn.userEmail;
-        [realm addObject:users];
-        [realm commitWriteTransaction];
         
-                WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
-                [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
-                IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+        WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+        [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+        IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
+        
+        
+        //store user_info
+        if (self.signIn.userEmail) {
+            if ([WRRealmUsers objectsWhere:@"email=%@",self.signIn.userEmail]) {
                 self.window.rootViewController = deckViewController;
+            }
+            WRRealmUsers* users=[[WRRealmUsers alloc] init];
+            RLMRealm *realm=[RLMRealm defaultRealm];
+            [realm beginWriteTransaction];
+            users.email=self.signIn.userEmail;
+            users.idToken=self.signIn.idToken;
+            [realm addObject:users];
+            [realm commitWriteTransaction];
+        }
+        
+        
+        
+        
+        self.window.rootViewController = deckViewController;
     }
 }
 

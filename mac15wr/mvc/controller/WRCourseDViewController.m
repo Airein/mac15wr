@@ -92,14 +92,12 @@
 
 -(void)viewDidLoad {
     self.courseTitleLabel.text=self.courseSelected.title;
-//    self.creditLabel.text=[NSString stringWithFormat:@"%.0f", self.courseSelected.min_units];
-//    self.descLabel.text=self.courseSelected.desc;
     self.courseIDLabel.text=self.courseSelected.sis_course_id;
     
     
-    
+    NSMutableArray *sec=[WRDataFormatChange NSData2NSMutableArray:self.courseSelected.section];
     self.sections=[[NSMutableArray alloc] init];
-    for (NSDictionary *dict in self.courseSelected.section) {
+    for (NSDictionary *dict in sec) {
         [self.sections addObject:dict];
     }
     
@@ -135,6 +133,7 @@
     //return mainview
     NSLog(@"pop");
     [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)addToWishList:(id)sender {

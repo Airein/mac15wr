@@ -10,6 +10,7 @@
 
 @interface WRRealmUsers : RLMObject
 @property NSString* email;
+@property NSString* idToken;
 @end
 
 // This protocol enables typed collections. i.e.:

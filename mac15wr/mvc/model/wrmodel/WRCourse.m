@@ -18,12 +18,12 @@
         return nil;
     }
     
-    self.course_id = (double)[[attributes valueForKeyPath:@"courseID"] doubleValue];
+    self.course_id = [[attributes valueForKeyPath:@"courseID"] integerValue];
     self.sis_course_id = (NSString*)[attributes valueForKeyPath:@"uCourseID"];
     self.title = (NSString*)[attributes valueForKeyPath:@"title"];
-    self.min_units = (double)[[attributes valueForKeyPath:@"minUnits"] doubleValue];
-    self.max_units = (double)[[attributes valueForKeyPath:@"maxUnits"] doubleValue];
-    self.total_max_units = [[attributes valueForKeyPath:@"tMaxUnits"] isKindOfClass:[NSNull class]]?0:(double)[[attributes valueForKeyPath:@"tMaxUnits"] doubleValue];
+    self.min_units = [[attributes valueForKeyPath:@"minUnits"] integerValue];
+    self.max_units = [[attributes valueForKeyPath:@"maxUnits"] integerValue];
+    self.total_max_units = [[attributes valueForKeyPath:@"tMaxUnits"] isKindOfClass:[NSNull class]]?0:[[attributes valueForKeyPath:@"tMaxUnits"] integerValue];
     self.desc = (NSString*)[attributes valueForKeyPath:@"description"];
     self.diversity_flag = (NSString*)[attributes valueForKey:@"dFlag"];
     self.effective_term_code = (NSString*)[attributes valueForKey:@"eTermCode"];

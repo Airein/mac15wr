@@ -11,12 +11,12 @@
 
 @interface WRCourse : NSObject
 
-@property (assign, nonatomic) double course_id;
+@property (assign, nonatomic) NSInteger course_id;
 @property (strong, nonatomic) NSString* sis_course_id;
 @property (strong, nonatomic) NSString* title;
-@property (assign, nonatomic) double min_units;
-@property (assign, nonatomic) double max_units;
-@property (assign, nonatomic) double total_max_units;
+@property (assign, nonatomic) NSInteger min_units;
+@property (assign, nonatomic) NSInteger max_units;
+@property (assign, nonatomic) NSInteger total_max_units;
 @property (strong, nonatomic) NSString* desc;
 @property (strong, nonatomic) NSString* diversity_flag;
 @property (strong, nonatomic) NSString* effective_term_code;

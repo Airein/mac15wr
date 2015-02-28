@@ -13,5 +13,10 @@
 
 + (NSData*) NSDictionary2NSData:(NSDictionary *)dic;
 + (NSDictionary*) NSData2NSDictionary:(NSData *)data;
++ (NSMutableArray *)NSData2NSMutableArray:(NSData*)data;
++ (NSArray *)NSData2NSArray:(NSData*)data;
++ (NSData*)NSArray2NSData:(NSArray*)array;
++ (NSData*)NSMutableArray2NSData:(NSMutableArray*)array;
+
 
 @end
