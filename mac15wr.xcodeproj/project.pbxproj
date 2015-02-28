@@ -212,7 +212,6 @@
 		003C342A1A8729E7003097DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		003C342C1A8729E7003097DD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		003C342D1A8729E7003097DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		003C34301A8729E7003097DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		003C34321A8729E7003097DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		003C34351A8729E7003097DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		003C343B1A8729E7003097DD /* mac15wrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mac15wrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -820,7 +819,6 @@
 		1F46A2761A8C65FB00DF74B7 /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				003C342F1A8729E7003097DD /* Main.storyboard */,
 			);
 			path = storyboard;
 			sourceTree = "<group>";
@@ -1850,15 +1848,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		003C342F1A8729E7003097DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				003C34301A8729E7003097DD /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		003C34341A8729E7003097DD /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
