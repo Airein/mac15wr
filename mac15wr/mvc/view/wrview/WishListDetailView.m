@@ -117,6 +117,7 @@
     
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"WishListAddToDefaultCalendarNotification" object:@"Yes"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"WishListBoxChangedNotificatoin" object:@"-"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CheckListBoxChangedNotificatoin" object:@"+"];
 }
 
 

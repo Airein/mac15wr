@@ -221,10 +221,11 @@
     
     
     if ([self.cvTypeString isEqualToString:@"first"]) {     // Tutorial
-        WRCheckActionViewController *actionViewController = NULL;
+//        WRCheckActionViewController *actionViewController = NULL;
         switch (index) {
             case 0:{    //  Overview Tour
-                actionViewController = [[WRCheckActionViewController alloc] init];
+//                actionViewController = [[WRCheckActionViewController alloc] init];
+                
                 
                 break;
             } case 1:{  //  Team Member
@@ -240,7 +241,7 @@
                 break;
             }
         }
-        [self presentCheckActionViewController:actionViewController];
+//        [self presentCheckActionViewController:actionViewController];
     } else if ([self.cvTypeString isEqualToString:@"second"]) {     //  Viewer
         WRCheckActionViewController *actionViewController = NULL;
         switch (index) {

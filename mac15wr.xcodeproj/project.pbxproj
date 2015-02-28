@@ -13,6 +13,8 @@
 		003C34331A8729E7003097DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003C34321A8729E7003097DD /* Images.xcassets */; };
 		003C34361A8729E7003097DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003C34341A8729E7003097DD /* LaunchScreen.xib */; };
 		003C34421A8729E7003097DD /* mac15wrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C34411A8729E7003097DD /* mac15wrTests.m */; };
+		1F0B1EF71AA1AD3C000115F4 /* DKCircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0B1EF41AA1AD3C000115F4 /* DKCircleImageView.m */; };
+		1F0B1EF81AA1AD3C000115F4 /* UIViewController+Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0B1EF61AA1AD3C000115F4 /* UIViewController+Tutorial.m */; };
 		1F3FDEC21A9FA9D10080A77C /* WRViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FDEC11A9FA9D10080A77C /* WRViewerViewController.m */; };
 		1F3FDECD1A9FBDC20080A77C /* FTCoreTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FDECA1A9FBDC20080A77C /* FTCoreTextStyle.m */; };
 		1F3FDECE1A9FBDC20080A77C /* FTCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3FDECC1A9FBDC20080A77C /* FTCoreTextView.m */; };
@@ -218,6 +220,10 @@
 		003C343B1A8729E7003097DD /* mac15wrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mac15wrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		003C34401A8729E7003097DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		003C34411A8729E7003097DD /* mac15wrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mac15wrTests.m; sourceTree = "<group>"; };
+		1F0B1EF31AA1AD3C000115F4 /* DKCircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircleImageView.h; sourceTree = "<group>"; };
+		1F0B1EF41AA1AD3C000115F4 /* DKCircleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleImageView.m; sourceTree = "<group>"; };
+		1F0B1EF51AA1AD3C000115F4 /* UIViewController+Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Tutorial.h"; sourceTree = "<group>"; };
+		1F0B1EF61AA1AD3C000115F4 /* UIViewController+Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Tutorial.m"; sourceTree = "<group>"; };
 		1F1AB7111A88785A001A656C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1F3FDEC01A9FA9D10080A77C /* WRViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRViewerViewController.h; sourceTree = "<group>"; };
 		1F3FDEC11A9FA9D10080A77C /* WRViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRViewerViewController.m; sourceTree = "<group>"; };
@@ -664,6 +670,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1F0B1EF21AA1AD3C000115F4 /* UIlViewController+Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				1F0B1EF31AA1AD3C000115F4 /* DKCircleImageView.h */,
+				1F0B1EF41AA1AD3C000115F4 /* DKCircleImageView.m */,
+				1F0B1EF51AA1AD3C000115F4 /* UIViewController+Tutorial.h */,
+				1F0B1EF61AA1AD3C000115F4 /* UIViewController+Tutorial.m */,
+			);
+			path = "UIlViewController+Tutorial";
+			sourceTree = "<group>";
+		};
 		1F3FDEBF1A9FA9AC0080A77C /* wrcheckaction */ = {
 			isa = PBXGroup;
 			children = (
@@ -711,13 +728,6 @@
 				1F3FDED81A9FDC190080A77C /* viewer-course-in-usc.txt */,
 			);
 			path = text;
-			sourceTree = "<group>";
-		};
-		1F3FDEE11AA00FEE0080A77C /* welcome */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = welcome;
 			sourceTree = "<group>";
 		};
 		1F3FDEE51AA017EA0080A77C /* SRFSurfboard */ = {
@@ -998,7 +1008,6 @@
 		1F9292A31A881DCE001B8A45 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				1F3FDEE11AA00FEE0080A77C /* welcome */,
 				1FB85FA81A931C5600119A34 /* wrview */,
 				1FB85F611A90435000119A34 /* widget */,
 				1F5007021A900EA100DBCBA5 /* fiveview */,
@@ -1021,6 +1030,7 @@
 		1F9292A51A881DCE001B8A45 /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				1F0B1EF21AA1AD3C000115F4 /* UIlViewController+Tutorial */,
 				1F3FDEE51AA017EA0080A77C /* SRFSurfboard */,
 				1F3FDEC81A9FBDC20080A77C /* FTCoreText */,
 				1FC508DD1A9EB9FD00CBCA88 /* M13BadgeView */,
@@ -1814,6 +1824,7 @@
 				1FC508D01A9DB6EF00CBCA88 /* UIColor+WRColor.m in Sources */,
 				1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */,
 				FAFB16841AA17E6900DC857B /* WRFilterViewController.m in Sources */,
+				1F0B1EF81AA1AD3C000115F4 /* UIViewController+Tutorial.m in Sources */,
 				1FC508B91A9D717F00CBCA88 /* WeekViewExampleController.m in Sources */,
 				FA474AD11AA0366B00C33517 /* MGSwipeTableCell.m in Sources */,
 				1FB85F6E1A9047F000119A34 /* WRFiveViewManager.m in Sources */,
@@ -1823,6 +1834,7 @@
 				FA474AA51AA032D800C33517 /* WRDept.m in Sources */,
 				1FD7CAAB1A88AEB7009857F7 /* JSONModelError.m in Sources */,
 				003C34281A8729E7003097DD /* main.m in Sources */,
+				1F0B1EF71AA1AD3C000115F4 /* DKCircleImageView.m in Sources */,
 				1F46A2C71A8C7BF000DF74B7 /* UISlider+FlatUI.m in Sources */,
 				FA474AA81AA032D800C33517 /* WRSection.m in Sources */,
 				1FC508CA1A9DAADD00CBCA88 /* WishListModel.m in Sources */,

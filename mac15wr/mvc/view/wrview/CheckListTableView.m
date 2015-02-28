@@ -329,7 +329,10 @@
     } completion:nil];
     [self loadData];
     [self reloadData];
-    [UIView animateWithDuration:0.8 animations:^{
+
+    [UIView animateWithDuration:1.5 animations:^{
+        [self loadData];
+        [self reloadData];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         self.alpha = 1;
     } completion:nil];

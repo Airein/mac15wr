@@ -24,6 +24,41 @@
 @end
 
 @implementation CenterViewController
+
+- (void)viewDidAppear: (BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+}
+
+- (void) startTuturial{
+    [self startTutorialWithInfo:@"Swipe down to see the top page"
+                        atPoint:CGPointMake(SCREEN_WIDTH/2, 100)
+   withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-100)
+                    andEndPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+100) shouldHideBackground:NO completion:^{
+                        [self startTutorialWithInfo:@"Swipe up to see the Bottom page"
+                                            atPoint:CGPointMake(SCREEN_WIDTH/2,100)
+                       withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+100)
+                                        andEndPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-100) shouldHideBackground:NO completion:^{
+                                            [self startTutorialWithInfo:@"Swipe right to see the Left page"
+                                                                atPoint:CGPointMake(SCREEN_WIDTH/2, 100)
+                                           withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2+100, SCREEN_HEIGHT/2)
+                                                            andEndPoint:CGPointMake(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2) shouldHideBackground:NO completion:^{
+                                                                [self startTutorialWithInfo:@"Swipe left to see the right page"
+                                                                                    atPoint:CGPointMake(SCREEN_WIDTH/2, 100)
+                                                               withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2)
+                                                                                andEndPoint:CGPointMake(SCREEN_WIDTH/2+100, SCREEN_HEIGHT/2) shouldHideBackground:NO completion:^{
+                                                                                    
+                                                                                    
+                                                                                }];
+                                                                
+                                                            }];
+                                            
+                                        }];
+                        
+                    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
