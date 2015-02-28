@@ -40,7 +40,7 @@
     self.circleProgressView = [[CircleProgressView alloc] init];
     self.circleProgressView.frame = CGRectMake(0, 0, circleRadius*2, circleRadius*2);
     self.circleProgressView.center = CGPointMake(screenWidth/2, screenHeight/2);
-    self.circleProgressView.status = @"Registing";
+    self.circleProgressView.status = @"Registering";
     self.circleProgressView.registeredPoint = @"9 Point Registered";
     self.circleProgressView.requiredPoint = @"8 Point Required";
     [self.circleProgressView setTimeLimit:20];
