@@ -26,5 +26,4 @@
 @property (strong,nonatomic) CenterViewController *centerViewControllerDelegate;
 @property WRFilterViewController* filterViewControllerDelegate;
 
-
 @end

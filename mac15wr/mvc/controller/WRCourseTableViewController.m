@@ -120,7 +120,9 @@
 */
 
 
-
+-(void)reLoad {
+    [self.tableview reloadData];
+}
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
