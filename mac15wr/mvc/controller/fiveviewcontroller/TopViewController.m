@@ -92,7 +92,7 @@ static int counter = 23;
     ((MAEvent *) [arr objectAtIndex:0]).end = [CURRENT_CALENDAR dateFromComponents:components];
     
     if (r2 > 5) {
-        ((MAEvent *) [arr objectAtIndex:0]).backgroundColor = [UIColor brownColor];
+        ((MAEvent *) [arr objectAtIndex:0]).backgroundColor = [UIColor belizeHoleColor];
     }
     
     return arr;

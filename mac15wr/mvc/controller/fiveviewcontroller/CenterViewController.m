@@ -31,27 +31,27 @@
 - (void)viewDidAppear: (BOOL)animated{
     
     [super viewDidAppear:animated];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialView"]) {
-        self.startTuturial;
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"tutorialView"];
-    }
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialView"]) {
+//        self.startTuturial;
+//        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"tutorialView"];
+//    }
     
 }
 
 - (void) startTuturial{
-    [self startTutorialWithInfo:@"Swipe down to see the top page"
+    [self startTutorialWithInfo:@"Swipe down to see the calendar page"
                         atPoint:CGPointMake(SCREEN_WIDTH/2, 100)
    withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-100)
                     andEndPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+100) shouldHideBackground:NO completion:^{
-                        [self startTutorialWithInfo:@"Swipe up to see the Bottom page"
+                        [self startTutorialWithInfo:@"Swipe up to see the search page"
                                             atPoint:CGPointMake(SCREEN_WIDTH/2,100)
                        withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+100)
                                         andEndPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-100) shouldHideBackground:NO completion:^{
-                                            [self startTutorialWithInfo:@"Swipe right to see the Left page"
+                                            [self startTutorialWithInfo:@"Swipe right to see the setting page"
                                                                 atPoint:CGPointMake(SCREEN_WIDTH/2, 100)
                                            withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2+100, SCREEN_HEIGHT/2)
                                                             andEndPoint:CGPointMake(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2) shouldHideBackground:NO completion:^{
-                                                                [self startTutorialWithInfo:@"Swipe left to see the right page"
+                                                                [self startTutorialWithInfo:@"Swipe left to see the list page"
                                                                                     atPoint:CGPointMake(SCREEN_WIDTH/2, 100)
                                                                withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2)
                                                                                 andEndPoint:CGPointMake(SCREEN_WIDTH/2+100, SCREEN_HEIGHT/2) shouldHideBackground:NO completion:^{
@@ -227,6 +227,25 @@
     theTimer = [NSTimer scheduledTimerWithTimeInterval:theInterval target:self selector:@selector(circleDueSample) userInfo:nil repeats:YES];
     
     
+    // Search
+    self.searchBar = [[UIView alloc] init];
+    self.searchBar.frame = CGRectMake(0, 0, SCREEN_WIDTH-60, 40);
+    self.searchBar.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT-60);
+    self.searchBar.backgroundColor = [UIColor WR_USC_Yellow];
+    
+    UILabel *searchLabel = [[UILabel alloc] init];
+    searchLabel.frame = CGRectMake(0, 0, 300, 30);
+    searchLabel.center = CGPointMake(CGRectGetWidth(self.searchBar.frame)/2, CGRectGetHeight(self.searchBar.frame)/2);
+    searchLabel.text = @"Search";
+    searchLabel.font = [UIFont boldSystemFontOfSize:24.f];
+    searchLabel.textAlignment = NSTextAlignmentCenter;
+    searchLabel.textColor = [UIColor WR_USC_Red];
+    [self.searchBar addSubview:searchLabel];
+    
+    [self.view addSubview:self.searchBar];
+    
+    
+    [self.searchBar addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchBarClicked)]];
     
     
 }
@@ -454,6 +473,11 @@
                                dismissOnContentTouch:NO];
     reminderView.klcPopupDelegate = popup;
     [popup show];
+}
+
+-(void) searchBarClicked{
+    [self.viewDeckController openBottomView];
+    
 }
 
 

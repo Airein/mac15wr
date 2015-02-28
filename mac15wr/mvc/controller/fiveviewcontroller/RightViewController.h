@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong)  UIView *rbgView;
 
+@property (nonatomic, strong)  UIButton *checkoutButton;
+
 
 -(void) openWishListView;
 -(void) openCheckListView;

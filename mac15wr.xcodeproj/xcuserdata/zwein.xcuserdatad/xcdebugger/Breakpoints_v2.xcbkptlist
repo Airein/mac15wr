@@ -134,11 +134,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mac15wr/mvc/controller/fiveviewcontroller/CenterViewController.m"
-            timestampString = "446811508.102845"
+            timestampString = "446814213.479056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
             landmarkName = "-handleSwipeFrom:"
             landmarkType = "5">
          </BreakpointContent>
