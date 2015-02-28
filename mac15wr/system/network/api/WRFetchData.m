@@ -38,8 +38,7 @@
 }
 
 + (NSString*)getSchoolList {
-    NSString *getString=@"misc/school";
-    return getString;
+    return @"misc/dept";
 }
 
 + (NSString*)getAvailabelTerm {

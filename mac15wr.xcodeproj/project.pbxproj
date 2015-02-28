@@ -192,6 +192,7 @@
 		FA51221A1AA0FC6E00E24E61 /* WRRealmSchoolList.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5122191AA0FC6E00E24E61 /* WRRealmSchoolList.m */; };
 		FA51221C1AA1131C00E24E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA51221B1AA1131C00E24E61 /* Main.storyboard */; };
 		FA51221F1AA11BED00E24E61 /* WRRealmCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = FA51221E1AA11BED00E24E61 /* WRRealmCourse.m */; };
+		FAFB16841AA17E6900DC857B /* WRFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFB16831AA17E6900DC857B /* WRFilterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -557,6 +558,8 @@
 		FA51221D1AA11BED00E24E61 /* WRRealmCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRRealmCourse.h; sourceTree = "<group>"; };
 		FA51221E1AA11BED00E24E61 /* WRRealmCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRRealmCourse.m; sourceTree = "<group>"; };
 		FA947AA51AA132C00037967B /* WRRealmTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WRRealmTables.h; sourceTree = "<group>"; };
+		FAFB16821AA17E6900DC857B /* WRFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRFilterViewController.h; sourceTree = "<group>"; };
+		FAFB16831AA17E6900DC857B /* WRFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRFilterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -962,6 +965,8 @@
 		1F9292A11A881DCE001B8A45 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FAFB16821AA17E6900DC857B /* WRFilterViewController.h */,
+				FAFB16831AA17E6900DC857B /* WRFilterViewController.m */,
 				FA474A921AA0328000C33517 /* WRCourseDViewController.h */,
 				FA474A931AA0328000C33517 /* WRCourseDViewController.m */,
 				FA474A941AA0328000C33517 /* WRCourseTableViewController.h */,
@@ -1808,6 +1813,7 @@
 				1FB85FA31A93110A00119A34 /* UIColor+HexColor.m in Sources */,
 				1FC508D01A9DB6EF00CBCA88 /* UIColor+WRColor.m in Sources */,
 				1FD7CAB71A88B357009857F7 /* WRCourse.m in Sources */,
+				FAFB16841AA17E6900DC857B /* WRFilterViewController.m in Sources */,
 				1FC508B91A9D717F00CBCA88 /* WeekViewExampleController.m in Sources */,
 				FA474AD11AA0366B00C33517 /* MGSwipeTableCell.m in Sources */,
 				1FB85F6E1A9047F000119A34 /* WRFiveViewManager.m in Sources */,

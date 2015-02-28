@@ -10,7 +10,7 @@
 
 @interface WRRealmSchoolList : RLMObject
 @property NSString* schoolAbb;
-@property NSString* shcoolName;
+//@property NSString* schoolName;
 @end
 
 // This protocol enables typed collections. i.e.:

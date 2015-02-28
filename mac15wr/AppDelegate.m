@@ -152,8 +152,6 @@ static NSString * const kClientID =
             
             
             WRRealmCourse *newcourse=[[WRRealmCourse alloc] init];
-            
-            
             newcourse.course_id=course.course_id;
             newcourse.sis_course_id=course.sis_course_id;
             newcourse.title=course.title;
@@ -175,7 +173,29 @@ static NSString * const kClientID =
         
     }];
     
-    
+//    NSString* schoolliststring=[WRFetchData getSchoolList];
+//    [[WRAPIClient sharedClient] GET:schoolliststring parameters:nil success:^(NSURLSessionDataTask * __unused task, id JSON) {
+//        [realm beginWriteTransaction];
+//        
+//        
+//        for (NSDictionary *course_attributes in JSON) {
+//            WRSchoolList *schoollist = [[WRSchoolList alloc] initWithAttributes:course_attributes];
+//            
+//            for (NSString* schoolname in schoollist.schoolList) {
+//                WRRealmSchoolList* sch=[[WRRealmSchoolList alloc] init];
+//                sch.schoolAbb=schoolname;
+//                [realm addObject:sch];
+//            }
+//            
+//            
+//        }
+//        
+//        
+//        [realm commitWriteTransaction];
+//        
+//    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+//        
+//    }];
     
     
     
@@ -257,10 +277,7 @@ static NSString * const kClientID =
         
         
         //store user_info
-        if (self.signIn.userEmail) {
-            if ([WRRealmUsers objectsWhere:@"email=%@",self.signIn.userEmail]) {
-                self.window.rootViewController = deckViewController;
-            }
+        if (self.signIn.userEmail&&[WRRealmUsers objectsWhere:@"email=%@",self.signIn.userEmail].count!=0) {
             WRRealmUsers* users=[[WRRealmUsers alloc] init];
             RLMRealm *realm=[RLMRealm defaultRealm];
             [realm beginWriteTransaction];
