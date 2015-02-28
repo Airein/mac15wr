@@ -204,7 +204,13 @@ static NSString * const kClientID =
     self.signIn.delegate = self;
     
     
-    [self.signIn trySilentAuthentication];
+    if(![self.signIn trySilentAuthentication]){
+        UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        WRLoginViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
+        myView.appDelegate=self;
+        self.window.rootViewController = myView;
+        
+    }
     
 //    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
 //    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"loginStory"];
@@ -213,15 +219,7 @@ static NSString * const kClientID =
 }
 
 - (void) entermainpage{
-    WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
-    [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
-    IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
-    
-    
-    if (self.signIn.userEmail) {
-        if ([WRRealmUsers objectsWhere:@"email=%@",self.signIn.userEmail]) {
-            self.window.rootViewController = deckViewController;
-        }
+    if (self.signIn.userEmail && [WRRealmUsers objectsWhere:@"email=%@",self.signIn.userEmail].count!=0) {
         WRRealmUsers* users=[[WRRealmUsers alloc] init];
         RLMRealm *realm=[RLMRealm defaultRealm];
         [realm beginWriteTransaction];
@@ -231,9 +229,11 @@ static NSString * const kClientID =
         [realm commitWriteTransaction];
     }
     
-    
-    
+    WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
+    [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
+    IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
     self.window.rootViewController = deckViewController;
+    
 }
 
 

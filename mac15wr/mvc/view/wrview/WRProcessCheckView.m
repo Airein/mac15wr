@@ -13,6 +13,8 @@
 
 #import "RightViewController.h"
 
+#import "WRCourseTableViewController.h"
+
 @implementation WRProcessCheckView
 
 
@@ -265,7 +267,9 @@
         switch (index) {
             case 0:{    // Choose course
                 NSLog(@"0");
-                
+                UIStoryboard *story=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                WRCourseTableViewController *myView = [story instantiateViewControllerWithIdentifier:@"chooseCourse"];
+                [self.parentControllerDelegate showViewController:myView sender:self.parentControllerDelegate];
                 
                 break;
             } case 1:{  // Check Wish List

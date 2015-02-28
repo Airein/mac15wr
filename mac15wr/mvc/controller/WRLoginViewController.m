@@ -69,14 +69,6 @@ static NSString * const kClientID =
     if (error) {
         // Do some error handling here.
     } else {
-//        [self performSegueWithIdentifier:@"login" sender:self];
-//        [self refreshInterfaceBasedOnsignIn];
-        
-        //go to main view
-//        WRFiveViewManager *wrFiveViewManager = [WRFiveViewManager sharedInstance];
-//        [wrFiveViewManager setBgColor:[UIColor pomegranateColor]];
-//        IIViewDeckController *deckViewController = [wrFiveViewManager getDeckController];
-//        [self showDetailViewController:deckViewController sender:self];
         [self.appDelegate entermainpage];
         
         
