@@ -136,6 +136,11 @@
     [rightViewController.checkoutTable loadData];
     [rightViewController.checkoutTable reloadData];
     
+    [rightViewController.wishlistTable loadData];
+    [rightViewController.wishlistTable reloadData];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CheckListBoxChangedNotificatoin" object:@"+"];
+    
     //return mainview
     NSLog(@"pop");
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -159,7 +164,7 @@
     
     [defaultRealm commitWriteTransaction];
     
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WishListBoxChangedNotificatoin" object:@"+"];
     //return mainview
     NSLog(@"pop");
     [self dismissViewControllerAnimated:YES completion:nil];

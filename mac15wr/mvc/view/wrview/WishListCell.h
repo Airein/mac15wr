@@ -21,11 +21,9 @@
 @property(nonatomic,strong) UILabel *courseDateLabel;
 @property(nonatomic,strong) UIButton *addToCalendarBtn;
 
+//@property(nonatomic,strong) CheckListModel *model;
+@property(nonatomic,strong) WishListDetailView *detialView;
 
+@property(assign,nonatomic) BOOL isExpand;
 
-
-
-
-@property(nonatomic,strong)WishListModel *model;
-@property(nonatomic,strong  )WishListDetailView *detialView;
 @end

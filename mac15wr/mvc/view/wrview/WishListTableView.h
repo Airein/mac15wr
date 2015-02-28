@@ -19,6 +19,8 @@
     NSMutableArray *_CurrentArray;
 }
 
+- (void) loadData;
+
 
 @end
 

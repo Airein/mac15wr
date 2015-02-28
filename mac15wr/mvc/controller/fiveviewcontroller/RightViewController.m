@@ -11,7 +11,6 @@
 #define BG_OFFSET SCREEN_WIDTH-80
 
 @interface RightViewController (){
-    UIView *backgroundView;
     CGPoint bgCenter;
     UILabel *titleLabel;
 }
@@ -19,6 +18,7 @@
 @end
 
 @implementation RightViewController
+@synthesize rbgView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,19 +35,21 @@
     [self.centerViewControllerDelegate.wishlistBox addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(wishlistBoxClicked)]];
     [self.centerViewControllerDelegate.checklistBox addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checklistBoxClicked)]];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wishListBoxChanged:) name:@"WishListBoxChangedNotificatoin" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkListBoxChanged:) name:@"CheckListBoxChangedNotificatoin" object:nil];
 }
 
 
 
 -(void) loadListView{
-    backgroundView = [[UIView alloc] init];
-    backgroundView.frame = CGRectMake(100, 20, SCREEN_WIDTH-80, SCREEN_HEIGHT-40);
-    bgCenter =  backgroundView.center;
-    backgroundView.center = CGPointMake(bgCenter.x + BG_OFFSET, bgCenter.y);
-    backgroundView.backgroundColor = [UIColor WR_USC_Yellow];
-    backgroundView.layer.cornerRadius = 36.0;
-    [self.view addSubview:backgroundView];
+    rbgView = [[UIView alloc] init];
+    rbgView.frame = CGRectMake(100, 20, SCREEN_WIDTH-80, SCREEN_HEIGHT-40);
+    bgCenter =  rbgView.center;
+    rbgView.center = CGPointMake(bgCenter.x + BG_OFFSET, bgCenter.y);
+    rbgView.backgroundColor = [UIColor WR_USC_Yellow];
+    rbgView.layer.cornerRadius = 36.0;
+    [self.view addSubview:rbgView];
 
     UIView *headerView = [[UIView alloc] init];
     headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH-80, 40);
@@ -59,7 +61,7 @@
     maskLayer.frame = headerView.bounds;
     maskLayer.path = maskPath.CGPath;
     headerView.layer.mask = maskLayer;
-    [backgroundView addSubview:headerView];
+    [rbgView addSubview:headerView];
     
     titleLabel = [[UILabel alloc] init];
     titleLabel.frame = CGRectMake(0, 0, CGRectGetWidth(headerView.bounds), CGRectGetHeight(headerView.bounds));
@@ -71,30 +73,69 @@
     
     
     // wish list
-    _wishlistTable = [[WishListTableView alloc] initWithFrame:CGRectMake(10, 50, CGRectGetWidth(backgroundView.bounds)-30, CGRectGetHeight(backgroundView.bounds)-65)];
+    _wishlistTable = [[WishListTableView alloc] initWithFrame:CGRectMake(10, 50, CGRectGetWidth(rbgView.bounds)-30, CGRectGetHeight(rbgView.bounds)-65)];
     [_wishlistTable reloadData];
     _wishlistTable.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    [backgroundView addSubview:_wishlistTable];
+    [rbgView addSubview:_wishlistTable];
     // checkout list
-    _checkoutTable = [[CheckListTableView alloc] initWithFrame:CGRectMake(10, 50, CGRectGetWidth(backgroundView.bounds)-30, CGRectGetHeight(backgroundView.bounds)-65)];
+    _checkoutTable = [[CheckListTableView alloc] initWithFrame:CGRectMake(10, 50, CGRectGetWidth(rbgView.bounds)-30, CGRectGetHeight(rbgView.bounds)-65)];
     [_checkoutTable reloadData];
     _checkoutTable.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    [backgroundView addSubview:_checkoutTable];
+    [rbgView addSubview:_checkoutTable];
 //    _checkoutTable.alpha = 0;
 }
 
 -(void)showWishListView{
-    self.wishlistTable.alpha = 1;
-    self.checkoutTable.alpha = 0;
+    CGFloat offset = 130.f;
+    CGFloat duration = 0.4f;
+    [UIView animateWithDuration:duration animations:^{
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            self.checkoutTable.alpha = 0;
+        self.rbgView.center = CGPointMake(self.rbgView.center.x+offset, self.rbgView.center.y);
+            self.wishlistTable.alpha = 0;
+        [self.wishlistTable loadData];
+        [self.wishlistTable reloadData];
+    } completion:^(BOOL finished) {
+        titleLabel.text = @"Wish List";
+
+        [UIView animateWithDuration:duration animations:^{
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            self.rbgView.center = CGPointMake(self.rbgView.center.x-offset, self.rbgView.center.y);
+            self.wishlistTable.alpha = 1;
+        } completion:^(BOOL finished) {
+            //执行完后走这里的代码块
+        }];
+    }];
     
-    titleLabel.text = @"Wish List";
+    
+
 }
 
 -(void)showCheckListView{
-    self.wishlistTable.alpha = 0;
-    self.checkoutTable.alpha = 1;
-    [self.checkoutTable loadData];
-    titleLabel.text = @"Checkout List";
+    CGFloat offset = 130.f;
+    CGFloat duration = 0.4f;
+
+    [UIView animateWithDuration:duration animations:^{
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        self.checkoutTable.alpha = 0;
+        self.rbgView.center = CGPointMake(self.rbgView.center.x+offset, self.rbgView.center.y);
+        self.wishlistTable.alpha = 0;
+        
+        [self.checkoutTable loadData];
+        [self.checkoutTable reloadData];
+    } completion:^(BOOL finished) {
+        titleLabel.text = @"Checkout List";
+
+        //执行完后走这里的代码块
+        [UIView animateWithDuration:duration animations:^{
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            self.rbgView.center = CGPointMake(self.rbgView.center.x-offset, self.rbgView.center.y);
+            self.checkoutTable.alpha = 1;
+        } completion:^(BOOL finished) {
+            //执行完后走这里的代码块
+        }];
+    }];
+    
 }
 
 
@@ -206,8 +247,8 @@
     [UIView animateWithDuration:FIVEPAGE_TRANSITION_DURATION animations:^{
         //[UIView setAnimationDelay:1.2];//配置动画时延
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        backgroundView.center = bgCenter;//CGPointMake(bgCenter.x + 100, bgCenter.y);
-        [backgroundView setAlpha:1.0];
+        rbgView.center = bgCenter;//CGPointMake(bgCenter.x + 100, bgCenter.y);
+        [rbgView setAlpha:1.0];
        
     } completion:^(BOOL finished) {
         //执行完后走这里的代码块
@@ -219,14 +260,44 @@
 -(void) hideViewContent{
     [UIView animateWithDuration:FIVEPAGE_TRANSITION_DURATION animations:^{
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        backgroundView.center = CGPointMake(bgCenter.x + BG_OFFSET, bgCenter.y);
-        [backgroundView setAlpha:0.2];
+        rbgView.center = CGPointMake(bgCenter.x + BG_OFFSET, bgCenter.y);
+        [rbgView setAlpha:0.2];
         
     } completion:^(BOOL finished) {
         //执行完后走这里的代码块
     }];
 }
 
+
+-(void)wishListBoxChanged:(NSNotification*)notification{
+    NSString *str =  notification.object;
+    if ([str isEqualToString:@"+"]) {
+        NSString *intString =  self.centerViewControllerDelegate.wishlistBadge.text;
+        self.centerViewControllerDelegate.wishlistBadge.text
+            = [NSString stringWithFormat:@"%d",[intString intValue] + 1];
+
+    } else if ([str isEqualToString:@"-"]) {
+        NSString *intString =  self.centerViewControllerDelegate.wishlistBadge.text;
+        self.centerViewControllerDelegate.wishlistBadge.text
+        = [NSString stringWithFormat:@"%d",[intString intValue] - 1];
+    }
+    
+    
+}
+-(void)checkListBoxChanged:(NSNotification*)notification{
+    NSString *str =  notification.object;
+    if ([str isEqualToString:@"+"]) {
+        NSString *intString =  self.centerViewControllerDelegate.checklistBadge.text;
+        self.centerViewControllerDelegate.checklistBadge.text
+        = [NSString stringWithFormat:@"%d",[intString intValue] + 1];
+        
+    } else if ([str isEqualToString:@"-"]) {
+        NSString *intString =  self.centerViewControllerDelegate.checklistBadge.text;
+        self.centerViewControllerDelegate.checklistBadge.text
+        = [NSString stringWithFormat:@"%d",[intString intValue] - 1];
+    }
+    
+}
 
 
 

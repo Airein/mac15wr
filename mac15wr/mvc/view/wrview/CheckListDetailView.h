@@ -15,11 +15,7 @@
     
 }
 
-//下边方法可以自己实现 用于计算view高度 或者单元格高度
 
-//+(CGFloat)getHeightByModel:(Model*)model;
-
-//@property(nonatomic,strong)CheckListModel *model;
 
 @property(nonatomic,strong) UILabel *sectionIdLabel;
 @property(nonatomic,strong) UILabel *sectionSeatsLabel;
@@ -30,6 +26,6 @@
 @property(nonatomic,strong) UIButton *addToWLBtn;
 @property(assign,nonatomic) BOOL isExpand;
 
-//@property(nonatomic,assign) CheckListCell *cellDelegate;
+@property(assign,nonatomic) WRRealmCheckList *realmChecklist;
 
 @end

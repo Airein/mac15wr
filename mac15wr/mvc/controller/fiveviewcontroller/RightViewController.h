@@ -22,6 +22,9 @@
 @property (nonatomic, strong) CheckListTableView *checkoutTable;
 @property (nonatomic, strong) NSMutableArray *checkoutContent;
 
+@property (nonatomic, strong)  UIView *rbgView;
+
+
 -(void) openWishListView;
 -(void) openCheckListView;
 
