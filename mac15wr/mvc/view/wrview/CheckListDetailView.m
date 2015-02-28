@@ -51,6 +51,10 @@
     self.sectionProfessorLabel.textColor = [UIColor WR_USC_Yellow];
     [self addSubview:self.sectionProfessorLabel];
     
+    [self.deleteBtn addTarget:self action:@selector(deleteClicked) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.addToWLBtn addTarget:self action:@selector(addToWishListBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 //自动布局 通过model 给展开后控件复制！！（详细控件在该方法内创建 在else中隐藏 包括要写死的控件）
 - (void)layoutSubviews
@@ -60,7 +64,7 @@
         self.backgroundColor=[UIColor alizarinColor];
 
         //高度可以通过实现计算高度的方法来获得
-        self.frame = CGRectMake(0, 44, 300, 150);
+        self.frame = CGRectMake(0, 44, 300, 180);
         
         self.sectionIdLabel.frame = CGRectMake(20, 0, 300, 30);
         self.sectionIdLabel.hidden = NO;
@@ -71,14 +75,12 @@
         self.sectionProfessorLabel.frame = CGRectMake(20, CGRectGetMaxY(self.sectionSeatsLabel.frame), 300, 30);
         self.sectionProfessorLabel.hidden = NO;
         
-        self.deleteBtn.frame = CGRectMake(0, 0, 60, 30);
-        self.deleteBtn.center = CGPointMake(CGRectGetWidth(self.frame)/2-100, CGRectGetHeight(self.frame)-30);
+        self.deleteBtn.frame = CGRectMake(20, CGRectGetMaxY(self.sectionProfessorLabel.frame)+5, 60, 30);
         [self.deleteBtn setTitle:@"Delete" forState:UIControlStateNormal];
         self.deleteBtn.titleLabel.textColor = [UIColor WR_USC_Red];
         self.deleteBtn.hidden = NO;
         
-        self.addToWLBtn.frame = CGRectMake(0, 0, 160, 30);
-        self.addToWLBtn.center = CGPointMake(CGRectGetWidth(self.frame)/2+50, CGRectGetHeight(self.frame)-30);
+        self.addToWLBtn.frame = CGRectMake(120, CGRectGetMaxY(self.sectionProfessorLabel.frame)+5, 160, 30);
         [self.addToWLBtn setTitle:@"Add to Wish List" forState:UIControlStateNormal];
         self.addToWLBtn.titleLabel.textColor = [UIColor WR_USC_Red];
         self.addToWLBtn.hidden = NO;
@@ -96,7 +98,35 @@
 
 
 
+- (void) deleteClicked{
+    RLMRealm *defaultRealm = [RLMRealm defaultRealm];
+    [defaultRealm beginWriteTransaction];
+    [defaultRealm deleteObject: self.realmChecklist];
+    [defaultRealm commitWriteTransaction];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CheckListBoxChangedNotificatoin" object:@"-"];
+}
 
+- (void) addToWishListBtnClicked{
+    //realm, data put in
+    RLMRealm *defaultRealm = [RLMRealm defaultRealm];
+    WRRealmWishList *wishlist=[[WRRealmWishList alloc] init];
+    [defaultRealm beginWriteTransaction];
+    wishlist.section=  self.realmChecklist.section;
+    wishlist.sis_course_id=self.realmChecklist.sis_course_id;
+    wishlist.title=self.realmChecklist.title;
+    [defaultRealm addObject:wishlist];
+    [defaultRealm commitWriteTransaction];
+    
+    [defaultRealm beginWriteTransaction];
+    [defaultRealm deleteObject: self.realmChecklist];
+    [defaultRealm commitWriteTransaction];
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CheckListBoxChangedNotificatoin" object:@"-"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"WishListBoxChangedNotificatoin" object:@"+"];
+    
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

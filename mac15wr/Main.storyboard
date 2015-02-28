@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3RA-xH-fGA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3RA-xH-fGA">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -158,8 +158,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vE4-Yp-I6x" customClass="GPPSignInButton">
-                                <rect key="frame" x="253" y="344" width="95" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vE4-Yp-I6x" customClass="GPPSignInButton">
+                                <rect key="frame" x="193" y="344" width="217" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="1hr-KO-SIp"/>
                                 </constraints>
@@ -167,21 +167,9 @@
                                     <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW2-pB-dHQ">
-                                <rect key="frame" x="271" y="105" width="58" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="dFc-5o-s0H"/>
-                                    <constraint firstAttribute="width" constant="58" id="woi-3j-7RP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.5" green="0.02589809341" blue="0.1461226128" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dW2-pB-dHQ" firstAttribute="top" secondItem="hS3-X9-pYI" secondAttribute="bottom" constant="85" id="PIa-1x-uLl"/>
-                            <constraint firstItem="dW2-pB-dHQ" firstAttribute="centerX" secondItem="vE4-Yp-I6x" secondAttribute="centerX" id="RBC-uo-m8y"/>
                             <constraint firstItem="fxE-nO-ceK" firstAttribute="top" secondItem="vE4-Yp-I6x" secondAttribute="bottom" constant="222" id="TjO-S0-HdY"/>
                             <constraint firstItem="vE4-Yp-I6x" firstAttribute="centerX" secondItem="VA4-wE-w6M" secondAttribute="centerX" id="igU-AC-glP"/>
                         </constraints>

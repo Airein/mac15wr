@@ -24,6 +24,41 @@
 @end
 
 @implementation CenterViewController
+
+- (void)viewDidAppear: (BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+}
+
+- (void) startTuturial{
+    [self startTutorialWithInfo:@"Swipe down to see the top page"
+                        atPoint:CGPointMake(SCREEN_WIDTH/2, 100)
+   withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-100)
+                    andEndPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+100) shouldHideBackground:NO completion:^{
+                        [self startTutorialWithInfo:@"Swipe up to see the Bottom page"
+                                            atPoint:CGPointMake(SCREEN_WIDTH/2,100)
+                       withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+100)
+                                        andEndPoint:CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-100) shouldHideBackground:NO completion:^{
+                                            [self startTutorialWithInfo:@"Swipe right to see the Left page"
+                                                                atPoint:CGPointMake(SCREEN_WIDTH/2, 100)
+                                           withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2+100, SCREEN_HEIGHT/2)
+                                                            andEndPoint:CGPointMake(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2) shouldHideBackground:NO completion:^{
+                                                                [self startTutorialWithInfo:@"Swipe left to see the right page"
+                                                                                    atPoint:CGPointMake(SCREEN_WIDTH/2, 100)
+                                                               withFingerprintStartingPoint:CGPointMake(SCREEN_WIDTH/2-100, SCREEN_HEIGHT/2)
+                                                                                andEndPoint:CGPointMake(SCREEN_WIDTH/2+100, SCREEN_HEIGHT/2) shouldHideBackground:NO completion:^{
+                                                                                    
+                                                                                    
+                                                                                }];
+                                                                
+                                                            }];
+                                            
+                                        }];
+                        
+                    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -137,7 +172,9 @@
     
     // Wish List Box
     _wishlistBadge = [[M13BadgeView alloc] initWithFrame: CGRectMake(0, 0, 12, 20)];
-    _wishlistBadge.text = @"7";
+    _wishlistBadge.text = @"0";
+    _wishlistBadge.horizontalAlignment = M13BadgeViewHorizontalAlignmentLeft;
+    _wishlistBadge.verticalAlignment = M13BadgeViewVerticalAlignmentTop;
     _wishlistBadge.textColor = [UIColor nephritisColor];
     _wishlistBadge.badgeBackgroundColor = [UIColor midnightBlueColor];
     _wishlistBox = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2 + circleRadius, SCREEN_HEIGHT/2 - circleRadius-20, 32, 32)];
@@ -149,7 +186,9 @@
 
     // Check List Box
     _checklistBadge = [[M13BadgeView alloc] initWithFrame: CGRectMake(0, 0, 12, 20)];
-    _checklistBadge.text = @"2";
+    _checklistBadge.text = @"0";
+    _checklistBadge.horizontalAlignment = M13BadgeViewHorizontalAlignmentLeft;
+    _checklistBadge.verticalAlignment = M13BadgeViewVerticalAlignmentTop;
     _checklistBadge.textColor = [UIColor nephritisColor];
     _checklistBadge.badgeBackgroundColor = [UIColor midnightBlueColor];
     _checklistBox = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2 + circleRadius, SCREEN_HEIGHT/2 + circleRadius, 32, 32)];
@@ -222,6 +261,8 @@
         if ([self.viewDeckController isSideClosed:IIViewDeckLeftSide]&&
             [self.viewDeckController isSideClosed:IIViewDeckRightSide]) {
             [self.viewDeckController openRightView];
+            
+            
         } else if ([self.viewDeckController isSideOpen:IIViewDeckLeftSide]&&
                    [self.viewDeckController isSideClosed:IIViewDeckRightSide]){
             [self.viewDeckController closeOpenView];

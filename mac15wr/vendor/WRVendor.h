@@ -29,7 +29,7 @@
 #import "JMWhenTapped.h"    // add finger event to uiview
 #import "KLCPopup.h"
 #import "TDBadgedCell.h"
-
+#import "UIViewController+Tutorial.h"
 
 
 // DataBase

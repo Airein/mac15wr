@@ -89,13 +89,20 @@
 
 -(instancetype)initWithFrame:(CGRect)frame{
     //    self =[super initWithFrame:CGRectMake(10, 30, 300, 500) style:UITableViewStyleGrouped];
-    self = [super initWithFrame:frame style:UITableViewStyleGrouped];
+    self = [super initWithFrame:frame style:UITableViewStylePlain];
     self.separatorColor = [UIColor clearColor];
     self.backgroundColor = [UIColor clearColor];
         //创建表
     self.delegate = self;
     self.dataSource = self;
     [self loadData];
+    
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteChecklistItem:) name:@"DeleteWishListNotification" object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checklistAddToWishList:) name:@"CheckListAddToWishListNotification" object:nil];
+//
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CheckListBoxChanged:) name:@"CheckListBoxChangedNotificatoin" object:nil];
     
     return self;
 }
@@ -153,7 +160,7 @@
     
     cell.detialView.sectionSeatsLabel.text = [[NSString alloc]
                                                   initWithFormat:@"Seats Registered: %@/%@", [section valueForKey:@"registered"], [section valueForKey:@"seats"]];
-    
+    cell.detialView.realmChecklist = cl;
     
     [cell layoutSubviews];
     
@@ -227,7 +234,7 @@
     if ([isExpand isEqualToString:@"no"]) {
         return  44;
     } else {
-        return 150;
+        return 224;
     }
     
 //    CheckListModel *model=[[_array objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
@@ -315,6 +322,21 @@
 
 
 
+-(void)CheckListBoxChanged:(NSNotification*)notification{
+    [UIView animateWithDuration:0.8 animations:^{
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        self.alpha = 0.2;
+    } completion:nil];
+    [self loadData];
+    [self reloadData];
+
+    [UIView animateWithDuration:1.5 animations:^{
+        [self loadData];
+        [self reloadData];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        self.alpha = 1;
+    } completion:nil];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

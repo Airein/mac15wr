@@ -23,12 +23,31 @@ static NSString * const kClientID =
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.signInButton setColorScheme:kGPPSignInButtonColorSchemeLight];
+    [self.signInButton setStyle:kGPPSignInButtonStyleIconOnly];
+    self.signInButton.frame = CGRectMake(0, 0, 600, 200);
+    self.signInButton.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2+80);
     // Do any additional setup after loading the view, typically from a nib.
     
     //ui settting
     //background
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_trajons.jpg"]];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_trajons.jpg"]];
     
+    self.view.backgroundColor = [UIColor WR_USC_Red];
+    
+//    UIImageView *appIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appIcon"]];
+//    appIconView.frame = CGRectMake(0, 0, 300, 300);
+//    appIconView.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+//    [self.view addSubview:appIconView];
+    
+    UILabel *loginLabel = [[UILabel alloc] init];
+    loginLabel.frame = CGRectMake(0, 0, 300, 100);
+    loginLabel.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-80);
+    loginLabel.text = @"Login";
+    loginLabel.textAlignment = NSTextAlignmentCenter;
+    loginLabel.textColor = [UIColor WR_USC_Yellow];
+    loginLabel.font = [UIFont boldSystemFontOfSize:80];
+    [self.view addSubview:loginLabel];
     
     //google login
     self.signIn = [GPPSignIn sharedInstance];
